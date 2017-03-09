@@ -1,0 +1,29 @@
+Functionality:
+
+    Take in workout info thgough a gui and store it in csv files as a basic database
+
+    Each person should have a dir of files of their progress
+
+    user sign in
+        password in future maybe
+
+    able to read in data and use it to give back results / progress / stats on workouts (total weight moved)
+
+    track bodyweight so it can be an added stat when looking back (especially helpful for bodyweight exercises)
+
+    custom datastructure for handling the data
+
+    data stored in csv format
+
+    each workout day is a separate file
+
+    csv date section will keep track to the day
+
+    when submitting the default day will be "today" but optionally can log for previous days as well
+
+    when submitting the exercises should be in a pull down menu, option to add to the exercise list
+        -file of exercises each line its own exercise
+
+    csv format:
+
+        date,bodyweight,exercise

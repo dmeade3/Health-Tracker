@@ -13,6 +13,9 @@ public class MainUtility
 {
     final static Logger logger = Logger.getLogger(MainUtility.class);
 
+    final static String WORKOUT_CSV_HEADER = "date,bodyweight,exercise,reps,sets";
+
+
     public static String getCurrentDate()
     {
         Date dNow = new Date( );
