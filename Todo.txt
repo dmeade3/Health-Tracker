@@ -27,3 +27,11 @@ Functionality:
     csv format:
 
         date,bodyweight,exercise
+
+    graph results eventually:
+        not the highest priority at least at the begining
+
+    look into using css with the gui to make it look good
+        -javafx builder
+            -http://docs.oracle.com/javafx/scenebuilder/1/use_java_ides/sb-with-intellij.htm
+        -css
