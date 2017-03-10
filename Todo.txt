@@ -19,19 +19,14 @@ Functionality:
 
     csv date section will keep track to the day
 
-    when submitting the default day will be "today" but optionally can log for previous days as well
-
-    when submitting the exercises should be in a pull down menu, option to add to the exercise list
-        -file of exercises each line its own exercise
+    if dir for user doesnt exist create a dir for the user
+        check disregarding case
 
     csv format:
-
-        date,bodyweight,exercise
+        date,bodyweight,exercise,sets,reps
 
     graph results eventually:
         not the highest priority at least at the begining
 
     look into using css with the gui to make it look good
-        -javafx builder
-            -http://docs.oracle.com/javafx/scenebuilder/1/use_java_ides/sb-with-intellij.htm
         -css
