@@ -2,7 +2,6 @@ package util;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.io.File;
@@ -70,12 +69,12 @@ public class MainUtility
         return FXCollections.observableArrayList(listExercises);
     }
 
-    public static void main(String... args)
+    /*public static void main(String... args)
     {
         BasicConfigurator.configure();
 
         logger.info(getCurrentDate());
 
         getDatesForDropDown();
-    }
+    }*/
 }

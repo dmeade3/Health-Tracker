@@ -7,10 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -24,7 +21,6 @@ public class Main extends Application
 {
     GridPane mainGrid;
 
-
     private void initMainGrid(Scene scene)
     {
         mainGrid = new GridPane();
@@ -34,6 +30,7 @@ public class Main extends Application
 
         scene.setRoot(mainGrid);
 
+        // sets up main grid for gridpane
         int rowCount = 50;
         int colCount = 50;
 
@@ -58,6 +55,8 @@ public class Main extends Application
         Scene scene = new Scene(root, MAIN_PAGE_WIDTH, MAIN_PAGE_HEIGHT);
         stage.setScene(scene);
         stage.setTitle(PROJECT_TITLE);
+        stage.setMaxHeight(MAIN_PAGE_HEIGHT);
+        stage.setMaxWidth(MAIN_PAGE_WIDTH);
 
         initMainGrid(scene);
 
@@ -65,10 +64,30 @@ public class Main extends Application
         /**
          *  TextFields
          */
-        final TextField comment = new TextField();
-        comment.setPromptText("Enter your comment.");
-        GridPane.setConstraints(comment, 2, 2, 2, 1);
-        mainGrid.getChildren().add(comment);
+        final TextField repsTextField = new TextField();
+        repsTextField.setPromptText("Reps...");
+        GridPane.setConstraints(repsTextField, 2, 2, 3, 1);
+        mainGrid.getChildren().add(repsTextField);
+
+        final TextField setTextField = new TextField();
+        setTextField.setPromptText("Sets...");
+        GridPane.setConstraints(setTextField, 2, 3, 3, 1);
+        mainGrid.getChildren().add(setTextField);
+
+        final TextField timeTextField = new TextField();
+        timeTextField.setPromptText("Time...");
+        GridPane.setConstraints(timeTextField, 2, 4, 3, 1);
+        mainGrid.getChildren().add(timeTextField);
+
+        final TextField bodyweightTextField = new TextField();
+        bodyweightTextField.setPromptText("Bodyweight...");
+        GridPane.setConstraints(bodyweightTextField, 2, 5, 3, 1);
+        mainGrid.getChildren().add(bodyweightTextField);
+
+        final TextField userTextField = new TextField();
+        userTextField.setPromptText("User...");
+        GridPane.setConstraints(userTextField, 2, 6, 3, 1);
+        mainGrid.getChildren().add(userTextField);
 
 
         /**
@@ -89,41 +108,42 @@ public class Main extends Application
         /**
          *  Buttons
          */
-        /*Button submitButton = new Button("Submit");
-        GridPane.setConstraints(submitButton, 0, 3);
-        grid.getChildren().add(submitButton);
-
-        Button clearButton = new Button("Clear");
-        GridPane.setConstraints(clearButton, 0, 1);
-        grid.getChildren().add(clearButton);*/
+        Button sampleButton = new Button("Sample Button");
+        GridPane.setConstraints(sampleButton, 10, 10, 3, 3);
+        mainGrid.getChildren().add(sampleButton);
 
 
         /**
          *  Labels
          */
         final Label dateLabel = new Label("Date");
-        GridPane.setConstraints(dateLabel, 0, 0);
+        GridPane.setConstraints(dateLabel, 1, 0);
         GridPane.setColumnSpan(dateLabel, 2);
         mainGrid.getChildren().add(dateLabel);
 
-        final Label infoTextField = new Label();
-        GridPane.setConstraints(infoTextField, 1, 3);
-        GridPane.setColumnSpan(infoTextField, 2);
-        mainGrid.getChildren().add(infoTextField);
+        final Label repsLabel = new Label("Reps");
+        GridPane.setConstraints(repsLabel, 1, 2);
+        GridPane.setColumnSpan(repsLabel, 2);
+        mainGrid.getChildren().add(repsLabel);
+
+        final Label setsLabel = new Label("Sets");
+        GridPane.setConstraints(setsLabel, 1, 3);
+        GridPane.setColumnSpan(setsLabel, 2);
+        mainGrid.getChildren().add(setsLabel);
 
         /**
          *  ListView  http://www.java2s.com/Tutorials/Java/JavaFX/0640__JavaFX_ListView.htm
          */
-        ObservableList<String> names = FXCollections .observableArrayList();
+        //ObservableList<String> names = FXCollections .observableArrayList();
         ObservableList<String> data = FXCollections.observableArrayList();
 
         ListView<String> listInfo = new ListView<>(data);
         listInfo.setPrefSize(600, MAIN_PAGE_HEIGHT);
         listInfo.setEditable(true);
 
-        names.addAll("Results of program appear here", "Results of program appear here Results of program appear here Results of program appear here Results of program appear here");
-        listInfo.setItems(names);
-        mainGrid.add(listInfo, 120, 0, 10, 100);
+        data.addAll("Sample output", "Results of program appear here Results of program appear here Results of program appear here Results of program appear here");
+        listInfo.setItems(data);
+        mainGrid.add(listInfo, 22, 0, 10, 27);
 
 
         /**
@@ -131,25 +151,11 @@ public class Main extends Application
          */
         stage.setOnCloseRequest(e -> Platform.exit());
 
-        /*submitButton.setOnAction(e ->
-        {
-            if ((comment.getText() != null && !comment.getText().isEmpty()))
-            {
-                infoTextField.setText(name.getText() + " " + lastName.getText() + ", " + "thank you for your comment!");
-            }
-            else
-            {
-                infoTextField.setText("You have not left a comment.");
-            }
-        });
 
-        clearButton.setOnAction(e ->
+        sampleButton.setOnAction(e ->
         {
-            name.clear();
-            lastName.clear();
-            comment.clear();
-            infoTextField.setText(null);
-        });*/
+            data.add("Sample button hit...");
+        });
     }
 
     @Override

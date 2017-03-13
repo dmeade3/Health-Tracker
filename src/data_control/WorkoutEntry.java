@@ -5,24 +5,26 @@ package data_control;
  */
 public class WorkoutEntry
 {
-    String date;
-    float bodyweight;
-    String exercise;
-    int reps;
-    int sets;
+    private String date;
+    private float bodyweight;
+    private String exercise;
+    private int reps;
+    private int sets;
+    private float time;
 
-    public WorkoutEntry(String date, float bodyweight, String exercise, int reps, int sets)
+    public WorkoutEntry(String date, float bodyweight, String exercise, int reps, int sets, float time)
     {
         this.date = date;
         this.bodyweight = bodyweight;
         this.exercise = exercise;
         this.reps = reps;
         this.sets = sets;
+        this.time = time;
     }
 
     @Override
     public String toString()
     {
-        return date + "," + bodyweight + "," + exercise + "," + reps + "," + sets;
+        return date + "," + bodyweight + "," + exercise + "," + reps + "," + sets + "," + time;
     }
 }

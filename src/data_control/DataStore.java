@@ -1,12 +1,17 @@
 package data_control;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.DirectoryFileFilter;
+import org.apache.commons.io.filefilter.RegexFileFilter;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import static util.Constants.LOGS_PATH;
 import static util.Constants.WORKOUT_CSV_HEADER;
@@ -21,49 +26,79 @@ public class DataStore
 
     ArrayList<WorkoutEntry> workoutEntries = new ArrayList<>();
 
-    public void readInData(String name)
+    public void readInUserData(String user)
     {
+        // todo check if the user dir exists
+
+        // get all csv files
+        Collection files = FileUtils.listFiles(new File(LOGS_PATH + System.getProperty("file.separator") + user), new RegexFileFilter(".+\\.(csv)"), DirectoryFileFilter.DIRECTORY);
+
+        for (Object file : files)
+        {
+
+            System.out.println(((File)file).getAbsoluteFile());
+
+        }
+
 
     }
 
-    public void storeData(WorkoutEntry workoutEntry, String user, String date)
+    public void storeWorkoutEntry(WorkoutEntry workoutEntry, String user, String date)
     {
+        BufferedWriter bw = null;
+        FileWriter fw = null;
 
-    }
-
-    public void makeNewCsvFile(String user, String date)
-    {
         String filePath = LOGS_PATH + System.getProperty("file.separator") + user + System.getProperty("file.separator") + date.replaceAll("/", "_") + ".csv";
-
-        File file = new File(filePath);
 
         try
         {
-            if (!file.createNewFile())
+            File file = new File(filePath);
+            // if file doesnt exists, then create it
+            if (!file.exists())
             {
-                System.out.println("File is created: " + filePath);
+                // true = append file
+                fw = new FileWriter(file.getAbsoluteFile(), true);
+                bw = new BufferedWriter(fw);
 
-                try
-                {
-                    PrintWriter writer = new PrintWriter(file, "UTF-8");
-                    writer.println(WORKOUT_CSV_HEADER);
-                    writer.close();
-                }
-                catch (IOException e)
-                {
-                    logger.warn("Could not writ to file: " + filePath);
-                }
+                logger.info("Creating new log file: " + filePath);
+
+                file.createNewFile();
+                bw.write(WORKOUT_CSV_HEADER + "\n" + workoutEntry.toString() + "\n");
             }
             else
             {
-                System.out.println("File already exists: " + filePath);
+                // true = append file
+                fw = new FileWriter(file.getAbsoluteFile(), true);
+                bw = new BufferedWriter(fw);
+
+                bw.write(workoutEntry.toString() + "\n");
             }
         }
         catch (IOException e)
         {
-            logger.warn("Could not create new log file: user: " + filePath);
+            e.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                if (bw != null)
+                {
+                    bw.close();
+                }
+
+                if (fw != null)
+                {
+                    fw.close();
+                }
+            }
+            catch (IOException ex)
+            {
+                ex.printStackTrace();
+            }
         }
     }
+
 
     public static void main(String... args)
     {
@@ -71,6 +106,16 @@ public class DataStore
 
         DataStore dataStore = new DataStore();
 
-        dataStore.makeNewCsvFile("David", "3/10/2017");
+        /*WorkoutEntry workoutEntry = new WorkoutEntry("3/13/2017", 195, "Pullups", 20, 5, 33.44f);
+
+        dataStore.storeWorkoutEntry(workoutEntry, "David", "3/13/2017");*/
+
+
+        dataStore.readInUserData("David");
+
+        for (WorkoutEntry workoutEntry : dataStore.workoutEntries)
+        {
+            System.out.println(workoutEntry.toString());
+        }
     }
 }

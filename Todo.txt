@@ -1,8 +1,6 @@
 Functionality:
 
-    Take in workout info thgough a gui and store it in csv files as a basic database
-
-    Each person should have a dir of files of their progress
+    Take in workout info through a gui and store it in csv files as a basic database
 
     user sign in
         password in future maybe
@@ -11,22 +9,17 @@ Functionality:
 
     track bodyweight so it can be an added stat when looking back (especially helpful for bodyweight exercises)
 
-    custom datastructure for handling the data
-
-    data stored in csv format
-
-    each workout day is a separate file
-
-    csv date section will keep track to the day
-
-    if dir for user doesnt exist create a dir for the user
-        check disregarding case
+    upon creating a new user make a log dir for them
 
     csv format:
-        date,bodyweight,exercise,sets,reps
+        date,bodyweight,exercise,sets,reps,time
+            -time can be blank
+            -error if the others are blank
 
     graph results eventually:
-        not the highest priority at least at the begining
+        not the highest priority at least at the beginning
 
     look into using css with the gui to make it look good
         -css
+
+    Message if the user doesnt exist
