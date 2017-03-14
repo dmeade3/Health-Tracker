@@ -11,11 +11,6 @@ Functionality:
 
     upon creating a new user make a log dir for them
 
-    csv format:
-        date,bodyweight,exercise,sets,reps,time
-            -time can be blank
-            -error if the others are blank
-
     graph results eventually:
         not the highest priority at least at the beginning
 
