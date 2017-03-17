@@ -18,3 +18,5 @@ Functionality:
         -css
 
     Message if the user doesnt exist
+
+    In app when tracking weight take Average of week as progress result, option
