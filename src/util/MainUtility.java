@@ -24,12 +24,10 @@ public class MainUtility
     final static Logger logger = Logger.getLogger(MainUtility.class);
 
 
-
-
     public static String getCurrentDate()
     {
         Date dNow = new Date( );
-        SimpleDateFormat ft = new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+        SimpleDateFormat ft = new SimpleDateFormat("MM-dd-yyy");
 
         return ft.format(dNow);
     }
@@ -68,13 +66,4 @@ public class MainUtility
 
         return FXCollections.observableArrayList(listExercises);
     }
-
-    /*public static void main(String... args)
-    {
-        BasicConfigurator.configure();
-
-        logger.info(getCurrentDate());
-
-        getDatesForDropDown();
-    }*/
 }

@@ -1,9 +1,9 @@
 package data_control;
 
+import gui.Main;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.RegexFileFilter;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.io.BufferedWriter;
@@ -19,14 +19,14 @@ import static util.Constants.WORKOUT_CSV_HEADER;
 /**
  * Created by dcmeade on 3/9/2017.
  */
-public class DataStore
+public class DataManager
 {
-    final static Logger logger = Logger.getLogger(DataStore.class);
+    final static Logger logger = Logger.getLogger(DataManager.class);
 
 
-    ArrayList<WorkoutEntry> workoutEntries = new ArrayList<>();
-
-    public void readInUserData(String user)
+    // Reads in all from a user back to a certain date
+    // if date is "all" then all user data read in
+    public static ArrayList<WorkoutEntry> readInUserData(String user, String date)
     {
         // todo check if the user dir exists
 
@@ -40,10 +40,10 @@ public class DataStore
 
         }
 
-
+        return new ArrayList<>();
     }
 
-    public void storeWorkoutEntry(WorkoutEntry workoutEntry, String user, String date)
+    public static void storeWorkoutEntry(WorkoutEntry workoutEntry, String user, String date)
     {
         BufferedWriter bw = null;
         FileWriter fw = null;
@@ -56,14 +56,24 @@ public class DataStore
             // if file doesnt exists, then create it
             if (!file.exists())
             {
-                // true = append file
-                fw = new FileWriter(file.getAbsoluteFile(), true);
-                bw = new BufferedWriter(fw);
+                try
+                {
+                    file.createNewFile();
 
-                logger.info("Creating new log file: " + filePath);
+                    // true = append file
+                    fw = new FileWriter(file.getAbsoluteFile(), true);
+                    bw = new BufferedWriter(fw);
 
-                file.createNewFile();
-                bw.write(WORKOUT_CSV_HEADER + "\n" + workoutEntry.toString() + "\n");
+                    logger.info("Creating new log file: " + filePath);
+
+                    bw.write(WORKOUT_CSV_HEADER + "\n" + workoutEntry.toString() + "\n");
+                }
+                catch (IOException ioExp)
+                {
+                    logger.warn("File path cannot be used");
+
+                    Main.writeToConsole("Path not able to be created, User may be wrong / not exist");
+                }
             }
             else
             {
@@ -72,6 +82,8 @@ public class DataStore
                 bw = new BufferedWriter(fw);
 
                 bw.write(workoutEntry.toString() + "\n");
+
+                Main.writeToConsole("Adding entry: " + workoutEntry.toString());
             }
         }
         catch (IOException e)
@@ -102,18 +114,17 @@ public class DataStore
 
     public static void main(String... args)
     {
-        BasicConfigurator.configure();
+        //BasicConfigurator.configure();
 
-        DataStore dataStore = new DataStore();
+        //
+        //WorkoutEntry workoutEntry = new WorkoutEntry("3/13/2017", 195, "Pullups", 20, 5, 33.44f);
 
-        /*WorkoutEntry workoutEntry = new WorkoutEntry("3/13/2017", 195, "Pullups", 20, 5, 33.44f);
-
-        dataStore.storeWorkoutEntry(workoutEntry, "David", "3/13/2017");*/
+        //storeWorkoutEntry(workoutEntry, "David", "3/13/2017");
 
 
-        dataStore.readInUserData("David");
+        ArrayList<WorkoutEntry> workoutEntries = readInUserData("David", "all");
 
-        for (WorkoutEntry workoutEntry : dataStore.workoutEntries)
+        for (WorkoutEntry workoutEntry : workoutEntries)
         {
             System.out.println(workoutEntry.toString());
         }

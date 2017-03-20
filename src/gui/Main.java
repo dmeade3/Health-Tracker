@@ -1,5 +1,6 @@
 package gui;
 
+import data_control.DataManager;
 import data_control.WorkoutEntry;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -41,8 +42,12 @@ public class Main extends Application
     private Label bodyweightLabel;
     private Label userLabel;
     private ListView<String> listInfo;
-    private ObservableList<String> workoutData;
+    private static ObservableList<String> workoutData;
 
+    public static void writeToConsole(String s)
+    {
+        workoutData.add(s);
+    }
 
     private void initMainGrid(Scene scene)
     {
@@ -167,16 +172,17 @@ public class Main extends Application
         listInfo.setPrefSize(600, MAIN_PAGE_HEIGHT);
         listInfo.setEditable(true);
 
-        workoutData.addAll("................................................................Output................................................................");
+        writeToConsole("................................................................Output................................................................");
         listInfo.setItems(workoutData);
         mainGrid.add(listInfo, 19, 0, 13, 27);
     }
 
     private void initActions(Stage stage)
     {
+        // Stop application on gui exit
         stage.setOnCloseRequest(e -> Platform.exit());
 
-
+        // Commit a workout entry
         sampleButton.setOnAction(e ->
         {
             // Check if the fields are filled first except for time, it is optional
@@ -194,7 +200,6 @@ public class Main extends Application
                 { // Do nothing, its allowed to be null
                 }
 
-
                 workoutEntry = new WorkoutEntry((String) datesComboBox.getSelectionModel().getSelectedItem(),
                         Float.valueOf(bodyweightTextField.getText()),
                         (String) exercises.getSelectionModel().getSelectedItem(),
@@ -202,12 +207,12 @@ public class Main extends Application
                         Integer.parseInt(setTextField.getText()),
                         time);
 
-                workoutData.add(workoutEntry.toString());
+                DataManager.storeWorkoutEntry(workoutEntry, userTextField.getText(), (String) datesComboBox.getSelectionModel().getSelectedItem());
             }
             catch (NumberFormatException ex)
             {
                 logger.warn("Formatting error when submitting workout entry");
-                workoutData.add("Formatting error when submitting workout entry");
+                writeToConsole("Formatting error when submitting workout entry");
             }
         });
     }

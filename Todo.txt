@@ -19,4 +19,8 @@ Functionality:
 
     Message if the user doesnt exist
 
+    user could be drop down
+
+    option to add new user
+
     In app when tracking weight take Average of week as progress result, option

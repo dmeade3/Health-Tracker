@@ -1,13 +1,0 @@
-
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¥³úÕ
-Ysquid:S1188"DReduce this lambda expression number of lines from 27 to at most 20.(³²ñë
-vsquid:S1450"\Remove the "userTextField" field and declare it as a local variable in the relevant methods.(»ÎÒ¼üÿÿÿÿ
-rsquid:S1450"XRemove the "dateLabel" field and declare it as a local variable in the relevant methods.(³°ßùÿÿÿÿÿ
-rsquid:S1450"XRemove the "repsLabel" field and declare it as a local variable in the relevant methods.(‚–±ÿÿÿÿÿ
-msquid:S1450"XRemove the "setsLabel" field and declare it as a local variable in the relevant methods.(÷‹ƒ³
-rsquid:S1450"XRemove the "timeLabel" field and declare it as a local variable in the relevant methods.(¤•…¾şÿÿÿÿ
-qsquid:S1450"\Remove the "optionalLabel" field and declare it as a local variable in the relevant methods.(ü­Û
-xsquid:S1450"^Remove the "bodyweightLabel" field and declare it as a local variable in the relevant methods.(õ’üøÿÿÿÿ
-msquid:S1450"XRemove the "userLabel" field and declare it as a local variable in the relevant methods.(‹ñæ­
-qsquid:S1450"WRemove the "listInfo" field and declare it as a local variable in the relevant methods.(î®Şÿÿÿÿÿ
-Osquid:S1141"5Extract this nested try block into a separate method.(ç£êúÿÿÿÿ

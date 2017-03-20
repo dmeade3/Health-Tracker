@@ -1,6 +1,0 @@
-
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Å∆…É
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(“Ã‚ñ¯ˇˇˇˇ
-Tsquid:S1118":Add a private constructor to hide the implicit public one.(üÀ„Â˝ˇˇˇˇ
-?squid:S1166"%Either log or rethrow this exception.(…òŸé˙ˇˇˇˇ
-=squid:S1148"#Use a logger to log this exception.(Ä…‘Ö˝ˇˇˇˇ
