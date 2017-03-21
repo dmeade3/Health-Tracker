@@ -1,15 +1,9 @@
 Functionality:
 
-    Take in workout info through a gui and store it in csv files as a basic database
-
     user sign in
         password in future maybe
 
     able to read in data and use it to give back results / progress / stats on workouts (total weight moved)
-
-    track bodyweight so it can be an added stat when looking back (especially helpful for bodyweight exercises)
-
-    upon creating a new user make a log dir for them
 
     graph results eventually:
         not the highest priority at least at the beginning
@@ -21,6 +15,24 @@ Functionality:
 
     user could be drop down
 
-    option to add new user
+    throw specific error in display too if the exercise is null
+
+    refactor so there is a real main and maingrid and other pages have their own class
 
     In app when tracking weight take Average of week as progress result, option
+
+    Aditional actions:
+
+        Button:
+            Display data Button:
+                -opens window with display options
+
+
+            Admin button:
+                -add user
+                    -upon creating a new user make a log dir for them
+
+            Delete entry button:
+                -opens a windows explorer window and lets you do it yourself
+
+                -or prints out

@@ -1,6 +1,6 @@
 package data_control;
 
-import gui.Main;
+import gui.InitMain;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.RegexFileFilter;
@@ -72,7 +72,7 @@ public class DataManager
                 {
                     logger.warn("File path cannot be used");
 
-                    Main.writeToConsole("Path not able to be created, User may be wrong / not exist");
+                    InitMain.writeToConsole("Path not able to be created, User may be wrong / not exist");
                 }
             }
             else
@@ -83,7 +83,7 @@ public class DataManager
 
                 bw.write(workoutEntry.toString() + "\n");
 
-                Main.writeToConsole("Adding entry: " + workoutEntry.toString());
+                InitMain.writeToConsole("Adding entry: " + workoutEntry.toString());
             }
         }
         catch (IOException e)

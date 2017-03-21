@@ -6,15 +6,21 @@ package util;
 public class Constants
 {
     // MISC NUMBERS
-    public static final int MAIN_PAGE_WIDTH = 1500;
+    public static final int MAIN_PAGE_WIDTH = 850;
 
     public static final int MAIN_PAGE_HEIGHT = 1000;
 
+    public static final int DATA_DISPLAY_PAGE_WIDTH = 850;
+
+    public static final int DATA_DISPLAY_PAGE_HEIGHT = 1000;
+
 
     // MISC STRINGS
-    public static final String WORKOUT_CSV_HEADER = "date,bodyweight,exercise,reps,sets,time";
+    public static final String WORKOUT_CSV_HEADER = "date,bodyweight,exercise,weight,reps,sets,time";
 
     public static final String PROJECT_TITLE = "Workout Tracker";
+
+    public static final String DATA_DISPLAY_TITLE = "Data Display";
 
 
     // PATHS

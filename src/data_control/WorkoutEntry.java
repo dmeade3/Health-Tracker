@@ -11,12 +11,14 @@ public class WorkoutEntry
     private int reps;
     private int sets;
     private float time;
+    private float weight;
 
-    public WorkoutEntry(String date, float bodyweight, String exercise, int reps, int sets, float time)
+    public WorkoutEntry(String date, float bodyweight, String exercise, float weight, int reps, int sets, float time)
     {
         this.date = date;
         this.bodyweight = bodyweight;
         this.exercise = exercise;
+        this.weight = weight;
         this.reps = reps;
         this.sets = sets;
         this.time = time;
@@ -25,6 +27,6 @@ public class WorkoutEntry
     @Override
     public String toString()
     {
-        return date + "," + bodyweight + "," + exercise + "," + reps + "," + sets + "," + time;
+        return date + "," + bodyweight + "," + exercise + "," + weight + "," + reps + "," + sets + "," + time;
     }
 }
