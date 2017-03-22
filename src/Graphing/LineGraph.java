@@ -19,13 +19,13 @@ public class LineGraph extends ApplicationFrame
 {
     final static Logger logger = Logger.getLogger(LineGraph.class);
 
-    public LineGraph( String applicationTitle , String chartTitle )
+    public LineGraph( String applicationTitle, String chartTitle, List<Number> xValsList, List<Number> yValsList)
     {
         super(applicationTitle);
         JFreeChart lineChart = ChartFactory.createLineChart(
                 chartTitle,
                 "Years","Number of Schools",
-                createDataset("Schools", Arrays.asList(15.0f, 30.0f, 60.0f, 120.0f, 240.0f, 300.0f), Arrays.asList("1970", "1980", "1990", "2000", "2010", "2014")),
+                createDataset("Schools", xValsList, yValsList),
                 PlotOrientation.VERTICAL,
                 true,true,false);
 
@@ -35,20 +35,20 @@ public class LineGraph extends ApplicationFrame
     }
 
 
-    private DefaultCategoryDataset createDataset(String lineName, List<Float> valuesList, List<String> xValsList)
+    private DefaultCategoryDataset createDataset(String lineName, List<Number> xValsList, List<Number> yValsList)
     {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
 
         try
         {
-            if (valuesList.size() != xValsList.size())
+            if (yValsList.size() != xValsList.size())
             {
                 throw new Exception("Input lists must be the same size");
             }
 
-            for (int i = 0; i < valuesList.size(); i++)
+            for (int i = 0; i < yValsList.size(); i++)
             {
-                dataset.addValue(valuesList.get(i), lineName, xValsList.get(i));
+                dataset.addValue(yValsList.get(i), lineName, (Comparable) xValsList.get(i));
             }
         }
         catch (Exception e)
@@ -61,10 +61,17 @@ public class LineGraph extends ApplicationFrame
 
     public static void main( String[ ] args )
     {
-        LineGraph chart = new LineGraph("School Vs Years", "Number of Schools vs years");
+        // TODO make an object that would encapsulate the complete data entry (ex: 15.0f, 1970)
 
-        chart.pack( );
-        RefineryUtilities.centerFrameOnScreen( chart );
+        List<Number> xValsList = Arrays.asList(1970, 1980, 1990, 2000, 2010, 2014);
+
+        List<Number> yValsList = Arrays.asList(15.0f, 30.0f, 60.0f, 120.0f, 240.0f, 300.0f);
+
+
+        LineGraph chart = new LineGraph("School Vs Years", "Number of Schools vs years", xValsList, yValsList);
+
+        chart.pack();
+        RefineryUtilities.centerFrameOnScreen(chart);
         chart.setVisible( true );
     }
 }
