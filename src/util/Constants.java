@@ -12,7 +12,7 @@ public class Constants
 
     public static final int DATA_DISPLAY_PAGE_WIDTH = 850;
 
-    public static final int DATA_DISPLAY_PAGE_HEIGHT = 1000;
+    public static final int DATA_DISPLAY_PAGE_HEIGHT = 850;
 
 
     // MISC STRINGS
@@ -29,5 +29,4 @@ public class Constants
     public static final String EXERCISE_PATH = PROJECT_PATH + "\\data\\exercises.txt";
 
     public static final String LOGS_PATH = PROJECT_PATH + "\\data\\logs\\";
-
 }

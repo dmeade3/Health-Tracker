@@ -1,4 +1,23 @@
-Reg Pullup
-Palms Facing Pullup
+
+# Chest Shoulders
 Parallel Bar Dips
 Ring Dips
+
+# Arms
+Sandbag Curl
+
+# Back
+Reg Pullup
+Palms Facing Pullup
+
+# Legs
+Sandbag Shouldering
+Lunges
+
+# Abs
+Situps
+Windshield Wipers
+Toe to Bar
+
+# Neck
+Neck Curl

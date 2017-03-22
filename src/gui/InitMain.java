@@ -1,6 +1,7 @@
 package gui;
 
 import data_control.DataManager;
+import data_control.WodEntry;
 import data_control.WorkoutEntry;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -15,10 +16,9 @@ import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
-import static util.Constants.MAIN_PAGE_HEIGHT;
-import static util.Constants.MAIN_PAGE_WIDTH;
-import static util.Constants.PROJECT_TITLE;
+import static util.Constants.*;
 import static util.MainUtility.getDatesForDropDown;
+import static util.MainUtility.getUsers;
 import static util.MainUtility.loadExercises;
 
 /**
@@ -33,10 +33,10 @@ public class InitMain
     private static TextField setTextField;
     private static TextField timeTextField;
     private static TextField bodyweightTextField;
-    private static TextField userTextField;
-    private static TextField weightTextField;
+    private static TextField additionalWeightTextField;
     private static ComboBox exercises;
     private static ComboBox datesComboBox;
+    private static ComboBox userComboBox;
     private static Button submitButton;
     private static Button displayDataButton;
     private static Button adminButton;
@@ -44,10 +44,9 @@ public class InitMain
     private static Label repsLabel;
     private static Label setsLabel;
     private static Label timeLabel;
-    private static Label optionalLabel;
     private static Label bodyweightLabel;
-    private static Label weightLabel;
-    private static Label everciseLabel;
+    private static Label additionalWeightLabel;
+    private static Label exerciseLabel;
     private static Label userLabel;
     private static ListView<String> listInfo;
     private static ObservableList<String> workoutData;
@@ -105,10 +104,10 @@ public class InitMain
 
     private static void initTextFields()
     {
-        weightTextField = new TextField();
-        weightTextField.setPromptText("Weight...");
-        GridPane.setConstraints(weightTextField, 3, 2, 3, 1);
-        mainGrid.getChildren().add(weightTextField);
+        additionalWeightTextField = new TextField();
+        additionalWeightTextField.setPromptText("Additional Weight...");
+        GridPane.setConstraints(additionalWeightTextField, 3, 2, 3, 1);
+        mainGrid.getChildren().add(additionalWeightTextField);
 
         repsTextField = new TextField();
         repsTextField.setPromptText("Reps...");
@@ -129,11 +128,6 @@ public class InitMain
         bodyweightTextField.setPromptText("Bodyweight...");
         GridPane.setConstraints(bodyweightTextField, 3, 6, 3, 1);
         mainGrid.getChildren().add(bodyweightTextField);
-
-        userTextField = new TextField();
-        userTextField.setPromptText("User...");
-        GridPane.setConstraints(userTextField, 3, 7, 3, 1);
-        mainGrid.getChildren().add(userTextField);
     }
 
     private static void initButtons()
@@ -154,15 +148,34 @@ public class InitMain
     private static void initComboBoxes()
     {
         ObservableList<String> exerciseOptions = loadExercises();
+
+        // load wods
+        for (WodEntry wod : WodEntry.values())
+        {
+            exerciseOptions.add(wod.getWorkoutEntry().getExercise());
+        }
+
         exercises = new ComboBox(exerciseOptions);
         GridPane.setConstraints(exercises, 2, 1, 5, 1);
         mainGrid.getChildren().add(exercises);
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // Load dates
         ObservableList<String> dateOptions = getDatesForDropDown();
         datesComboBox = new ComboBox(dateOptions);
         datesComboBox.getSelectionModel().selectFirst();
         GridPane.setConstraints(datesComboBox, 2, 0, 5, 1);
         mainGrid.getChildren().add(datesComboBox);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        ObservableList<String> users = getUsers();
+        userComboBox = new ComboBox(users);
+
+        userComboBox.getSelectionModel().selectFirst();
+        GridPane.setConstraints(userComboBox, 3, 7, 5, 1);
+        mainGrid.getChildren().add(userComboBox);
     }
 
     private static void initLabels()
@@ -172,15 +185,15 @@ public class InitMain
         GridPane.setColumnSpan(dateLabel, 2);
         mainGrid.getChildren().add(dateLabel);
 
-        everciseLabel = new Label("Exercise");
-        GridPane.setConstraints(everciseLabel, 0, 1);
-        GridPane.setColumnSpan(everciseLabel, 4);
-        mainGrid.getChildren().add(everciseLabel);
+        exerciseLabel = new Label("Exercise");
+        GridPane.setConstraints(exerciseLabel, 0, 1);
+        GridPane.setColumnSpan(exerciseLabel, 4);
+        mainGrid.getChildren().add(exerciseLabel);
 
-        weightLabel = new Label("Weight");
-        GridPane.setConstraints(weightLabel, 1, 2);
-        GridPane.setColumnSpan(weightLabel, 4);
-        mainGrid.getChildren().add(weightLabel);
+        additionalWeightLabel = new Label("Added Weight");
+        GridPane.setConstraints(additionalWeightLabel, 0, 2);
+        GridPane.setColumnSpan(additionalWeightLabel, 4);
+        mainGrid.getChildren().add(additionalWeightLabel);
 
         repsLabel = new Label("Reps");
         GridPane.setConstraints(repsLabel, 1, 3);
@@ -196,11 +209,6 @@ public class InitMain
         GridPane.setConstraints(timeLabel, 1, 5);
         GridPane.setColumnSpan(timeLabel, 2);
         mainGrid.getChildren().add(timeLabel);
-
-        optionalLabel = new Label("optional");
-        GridPane.setConstraints(optionalLabel, 6, 5);
-        GridPane.setColumnSpan(optionalLabel, 4);
-        mainGrid.getChildren().add(optionalLabel);
 
         bodyweightLabel = new Label("Bodyweight");
         GridPane.setConstraints(bodyweightLabel, 0, 6);
@@ -241,6 +249,36 @@ public class InitMain
             displayDataStage.show();
         });
 
+        // Display admin page
+        adminButton.setOnAction(e ->
+        {
+            // TODO
+            Stage displayAdminStage = new Stage();
+
+            //InitDataDisplay.initDataDisplay(displayAdminStage);
+
+            //displayAdminStage.show();
+        });
+
+        // listener for if the exercise that is selected is a wod
+        exercises.setOnAction(e ->
+        {
+            if (exercises.getSelectionModel().getSelectedItem() != null)
+            {
+                if (exercises.getSelectionModel().getSelectedItem().toString().contains("Wod "))
+                {
+                    setTextField.setDisable(true);
+                    repsTextField.setDisable(true);
+                    additionalWeightTextField.setText("0");
+                }
+                else
+                {
+                    setTextField.setDisable(false);
+                    repsTextField.setDisable(false);
+                }
+            }
+        });
+
         // Commit a workout entry
         submitButton.setOnAction(e ->
         {
@@ -259,20 +297,59 @@ public class InitMain
                 { // Do nothing, its allowed to be null
                 }
 
-                workoutEntry = new WorkoutEntry((String) datesComboBox.getSelectionModel().getSelectedItem(),
-                        Float.valueOf(bodyweightTextField.getText()),
-                        (String) exercises.getSelectionModel().getSelectedItem(),
-                        Float.valueOf(weightTextField.getText()),
-                        Integer.parseInt(repsTextField.getText()),
-                        Integer.parseInt(setTextField.getText()),
-                        time);
+                if (exercises.getSelectionModel().getSelectedItem().toString().contains("Wod "))
+                {
+                    for (WodEntry wodEntry : WodEntry.values())
+                    {
+                        if (exercises.getSelectionModel().getSelectedItem().toString().contains(wodEntry.getWorkoutEntry().getExercise()))
+                        {
+                            workoutEntry = wodEntry.getWorkoutEntry();
+                            break;
+                        }
+                    }
 
-                DataManager.storeWorkoutEntry(workoutEntry, userTextField.getText(), (String) datesComboBox.getSelectionModel().getSelectedItem());
+                    if (workoutEntry == null)
+                    {
+                        // something went very wrong because the wod was loaded somewhere but not from the enum
+                        throw new Exception("something went very wrong because the wod was loaded somewhere but not from the enum");
+                    }
+                    else
+                    {
+                        if (time == 0f)
+                        {
+                            throw new Exception("For wods time needs to be set");
+                        }
+
+                        // Need to make sure date, bodyweight, time are not blank and are set in the workout entry
+                        workoutEntry.setDate((String) datesComboBox.getSelectionModel().getSelectedItem());
+                        workoutEntry.setBodyweight(Float.valueOf(bodyweightTextField.getText()));
+                        workoutEntry.setTime(time);
+                    }
+                }
+                else
+                {
+                    workoutEntry = new WorkoutEntry((String) datesComboBox.getSelectionModel().getSelectedItem(),
+                            Float.valueOf(bodyweightTextField.getText()),
+                            (String) exercises.getSelectionModel().getSelectedItem(),
+                            Float.valueOf(additionalWeightTextField.getText()),
+                            Integer.parseInt(repsTextField.getText()),
+                            Integer.parseInt(setTextField.getText()),
+                            time);
+                }
+
+                // Check if the user is set for the path
+                if (datesComboBox.getSelectionModel().getSelectedItem().equals(""))
+                {
+                    throw new Exception("User cant be blank");
+                }
+
+                DataManager.storeWorkoutEntry(workoutEntry, (String) datesComboBox.getSelectionModel().getSelectedItem(), (String) datesComboBox.getSelectionModel().getSelectedItem());
             }
-            catch (NumberFormatException ex)
+            catch (Exception ex)
             {
-                logger.warn("Formatting error when submitting workout entry");
+                logger.warn("Formatting error when submitting workout entry: " + ex);
                 writeToConsole("Formatting error when submitting workout entry");
+                writeToConsole(ex.getMessage());
             }
         });
     }

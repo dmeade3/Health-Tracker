@@ -9,12 +9,10 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static util.Constants.EXERCISE_PATH;
+import static util.Constants.LOGS_PATH;
 
 /**
  * Created by dcmeade on 3/9/2017.
@@ -50,20 +48,55 @@ public class MainUtility
         return FXCollections.observableArrayList(listOfDates);
     }
 
+    public static ObservableList<String> getUsers()
+    {
+        File file = new File(LOGS_PATH);
+
+        String[] directories = file.list((current, name) -> new File(current, name).isDirectory());
+
+        return FXCollections.observableArrayList(directories);
+    }
+
     public static ObservableList<String> loadExercises()
     {
-        List<String> listExercises = null;
-
         try
         {
-            listExercises = Files.readAllLines(new File(EXERCISE_PATH).toPath(), Charset.defaultCharset() );
+            List<String> listExercises = listExercises = Files.readAllLines(new File(EXERCISE_PATH).toPath(), Charset.defaultCharset());
+
+            int ctr = 0;
+            List<Integer> indecesToRemove = new ArrayList<>();
+
+            for (String s : listExercises)
+            {
+                if (s.trim().startsWith("#") || s.equals(""))
+                {
+                    indecesToRemove.add(ctr);
+                }
+
+                ctr++;
+            }
+
+            List <String> filteredList = new ArrayList<>();
+
+            ctr = 0;
+            // Perform the remove operation
+            for (String s : listExercises)
+            {
+                if (!indecesToRemove.contains(ctr))
+                {
+                    filteredList.add(s);
+                }
+
+                ctr++;
+            }
+
+            return FXCollections.observableArrayList(filteredList);
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
 
-
-        return FXCollections.observableArrayList(listExercises);
+        return null;
     }
 }

@@ -67,6 +67,7 @@ public class DataManager
                     logger.info("Creating new log file: " + filePath);
 
                     bw.write(WORKOUT_CSV_HEADER + "\n" + workoutEntry.toString() + "\n");
+                    InitMain.writeToConsole("Adding entry: " + workoutEntry.toString());
                 }
                 catch (IOException ioExp)
                 {

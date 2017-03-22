@@ -11,21 +11,29 @@ Functionality:
     look into using css with the gui to make it look good
         -css
 
-    Message if the user doesnt exist
+    after user added reload the users in the combo box
 
-    user could be drop down
-
-    throw specific error in display too if the exercise is null
+    eventually save the most recently used user as the first one selected on startup / same with bodyweight
 
     refactor so there is a real main and maingrid and other pages have their own class
 
     In app when tracking weight take Average of week as progress result, option
+
+    add wods as an exercise, time is now required
+        -workout should be a super class and the different ones should inherit from then add on to (Strength, wod, walking)
+            -within wod: should be an enum of the different wods i have
+                -should eventually come up with own
+        -will need refactoring to handle these new type of workouts
+            -make more general and call more functions from the super class
+
 
     Aditional actions:
 
         Button:
             Display data Button:
                 -opens window with display options
+                    -options should be in a listview with a button under called show
+                        -when show is pressed the selected option should be shown
 
 
             Admin button:
@@ -33,6 +41,4 @@ Functionality:
                     -upon creating a new user make a log dir for them
 
             Delete entry button:
-                -opens a windows explorer window and lets you do it yourself
-
-                -or prints out
+                -opens a windows explorer window and lets you do it yourself or opens list view window and lets you delete from list view
