@@ -14,9 +14,7 @@ public class Constants
 
     public static final int DATA_DISPLAY_PAGE_HEIGHT = 850;
 
-    public static final int LINECHART_WINDOW_HEIGHT = 500;
 
-    public static final int LINECHART_WINDOW_WIDTH = 500;
 
 
     // MISC STRINGS

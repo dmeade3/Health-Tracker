@@ -19,6 +19,9 @@ Functionality:
 
     In app when tracking weight take Average of week as progress result, option
 
+    find out how to make a line graph with multiple lines
+        -wil have to do some refactoring
+
     add wods as an exercise, time is now required
         -workout should be a super class and the different ones should inherit from then add on to (Strength, wod, walking)
             -within wod: should be an enum of the different wods i have

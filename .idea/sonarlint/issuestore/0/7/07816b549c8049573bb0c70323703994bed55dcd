@@ -1,0 +1,5 @@
+
+nsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Ž®Ù~8ð¾¾Ü¯+
+rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(äÛ•¬úÿÿÿÿ
+Nsquid:S1135"2Complete the task associated to this TODO comment.(¤Çò¼8ù¦âæ¯+
+[squid:S1118":Add a private constructor to hide the implicit public one.(ÙµŒóúÿÿÿÿ8àÙåæ¯+
