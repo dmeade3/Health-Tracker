@@ -19,13 +19,13 @@ public class LineGraph extends ApplicationFrame
 {
     final static Logger logger = Logger.getLogger(LineGraph.class);
 
-    public LineGraph( String applicationTitle, String chartTitle, List<Number> xValsList, List<Number> yValsList)
+    public LineGraph( String applicationTitle, String chartTitle, String lineName, List<Number> xValsList, List<Number> yValsList, String xAxisLabel, String yAxisLabel)
     {
         super(applicationTitle);
         JFreeChart lineChart = ChartFactory.createLineChart(
                 chartTitle,
-                "Years","Number of Schools",
-                createDataset("Schools", xValsList, yValsList),
+                xAxisLabel, yAxisLabel,
+                createDataset(lineName, xValsList, yValsList),
                 PlotOrientation.VERTICAL,
                 true,true,false);
 
@@ -61,14 +61,18 @@ public class LineGraph extends ApplicationFrame
 
     public static void main( String[ ] args )
     {
-        // TODO make an object that would encapsulate the complete data entry (ex: 15.0f, 1970)
+        // TODO make an object that would encapsulate the complete data entry (ex: 15.0f, 1970) and would contain the name of the line
+	    String lineName = "Schools";
 
         List<Number> xValsList = Arrays.asList(1970, 1980, 1990, 2000, 2010, 2014);
 
         List<Number> yValsList = Arrays.asList(15.0f, 30.0f, 60.0f, 120.0f, 240.0f, 300.0f);
 
 
-        LineGraph chart = new LineGraph("School Vs Years", "Number of Schools vs years", xValsList, yValsList);
+
+	    
+
+        LineGraph chart = new LineGraph("School Vs Years", "Number of Schools vs years", lineName, xValsList, yValsList, "Years", "Number of Schools");
 
         chart.pack();
         RefineryUtilities.centerFrameOnScreen(chart);
