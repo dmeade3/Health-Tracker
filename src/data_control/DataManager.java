@@ -4,17 +4,16 @@ import gui.InitMain;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.RegexFileFilter;
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import static util.Constants.LOGS_PATH;
 import static util.Constants.WORKOUT_CSV_HEADER;
+import static util.MainUtility.stringDateCompareTo;
 
 /**
  * Created by dcmeade on 3/9/2017.
@@ -23,24 +22,51 @@ public class DataManager
 {
     final static Logger logger = Logger.getLogger(DataManager.class);
 
-
     // Reads in all from a user back to a certain date
     // if date is "all" then all user data read in
     public static ArrayList<WorkoutEntry> readInUserData(String user, String date)
     {
         // todo check if the user dir exists
+        // TODO make sure the date portion of this function works
 
         // get all csv files
         Collection files = FileUtils.listFiles(new File(LOGS_PATH + System.getProperty("file.separator") + user), new RegexFileFilter(".+\\.(csv)"), DirectoryFileFilter.DIRECTORY);
 
+
+        ArrayList<WorkoutEntry> workoutEntries = new ArrayList<>();
+
         for (Object file : files)
         {
 
-            System.out.println(((File)file).getAbsoluteFile());
+            //System.out.println("Reading in file: " + ((File)file).getAbsoluteFile());
 
+            try (BufferedReader br = new BufferedReader(new FileReader((File) file)))
+            {
+                String line;
+
+                while ((line = br.readLine()) != null)
+                {
+                    if (line.startsWith("date,"))
+                    {
+                        continue;
+                    }
+
+                    WorkoutEntry workoutEntry = WorkoutEntry.parseWorkoutEntry(line);
+
+                    // Check if the first provided is before the file date || date is equal to all
+                    if (date.equals("all") || stringDateCompareTo(workoutEntry.getDate(), date))
+                    {
+                        workoutEntries.add(workoutEntry);
+                    }
+                }
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
         }
 
-        return new ArrayList<>();
+        return workoutEntries;
     }
 
     public static void storeWorkoutEntry(WorkoutEntry workoutEntry, String user, String date)
@@ -115,7 +141,7 @@ public class DataManager
 
     public static void main(String... args)
     {
-        //BasicConfigurator.configure();
+        BasicConfigurator.configure();
 
         //
         //WorkoutEntry workoutEntry = new WorkoutEntry("3/13/2017", 195, "Pullups", 20, 5, 33.44f);
@@ -123,7 +149,7 @@ public class DataManager
         //storeWorkoutEntry(workoutEntry, "David", "3/13/2017");
 
 
-        ArrayList<WorkoutEntry> workoutEntries = readInUserData("David", "all");
+        ArrayList<WorkoutEntry> workoutEntries = readInUserData("David", "03-21-2017");
 
         for (WorkoutEntry workoutEntry : workoutEntries)
         {

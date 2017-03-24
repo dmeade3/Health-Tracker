@@ -1,10 +1,24 @@
 package data_control;
 
+import org.apache.log4j.Logger;
+import org.jfree.data.time.Day;
+import org.jfree.data.time.TimeSeriesDataItem;
+
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static util.Constants.WORKOUT_CSV_HEADER;
+import static util.MainUtility.DATE_FORMAT;
+
 /**
  * Created by dcmeade on 3/9/2017.
  */
 public class WorkoutEntry
 {
+    final static Logger logger = Logger.getLogger(WorkoutEntry.class);
+
     private String date;
     private float bodyweight;
     private String exercise;
@@ -92,6 +106,85 @@ public class WorkoutEntry
     public void setAdditionalWeight(float additionalWeight)
     {
         this.additionalWeight = additionalWeight;
+    }
+
+    public static WorkoutEntry parseWorkoutEntry(String line)
+    {
+        List<String> workoutEntryLine = Arrays.asList(line.split(","));
+
+        if (workoutEntryLine.size() != (WORKOUT_CSV_HEADER.split(",").length))
+        {
+            logger.warn("Wrong number of commas in workout entry: " + workoutEntryLine);
+
+            return null;
+        }
+
+        return new WorkoutEntry(
+                workoutEntryLine.get(0),
+                Float.parseFloat(workoutEntryLine.get(1)),
+                workoutEntryLine.get(2),
+                Float.parseFloat(workoutEntryLine.get(3)),
+                Integer.parseInt(workoutEntryLine.get(4)),
+                Integer.parseInt(workoutEntryLine.get(5)),
+                Float.parseFloat(workoutEntryLine.get(6))
+        );
+    }
+
+    public static List<TimeSeriesDataItem> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryFields field) throws ParseException
+    {
+
+        String stringField = field.toString();
+
+        List<TimeSeriesDataItem> timeSeriesDataItems = new ArrayList<>();
+
+
+        switch (stringField)
+        {
+            case "date":
+                logger.warn("Cannot choose date as a field to graph");
+                break;
+            case "bodyweight":
+                for (WorkoutEntry workoutEntry : workoutEntries)
+                {
+                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.bodyweight));
+                }
+                break;
+
+            case "weight":
+                for (WorkoutEntry workoutEntry : workoutEntries)
+                {
+                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.additionalWeight));
+                }
+                break;
+
+            case "reps":
+                for (WorkoutEntry workoutEntry : workoutEntries)
+                {
+                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.reps));
+                }
+                break;
+
+            case "sets":
+                for (WorkoutEntry workoutEntry : workoutEntries)
+                {
+                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.sets));
+                }
+                break;
+
+            case "time":
+                for (WorkoutEntry workoutEntry : workoutEntries)
+                {
+                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.time));
+                }
+                break;
+
+            default:
+                logger.warn("Could not process field: " + field);
+                return null;
+        }
+
+
+        return timeSeriesDataItems;
     }
 
     @Override

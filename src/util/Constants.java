@@ -14,7 +14,7 @@ public class Constants
 
     public static final int DATA_DISPLAY_PAGE_HEIGHT = 850;
 
-
+    public static final int WORKOUT_ENTRY_SIZE = 6;
 
 
     // MISC STRINGS

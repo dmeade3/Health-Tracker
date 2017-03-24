@@ -1,9 +1,15 @@
 package Graphing;
 
+import data_control.WorkoutEntryFields;
 import org.apache.log4j.Logger;
-import org.jfree.data.xy.XYDataset;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.data.time.RegularTimePeriod;
+import org.jfree.data.time.TimeSeries;
+import org.jfree.data.time.TimeSeriesDataItem;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by dcmeade on 3/23/2017.
@@ -26,43 +32,56 @@ public class GraphUtil
 
     // Util methods ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static XYDataset createDataset()   // TODO needs to take args for everything
+    public static TimeSeries createTimeSeries(List<TimeSeriesDataItem> timeSeriesDataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField)   // TODO want to take a list of XYSeries as the args
     {
-        final XYSeries series1 = new XYSeries("First");
-        series1.add(1.0, 1.0);
-        series1.add(2.0, 4.0);
-        series1.add(3.0, 3.0);
-        series1.add(4.0, 5.0);
-        series1.add(5.0, 5.0);
-        series1.add(6.0, 7.0);
-        series1.add(7.0, 7.0);
-        series1.add(8.0, 8.0);
+        if (!workoutEntryField.getGraph_data_options().contains(option))
+        {
+            logger.warn("Option: " + option + " not compatible with field: " + workoutEntryField);
+            return null;
+        }
 
-        final XYSeries series2 = new XYSeries("Second");
-        series2.add(1.0, 5.0);
-        series2.add(2.0, 7.0);
-        series2.add(3.0, 6.0);
-        series2.add(4.0, 8.0);
-        series2.add(5.0, 4.0);
-        series2.add(6.0, 4.0);
-        series2.add(7.0, 2.0);
-        series2.add(8.0, 1.0);
+        // Hashmap will map the date to the data point
+        // operations to either replace it or update it are al that are necessary
+        HashMap<RegularTimePeriod, Number> hashMap = new HashMap();
 
-        final XYSeries series3 = new XYSeries("Third");
-        series3.add(3.0, 4.0);
-        series3.add(4.0, 3.0);
-        series3.add(5.0, 2.0);
-        series3.add(6.0, 3.0);
-        series3.add(7.0, 6.0);
-        series3.add(8.0, 3.0);
-        series3.add(9.0, 4.0);
-        series3.add(10.0, 3.0);
+        switch (option)
+        {
+            case LOWEST_VALUE:
+                for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
+                {
+                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod().getStart()) &&
+                       (timeSeriesDataItem.getValue().doubleValue() < hashMap.get(timeSeriesDataItem.getPeriod().getStart()).doubleValue()))
+                    {
+                        System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod().getStart() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
+                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                    }
+                    else
+                    {
+                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                    }
+                }
+                break;
 
-        final XYSeriesCollection dataset = new XYSeriesCollection();
-        dataset.addSeries(series1);
-        dataset.addSeries(series2);
-        dataset.addSeries(series3);
 
-        return dataset;
+            default:
+                logger.warn("Option: " + option + " not handled");
+        }
+
+
+        TimeSeries timeSeries = new TimeSeries(workoutEntryField);
+
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext())
+        {
+            Map.Entry pair = (Map.Entry)it.next();
+            System.out.println(pair.getKey() + " = " + pair.getValue());
+
+
+            timeSeries.add((RegularTimePeriod) pair.getKey(), (Number) pair.getValue());
+
+            it.remove();
+        }
+
+        return timeSeries;
     }
 }

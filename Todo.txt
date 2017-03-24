@@ -17,6 +17,8 @@ Functionality:
 
     refactor so there is a real main and maingrid and other pages have their own class
 
+    have an object that represents a whole workoutday if needed
+
     In app when tracking weight take Average of week as progress result, option
 
     find out how to make a line graph with multiple lines

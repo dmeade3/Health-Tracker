@@ -21,19 +21,62 @@ public class MainUtility
 {
     final static Logger logger = Logger.getLogger(MainUtility.class);
 
+    public final static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MM-dd-yyyy");
+
+    // is date2 older than date1
+    public static boolean stringDateCompareTo(String date1, String date2)
+    {
+        String[] dateArray1 = date1.split("-");
+        String[] dateArray2 = date2.split("-");
+
+        // move the year to the front for the compare
+        String temp1, temp2, temp3;
+        temp1 = dateArray1[0];
+        temp2 = dateArray1[1];
+        temp3 = dateArray1[2];
+
+        dateArray1[0] = temp3;
+        dateArray1[1] = temp1;
+        dateArray1[2] = temp2;
+
+        temp1 = dateArray2[0];
+        temp2 = dateArray2[1];
+        temp3 = dateArray2[2];
+
+        dateArray2[0] = temp3;
+        dateArray2[1] = temp1;
+        dateArray2[2] = temp2;
+
+        // do the comparison
+        if (dateArray1.length == dateArray2.length)
+        {
+            for (int i = 0; i < dateArray1.length; i++)
+            {
+                //System.out.println(Integer.parseInt(dateArray1[i]) + "   " + Integer.parseInt(dateArray2[i]));
+
+                if (Integer.parseInt(dateArray1[i]) > Integer.parseInt(dateArray2[i]))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        else
+        {
+            logger.warn("Date array length error");
+            return false;
+        }
+    }
 
     public static String getCurrentDate()
     {
-        Date dNow = new Date( );
-        SimpleDateFormat ft = new SimpleDateFormat("MM-dd-yyy");
-
-        return ft.format(dNow);
+        return DATE_FORMAT.format(new Date( ));
     }
 
     public static ObservableList<String> getDatesForDropDown()
     {
         List<String> listOfDates = new ArrayList<>(14);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyy");
 
         // Goes 2 weeks back
         for (int i = 0; i < 14; i++)
@@ -42,7 +85,7 @@ public class MainUtility
 
             cal.add(Calendar.DATE, - i);
 
-            listOfDates.add(dateFormat.format(cal.getTime()));
+            listOfDates.add(DATE_FORMAT.format(cal.getTime()));
         }
 
         return FXCollections.observableArrayList(listOfDates);
