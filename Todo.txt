@@ -17,12 +17,8 @@ Functionality:
 
     refactor so there is a real main and maingrid and other pages have their own class
 
-    have an object that represents a whole workoutday if needed
+    in graphs be able to filter by exercise
 
-    In app when tracking weight take Average of week as progress result, option
-
-    find out how to make a line graph with multiple lines
-        -wil have to do some refactoring
 
     add wods as an exercise, time is now required
         -workout should be a super class and the different ones should inherit from then add on to (Strength, wod, walking)
@@ -30,6 +26,8 @@ Functionality:
                 -should eventually come up with own
         -will need refactoring to handle these new type of workouts
             -make more general and call more functions from the super class
+
+
 
 
     Aditional actions:

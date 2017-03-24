@@ -34,7 +34,7 @@ public class GraphUtil
 
     public static TimeSeries createTimeSeries(List<TimeSeriesDataItem> timeSeriesDataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField)   // TODO want to take a list of XYSeries as the args
     {
-        if (!workoutEntryField.getGraph_data_options().contains(option))
+        if (!workoutEntryField.getGraphDataOptions().contains(option))
         {
             logger.warn("Option: " + option + " not compatible with field: " + workoutEntryField);
             return null;
@@ -49,10 +49,10 @@ public class GraphUtil
             case LOWEST_VALUE:
                 for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
                 {
-                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod().getStart()) &&
-                       (timeSeriesDataItem.getValue().doubleValue() < hashMap.get(timeSeriesDataItem.getPeriod().getStart()).doubleValue()))
+                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod()) &&
+                       (timeSeriesDataItem.getValue().doubleValue() < hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue()))
                     {
-                        System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod().getStart() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
+                        //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
                         hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
                     }
                     else
@@ -62,23 +62,57 @@ public class GraphUtil
                 }
                 break;
 
+            case HIGHEST_VALUE:
+                for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
+                {
+                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod()) &&
+                       (timeSeriesDataItem.getValue().doubleValue() > hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue()))
+                    {
+                        //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
+                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                    }
+                    else
+                    {
+                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                    }
+                }
+                break;
+
+            case ADD_UP:
+                for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
+                {
+                    System.out.println(timeSeriesDataItem.getPeriod());
+
+                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod()))
+                    {
+                        System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
+                        hashMap.put(timeSeriesDataItem.getPeriod(), (timeSeriesDataItem.getValue().doubleValue() + hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue()));
+                    }
+                    else
+                    {
+                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                    }
+                }
+                break;
+
+            // TODO
+
 
             default:
                 logger.warn("Option: " + option + " not handled");
         }
 
 
+        // Create the time series
         TimeSeries timeSeries = new TimeSeries(workoutEntryField);
 
         Iterator it = hashMap.entrySet().iterator();
         while (it.hasNext())
         {
             Map.Entry pair = (Map.Entry)it.next();
-            System.out.println(pair.getKey() + " = " + pair.getValue());
 
-
+            // add to the time series from the hashmap
             timeSeries.add((RegularTimePeriod) pair.getKey(), (Number) pair.getValue());
-
             it.remove();
         }
 

@@ -54,15 +54,19 @@ public class LineGraph extends ApplicationFrame
     {
         BasicConfigurator.configure();
 
-        LineGraph lineGraph = new LineGraph("Change this title", "chart title", "x axis label", "y axis label");
+        LineGraph lineGraph = new LineGraph("Test title", "Test chart title", "x axis label", "y axis label");
 
-
-        WorkoutEntryFields workoutEntryField = WorkoutEntryFields.bodyweight;
+        WorkoutEntryFields workoutEntryField = WorkoutEntryFields.reps;
 
         List<TimeSeriesDataItem> data = null;
+
+        List<TimeSeriesDataItem> data2 = null;
+
         try
         {
             data = WorkoutEntry.getWorkoutValues(readInUserData("David", "all"), workoutEntryField);
+
+            data2 = WorkoutEntry.getWorkoutValues(readInUserData("David", "all"), WorkoutEntryFields.bodyweight);
         }
         catch (ParseException e)
         {
@@ -70,8 +74,9 @@ public class LineGraph extends ApplicationFrame
         }
 
 
-        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data, GRAPH_DATA_OPTION.LOWEST_VALUE, workoutEntryField));
+        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data, GRAPH_DATA_OPTION.ADD_UP, workoutEntryField));
 
+        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data2, GRAPH_DATA_OPTION.LOWEST_VALUE, WorkoutEntryFields.bodyweight));
 
         lineGraph.pack();
         RefineryUtilities.centerFrameOnScreen(lineGraph);
