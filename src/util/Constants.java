@@ -31,4 +31,6 @@ public class Constants
     public static final String EXERCISE_PATH = PROJECT_PATH + "\\data\\exercises.txt";
 
     public static final String LOGS_PATH = PROJECT_PATH + "\\data\\logs\\";
+
+    public static final String ON_EXIT_INFO_PATH = PROJECT_PATH + "\\data\\" + "OnExitInfo.txt";
 }

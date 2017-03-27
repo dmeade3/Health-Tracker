@@ -16,10 +16,16 @@ import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 import static util.Constants.*;
-import static util.MainUtility.getDatesForDropDown;
-import static util.MainUtility.getUsers;
-import static util.MainUtility.loadExercises;
+import static util.MainUtility.*;
 
 /**
  * Created by dcmeade on 3/21/2017.
@@ -126,6 +132,7 @@ public class InitMain
 
         bodyweightTextField = new TextField();
         bodyweightTextField.setPromptText("Bodyweight...");
+        bodyweightTextField.setText(loadOnExitDataEntry("bodyweight"));
         GridPane.setConstraints(bodyweightTextField, 3, 6, 3, 1);
         mainGrid.getChildren().add(bodyweightTextField);
     }
@@ -145,13 +152,11 @@ public class InitMain
         mainGrid.getChildren().add(adminButton);
     }
 
-    private static void initComboBoxes()
-    {
+    private static void initComboBoxes() {
         ObservableList<String> exerciseOptions = loadExercises();
 
         // load wods
-        for (WodEntry wod : WodEntry.values())
-        {
+        for (WodEntry wod : WodEntry.values()) {
             exerciseOptions.add(wod.getWorkoutEntry().getExercise());
         }
 
@@ -173,7 +178,26 @@ public class InitMain
         ObservableList<String> users = getUsers();
         userComboBox = new ComboBox(users);
 
-        userComboBox.getSelectionModel().selectFirst();
+        String prevUser = loadOnExitDataEntry("user");
+
+        int ctr = 0;
+
+        if (prevUser != null)
+        {
+            for (String item : users)
+            {
+                if (item.equals(prevUser))
+                {
+                    break;
+                }
+                else
+                {
+                    ctr++;
+                }
+            }
+        }
+
+        userComboBox.getSelectionModel().select(ctr);
         GridPane.setConstraints(userComboBox, 3, 7, 5, 1);
         mainGrid.getChildren().add(userComboBox);
     }
@@ -234,10 +258,81 @@ public class InitMain
         mainGrid.add(listInfo, 10, 0, 15, 27);
     }
 
+    private static void writeOutPreviousInfo(List<String> info)
+    {
+        File fnew=new File(ON_EXIT_INFO_PATH);
+        FileWriter fileWriter = null;
+
+        try
+        {
+            fnew.createNewFile();
+
+            fileWriter = new FileWriter(fnew);
+
+            for (String s : info)
+            {
+                fileWriter.write(s + "\n");
+            }
+        }
+        catch (IOException e)
+        {
+            logger.warn("Could not overwrite onExit file: " + e);
+        }
+        finally
+        {
+            try
+            {
+                fileWriter.close();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private static String loadOnExitDataEntry(String target)
+    {
+        try
+        {
+            List<String> lines = Files.readAllLines(Paths.get(ON_EXIT_INFO_PATH));
+
+            for (String s : lines)
+            {
+                // user
+                if (s.split(":")[0].equals(target))
+                {
+                    return s.split(":")[1];
+                }
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     private static void initActions(Stage stage)
     {
         // Stop application on gui exit
-        stage.setOnCloseRequest(e -> Platform.exit());
+        stage.setOnCloseRequest(e ->
+        {
+            List<String> info = new ArrayList<>();
+
+            // Collect data i want to write out to load on next start
+            info.add("user:" + userComboBox.getSelectionModel().getSelectedItem());
+
+        if (bodyweightTextField.getText() != null)
+            {
+                info.add("bodyweight:" + bodyweightTextField.getText());
+            }
+
+            writeOutPreviousInfo(info);
+
+            Platform.exit();
+        });
 
         // Display data page
         displayDataButton.setOnAction(e ->

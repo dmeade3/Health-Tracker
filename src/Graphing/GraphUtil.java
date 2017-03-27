@@ -81,11 +81,11 @@ public class GraphUtil
             case ADD_UP:
                 for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
                 {
-                    System.out.println(timeSeriesDataItem.getPeriod());
+                    //System.out.println(timeSeriesDataItem.getPeriod());
 
                     if (hashMap.containsKey(timeSeriesDataItem.getPeriod()))
                     {
-                        System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
+                        //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
                         hashMap.put(timeSeriesDataItem.getPeriod(), (timeSeriesDataItem.getValue().doubleValue() + hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue()));
                     }
                     else
@@ -96,6 +96,25 @@ public class GraphUtil
                 break;
 
             // TODO
+            case TOTAL_VOLUME:
+                for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
+                {
+                    //System.out.println(timeSeriesDataItem.getPeriod());
+
+                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod()))
+                    {
+                        double updatedValue = timeSeriesDataItem.getValue().doubleValue() + hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue();
+
+                        System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + updatedValue);
+                        hashMap.put(timeSeriesDataItem.getPeriod(), updatedValue);
+                    }
+                    else
+                    {
+                        System.out.println("Inserting value: " + timeSeriesDataItem.getValue());
+                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                    }
+                }
+                break;
 
 
             default:

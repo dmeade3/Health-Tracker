@@ -178,6 +178,17 @@ public class WorkoutEntry
                 }
                 break;
 
+            case "exercise":
+                for (WorkoutEntry workoutEntry : workoutEntries)
+                {
+                    // Multiply the reps x the sets for the total volume x (bodyweight + additional weight)
+                    double volume = workoutEntry.reps * workoutEntry.sets * (workoutEntry.bodyweight + workoutEntry.additionalWeight);
+
+                    //System.out.println("Volume: " + volume);
+                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), volume));
+                }
+                break;
+
             default:
                 logger.warn("Could not process field: " + field);
                 return null;

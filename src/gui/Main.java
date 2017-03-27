@@ -5,9 +5,9 @@ import javafx.stage.Stage;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
-public class MainPage extends Application
+public class Main extends Application
 {
-    final static Logger logger = Logger.getLogger(MainPage.class);
+    final static Logger logger = Logger.getLogger(Main.class);
 
     @Override
     public void start(Stage stage)

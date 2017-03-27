@@ -21,21 +21,22 @@ import static data_control.DataManager.readInUserData;
 
 // TODO refactor this class
 
-public class LineGraph extends ApplicationFrame
+public class LineGraph
 {
 
     private TimeSeriesCollection dataset = new TimeSeriesCollection();
 
-    public LineGraph(String title, String chartTitle, String xAxisLabel, String yAxisLabel)
+    public LineGraph(ApplicationFrame applicationFrame, String chartTitle, String xAxisLabel, String yAxisLabel)
     {
-        super(title);
-
         final JFreeChart chart = createChart(chartTitle, xAxisLabel, yAxisLabel);
         final ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new java.awt.Dimension(LINECHART_WINDOW_WIDTH, LINECHART_WINDOW_HEIGHT));
-        setContentPane(chartPanel);
-    }
+        applicationFrame.setContentPane(chartPanel);
 
+        applicationFrame.pack();
+        RefineryUtilities.centerFrameOnScreen(applicationFrame);
+        applicationFrame.setVisible(true);
+    }
 
     private JFreeChart createChart(String chartTitle, String xAxisLabel, String yAxisLabel)
     {
@@ -54,19 +55,22 @@ public class LineGraph extends ApplicationFrame
     {
         BasicConfigurator.configure();
 
-        LineGraph lineGraph = new LineGraph("Test title", "Test chart title", "x axis label", "y axis label");
+        ApplicationFrame applicationFrame = new ApplicationFrame("Test title");
 
-        WorkoutEntryFields workoutEntryField = WorkoutEntryFields.reps;
 
-        List<TimeSeriesDataItem> data = null;
+        LineGraph lineGraph = new LineGraph(applicationFrame, "Test chart title", "x axis label", "y axis label");
+
+        //WorkoutEntryFields workoutEntryField = WorkoutEntryFields.reps;
+
+        //List<TimeSeriesDataItem> data = null;
 
         List<TimeSeriesDataItem> data2 = null;
 
         try
         {
-            data = WorkoutEntry.getWorkoutValues(readInUserData("David", "all"), workoutEntryField);
+            //data = WorkoutEntry.getWorkoutValues(readInUserData("David", "all"), workoutEntryField);
 
-            data2 = WorkoutEntry.getWorkoutValues(readInUserData("David", "all"), WorkoutEntryFields.bodyweight);
+            data2 = WorkoutEntry.getWorkoutValues(readInUserData("David", "all"), WorkoutEntryFields.exercise);
         }
         catch (ParseException e)
         {
@@ -74,12 +78,8 @@ public class LineGraph extends ApplicationFrame
         }
 
 
-        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data, GRAPH_DATA_OPTION.ADD_UP, workoutEntryField));
+        //lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data, GRAPH_DATA_OPTION.ADD_UP, workoutEntryField));
 
-        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data2, GRAPH_DATA_OPTION.LOWEST_VALUE, WorkoutEntryFields.bodyweight));
-
-        lineGraph.pack();
-        RefineryUtilities.centerFrameOnScreen(lineGraph);
-        lineGraph.setVisible(true);
+        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data2, GRAPH_DATA_OPTION.TOTAL_VOLUME, WorkoutEntryFields.exercise));
     }
 }
