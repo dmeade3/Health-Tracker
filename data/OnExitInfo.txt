@@ -1,2 +1,2 @@
 user:David
-bodyweight:197
+bodyweight:196.4

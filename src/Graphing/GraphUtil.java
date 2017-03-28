@@ -32,7 +32,7 @@ public class GraphUtil
 
     // Util methods ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static TimeSeries createTimeSeries(List<TimeSeriesDataItem> timeSeriesDataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField)   // TODO want to take a list of XYSeries as the args
+    public static TimeSeries createTimeSeries(List<TimeSeriesDataItem> timeSeriesDataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField)
     {
         if (!workoutEntryField.getGraphDataOptions().contains(option))
         {
@@ -95,7 +95,6 @@ public class GraphUtil
                 }
                 break;
 
-            // TODO
             case TOTAL_VOLUME:
                 for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
                 {
@@ -105,22 +104,20 @@ public class GraphUtil
                     {
                         double updatedValue = timeSeriesDataItem.getValue().doubleValue() + hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue();
 
-                        System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + updatedValue);
+                        //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + updatedValue);
                         hashMap.put(timeSeriesDataItem.getPeriod(), updatedValue);
                     }
                     else
                     {
-                        System.out.println("Inserting value: " + timeSeriesDataItem.getValue());
+                        //System.out.println("Inserting value: " + timeSeriesDataItem.getValue());
                         hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
                     }
                 }
                 break;
 
-
             default:
                 logger.warn("Option: " + option + " not handled");
         }
-
 
         // Create the time series
         TimeSeries timeSeries = new TimeSeries(workoutEntryField);

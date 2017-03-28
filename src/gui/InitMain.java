@@ -438,7 +438,7 @@ public class InitMain
                     throw new Exception("User cant be blank");
                 }
 
-                DataManager.storeWorkoutEntry(workoutEntry, (String) datesComboBox.getSelectionModel().getSelectedItem(), (String) datesComboBox.getSelectionModel().getSelectedItem());
+                DataManager.storeWorkoutEntry(workoutEntry, (String) userComboBox.getSelectionModel().getSelectedItem(), (String) datesComboBox.getSelectionModel().getSelectedItem());
             }
             catch (Exception ex)
             {

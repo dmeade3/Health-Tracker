@@ -132,17 +132,16 @@ public class WorkoutEntry
 
     public static List<TimeSeriesDataItem> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryFields field) throws ParseException
     {
-
         String stringField = field.toString();
 
         List<TimeSeriesDataItem> timeSeriesDataItems = new ArrayList<>();
-
 
         switch (stringField)
         {
             case "date":
                 logger.warn("Cannot choose date as a field to graph");
                 break;
+
             case "bodyweight":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
@@ -193,7 +192,6 @@ public class WorkoutEntry
                 logger.warn("Could not process field: " + field);
                 return null;
         }
-
 
         return timeSeriesDataItems;
     }

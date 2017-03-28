@@ -24,7 +24,7 @@ public class DataManager
 
     // Reads in all from a user back to a certain date
     // if date is "all" then all user data read in
-    public static ArrayList<WorkoutEntry> readInUserData(String user, String date)
+    public static ArrayList<WorkoutEntry> readInUserData(String user, String date, String exercise)
     {
         // todo check if the user dir exists
         // TODO make sure the date portion of this function works
@@ -56,7 +56,11 @@ public class DataManager
                     // Check if the first provided is before the file date || date is equal to all
                     if (date.equals("all") || stringDateCompareTo(workoutEntry.getDate(), date))
                     {
-                        workoutEntries.add(workoutEntry);
+                        // check if the exercise is all or a specific exercise
+                        if (exercise.equals("all") || workoutEntry.getExercise().equals(exercise))
+                        {
+                            workoutEntries.add(workoutEntry);
+                        }
                     }
                 }
             }
@@ -97,7 +101,7 @@ public class DataManager
                 }
                 catch (IOException ioExp)
                 {
-                    logger.warn("File path cannot be used");
+                    logger.warn("File path cannot be used: " + file.getAbsolutePath());
 
                     InitMain.writeToConsole("Path not able to be created, User may be wrong / not exist");
                 }
@@ -138,7 +142,6 @@ public class DataManager
         }
     }
 
-
     public static void main(String... args)
     {
         BasicConfigurator.configure();
@@ -149,7 +152,7 @@ public class DataManager
         //storeWorkoutEntry(workoutEntry, "David", "3/13/2017");
 
 
-        ArrayList<WorkoutEntry> workoutEntries = readInUserData("David", "03-21-2017");
+        ArrayList<WorkoutEntry> workoutEntries = readInUserData("David", "03-21-2017", "all");
 
         for (WorkoutEntry workoutEntry : workoutEntries)
         {

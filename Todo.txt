@@ -11,7 +11,7 @@ Functionality:
     look into using css with the gui to make it look good
         -css
 
-    in graphs be able to filter by exercise
+    Make exercises into enums and say if they need to include the bodyweight into the volume equation
 
     add wods as an exercise, time is now required
         -workout should be a super class and the different ones should inherit from then add on to (Strength, wod, walking)
@@ -19,8 +19,6 @@ Functionality:
                 -should eventually come up with own
         -will need refactoring to handle these new type of workouts
             -make more general and call more functions from the super class
-
-    need a way to know if the bodyweight should be taken into acount when calculating the total volume
 
 
 
