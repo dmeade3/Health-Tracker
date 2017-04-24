@@ -1,8 +1,7 @@
 package data_control;
 
+import javafx.scene.chart.XYChart;
 import org.apache.log4j.Logger;
-import org.jfree.data.time.Day;
-import org.jfree.data.time.TimeSeriesDataItem;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -132,11 +131,11 @@ public class WorkoutEntry
     }
 
     // TODO this should be in a different class
-    public static List<TimeSeriesDataItem> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryFields field) throws ParseException
+    public static List<XYChart.Data> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryFields field) throws ParseException
     {
         String stringField = field.toString();
 
-        List<TimeSeriesDataItem> timeSeriesDataItems = new ArrayList<>();
+        List<XYChart.Data> timeSeriesDataItems = new ArrayList<>();
 
         switch (stringField)
         {
@@ -147,35 +146,35 @@ public class WorkoutEntry
             case "bodyweight":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.bodyweight));
+                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.bodyweight));
                 }
                 break;
 
             case "weight":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.additionalWeight));
+                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.additionalWeight));
                 }
                 break;
 
             case "reps":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.reps));
+                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.reps));
                 }
                 break;
 
             case "sets":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.sets));
+                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.sets));
                 }
                 break;
 
             case "time":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), workoutEntry.time));
+                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.time));
                 }
                 break;
 
@@ -190,7 +189,7 @@ public class WorkoutEntry
                     double volume = workoutEntry.reps * workoutEntry.sets * (workoutEntry.bodyweight + workoutEntry.additionalWeight);
 
                     //System.out.println("Volume: " + volume);
-                    timeSeriesDataItems.add(new TimeSeriesDataItem(new Day(DATE_FORMAT.parse(workoutEntry.date)), volume));
+                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), volume));
                 }
                 break;
 

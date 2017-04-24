@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import static util.Constants.LOGS_PATH;
 import static util.Constants.WORKOUT_CSV_HEADER;
@@ -20,7 +21,7 @@ public class DataManager
 
     // Reads in all from a user back to a certain date
     // if date is "all" then all user data read in
-    public static ArrayList<WorkoutEntry> readInUserData(String user, String date, String exercise)
+    public static List<WorkoutEntry> readInUserData(String user, String date, String exercise)
     {
         // todo check if the user dir exists
         // TODO make sure the date portion of this function works
@@ -142,7 +143,7 @@ public class DataManager
         //storeWorkoutEntry(workoutEntry, "David", "3/13/2017");
 
 
-        ArrayList<WorkoutEntry> workoutEntries = readInUserData("David", "03-21-2017", "all");
+        List<WorkoutEntry> workoutEntries = readInUserData("David", "03-21-2017", "all");
 
         for (WorkoutEntry workoutEntry : workoutEntries)
         {

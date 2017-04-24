@@ -11,12 +11,7 @@ import static data_control.MuscleGroup.*;
 public enum Exercise
 {
     /*
-    # Chest Shoulders
-    Ring Dips
-
     # Arms
-    Sandbag Curl
-    Sandbag Reverse Curl
     Sandbag Tri Ext
 
     # Back
@@ -39,7 +34,9 @@ public enum Exercise
 
     PARALLEL_BAR_DIPS("Parallel Bar Dips", true, CHEST, SHOULDERS, TRICEPS),
     RING_DIPS("Ring Dips", true, CHEST, SHOULDERS, TRICEPS),
-    ONE_LEG_CALVE_RAISE("One Leg Calve Raise", true, CALVES)
+    ONE_LEG_CALVE_RAISE("One Leg Calve Raise", true, CALVES),
+    SANDBAG_CURL("Sandbag Curl", false, BICEPS, FOREARMS),
+    SANDBAG_REVERSE_CURL("Sandbag Reverse Curl", false, BICEPS, FOREARMS)
     ;
 
 

@@ -2,20 +2,21 @@ package gui;
 
 import Graphing.GRAPH_DATA_OPTION;
 import Graphing.GraphUtil;
-import Graphing.LineGraph;
+import Graphing.MyLineGraph;
 import data_control.Exercise;
 import data_control.WorkoutEntry;
 import data_control.WorkoutEntryFields;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
-import org.jfree.data.time.TimeSeriesDataItem;
 
 import java.text.ParseException;
 import java.util.List;
@@ -109,28 +110,39 @@ public class InitDataDisplay
 
     private static void initActions(Stage stage)
     {
-        showSampleData.setOnAction(event ->
+        showSampleData.setOnAction((ActionEvent event) ->
         {
-            LineGraph lineGraph = new LineGraph("Workout Tracker", "Total Volume for All Exercises Over Time", "Date", "Volume in lbs");
+            Stage chartStage = new Stage();
 
+            chartStage.setTitle("Line Chart Sample");
+
+            MyLineGraph lineGraph = new MyLineGraph("Total Volume for All Exercises Over Time (lbs)");
+
+            // TODO Set a combo box and select, if doenst comply make a popup saying the error
             WorkoutEntryFields workoutEntryField = WorkoutEntryFields.exercise;
 
             try
             {
-
-                // TODO loop thought the exercises here
-
                 for (Exercise exercise : Exercise.values())
                 {
-                    List<TimeSeriesDataItem> timeSeriesDataItems = WorkoutEntry.getWorkoutValues(readInUserData("David", "all", exercise.exerciseName), workoutEntryField);
 
-                    lineGraph.getDataset().addSeries(GraphUtil.createTimeSeries(timeSeriesDataItems, GRAPH_DATA_OPTION.TOTAL_VOLUME, workoutEntryField, exercise.exerciseName));
+                    // TODO .csv -> workoutentries -> time series -> chart
+
+                    List<XYChart.Data> chartData = WorkoutEntry.getWorkoutValues(readInUserData("David", "all", exercise.exerciseName), workoutEntryField);
+
+                    lineGraph.getData().addAll(GraphUtil.createTimeSeries(chartData, GRAPH_DATA_OPTION.TOTAL_VOLUME, workoutEntryField, exercise.exerciseName));
                 }
             }
             catch (ParseException e)
             {
                 e.printStackTrace();
             }
+
+
+            // TODO make these constants
+            Scene scene  = new Scene(lineGraph, 800, 600);
+            chartStage.setScene(scene);
+            chartStage.show();
         });
     }
 }

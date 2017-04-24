@@ -1,8 +1,16 @@
 Functionality:
 
+    dont use jfreechart, use javafx charts
+
+
     get working first then refactor
 
 
+
+    load my exercises into enum
+
+    exercise drop down use exercise name not the enum name
+        -but should still hold an exercise Object not a string
 
     option for range to start at zero on graph
 
@@ -11,8 +19,6 @@ Functionality:
     make exercise an enum
         -replace all places that use exercise
 
-    make onExitInfo a cfg
-
     use csv code from budget here
 
     centralize the main data
@@ -20,11 +26,12 @@ Functionality:
     make the gui things extetend the object instead on the weird init thing they do now
 
     review situations when fields are required / not required based on exercise selection
+        -for exercise logging
 
     Restricted textfield
         -takes regex
-
-    Only need one workout file, no need for the date to be the title, treat like a database
+            -enum of restriction options
+        -use everywhere
 
     Date should be a datepicker
 
@@ -45,21 +52,14 @@ Functionality:
             -all groups on same map
             -shows where you should add or subtract volume
 
-
-
-
     user sign in
         password in future maybe
 
     able to read in data and use it to give back results / progress / stats on workouts (total weight moved)
 
-    graph results eventually:
-        not the highest priority at least at the beginning
-
     look into using css with the gui to make it look good
         -css
-
-    Make exercises into enums and say if they need to include the bodyweight into the volume equation
+        -budget css
 
     add wods as an exercise, time is now required
         -workout should be a super class and the different ones should inherit from then add on to (Strength, wod, walking)
@@ -85,3 +85,8 @@ Functionality:
 
             Delete entry / user button:
                 -opens a windows explorer window and lets you do it yourself or opens list view window and lets you delete from list view
+
+            Analyze Button:
+                -has tests it runs on your data
+                    -exmple ratio between upperbody volume and lower body volume is not balanced
+                -runs tests gives results

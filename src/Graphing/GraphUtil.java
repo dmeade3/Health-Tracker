@@ -1,10 +1,8 @@
 package Graphing;
 
 import data_control.WorkoutEntryFields;
+import javafx.scene.chart.XYChart;
 import org.apache.log4j.Logger;
-import org.jfree.data.time.RegularTimePeriod;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesDataItem;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -25,15 +23,31 @@ public class GraphUtil
     public static final boolean SHOW_GRAPH_TOOLTIP = true;
     public static final boolean SHOW_GRAPH_URL = false;
 
-    public static final int LINECHART_WINDOW_HEIGHT = 500;
+    public static final int LINECHART_WINDOW_HEIGHT = 500; // TODO use
 
     public static final int LINECHART_WINDOW_WIDTH = 500;
 
 
     // Util methods ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static TimeSeries createTimeSeries(List<TimeSeriesDataItem> timeSeriesDataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField, String setName)
+    public static XYChart.Series<String, Number> createTimeSeries(List<XYChart.Data<String, Number>> dataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField, String setName)
     {
+
+        /*final XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        Date date1 = new Date();
+
+        for (int i = 0; i <= 10; i += 1)
+        {
+            date1.setTime(date1.getTime() + i * 11111);
+            series1.getData().add(new XYChart.Data(dateFormat.format(date1), Math.random() * 500));
+        }
+
+        return series1;*/ // TODO get rid of when done with
+
+
+
         if (!workoutEntryField.getGraphDataOptions().contains(option))
         {
             logger.warn("Option: " + option + " not compatible with field: " + workoutEntryField);
@@ -42,75 +56,75 @@ public class GraphUtil
 
         // Hashmap will map the date to the data point
         // operations to either replace it or update it are al that are necessary
-        HashMap<RegularTimePeriod, Number> hashMap = new HashMap();
+        HashMap<String, Number> hashMap = new HashMap();
 
         switch (option)
         {
-            case LOWEST_VALUE:
-                for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
+            /*case LOWEST_VALUE:
+                for (XYChart.Data dataItem : dataItems)
                 {
-                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod()) &&
-                       (timeSeriesDataItem.getValue().doubleValue() < hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue()))
+                    if (hashMap.containsKey(dataItem.getPeriod()) &&
+                       (dataItem.getValue().doubleValue() < hashMap.get(dataItem.getPeriod()).doubleValue()))
                     {
                         //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
-                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                        hashMap.put(dataItem.getPeriod(), dataItem.getValue());
                     }
                     else
                     {
-                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                        hashMap.put(dataItem.getPeriod(), dataItem.getValue());
                     }
                 }
                 break;
 
             case HIGHEST_VALUE:
-                for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
+                for (XYChart.Data dataItem : dataItems)
                 {
-                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod()) &&
-                       (timeSeriesDataItem.getValue().doubleValue() > hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue()))
+                    if (hashMap.containsKey(dataItem.getPeriod()) &&
+                       (dataItem.getValue().doubleValue() > hashMap.get(dataItem.getPeriod()).doubleValue()))
                     {
                         //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
-                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                        hashMap.put(dataItem.getPeriod(), dataItem.getValue());
                     }
                     else
                     {
-                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                        hashMap.put(dataItem.getPeriod(), dataItem.getValue());
                     }
                 }
                 break;
 
             case ADD_UP:
-                for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
+                for (XYChart.Data dataItem : dataItems)
                 {
                     //System.out.println(timeSeriesDataItem.getPeriod());
 
-                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod()))
+                    if (hashMap.containsKey(dataItem.getPeriod()))
                     {
                         //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + timeSeriesDataItem.getValue().doubleValue());
-                        hashMap.put(timeSeriesDataItem.getPeriod(), (timeSeriesDataItem.getValue().doubleValue() + hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue()));
+                        hashMap.put(dataItem.getPeriod(), (dataItem.getValue().doubleValue() + hashMap.get(dataItem.getPeriod()).doubleValue()));
                     }
                     else
                     {
-                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                        hashMap.put(dataItem.getPeriod(), dataItem.getValue());
                     }
                 }
-                break;
+                break;*/
 
             case TOTAL_VOLUME:
-                for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
+                for (XYChart.Data dataItem : dataItems)
                 {
-                    System.out.println(timeSeriesDataItem.getPeriod());
+                    //System.out.println(timeSeriesDataItem.getPeriod());
 
-                    if (hashMap.containsKey(timeSeriesDataItem.getPeriod()))
+                    if (hashMap.containsKey(dataItem.getXValue()))
                     {
-                        double updatedValue = timeSeriesDataItem.getValue().doubleValue() + hashMap.get(timeSeriesDataItem.getPeriod()).doubleValue();
+                        double updatedValue = dataItem.getYValue() + hashMap.get(dataItem.getXValue());
 
                         //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + updatedValue);
-                        hashMap.put(timeSeriesDataItem.getPeriod(), updatedValue);
+                        hashMap.put(dataItem.getPeriod(), updatedValue);
                     }
                     else
                     {
                         //System.out.println("Inserting value: " + timeSeriesDataItem.getValue());
-                        hashMap.put(timeSeriesDataItem.getPeriod(), timeSeriesDataItem.getValue());
+                        hashMap.put(dataItem.getXValue(), dataItem.getYValue());
                     }
                 }
                 break;
@@ -120,7 +134,10 @@ public class GraphUtil
         }
 
         // Create the time series
-        TimeSeries timeSeries = new TimeSeries(setName);
+        XYChart.Series<String, Number> series = new XYChart.Series();
+
+        series.setName(setName);
+
 
         Iterator it = hashMap.entrySet().iterator();
         while (it.hasNext())
@@ -128,10 +145,10 @@ public class GraphUtil
             Map.Entry pair = (Map.Entry)it.next();
 
             // add to the time series from the hashmap
-            timeSeries.add((RegularTimePeriod) pair.getKey(), (Number) pair.getValue());
+            series.getData().add(new XYChart.Data(pair.getKey(), pair.getValue()));
             it.remove();
         }
 
-        return timeSeries;
+        return series;
     }
 }
