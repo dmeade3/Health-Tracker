@@ -1,15 +1,11 @@
 package data_control;
 
 import gui.InitMain;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.filefilter.DirectoryFileFilter;
-import org.apache.commons.io.filefilter.RegexFileFilter;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static util.Constants.LOGS_PATH;
 import static util.Constants.WORKOUT_CSV_HEADER;
@@ -30,44 +26,38 @@ public class DataManager
         // TODO make sure the date portion of this function works
 
         // get all csv files
-        Collection files = FileUtils.listFiles(new File(LOGS_PATH + System.getProperty("file.separator") + user), new RegexFileFilter(".+\\.(csv)"), DirectoryFileFilter.DIRECTORY);
-
-
         ArrayList<WorkoutEntry> workoutEntries = new ArrayList<>();
 
-        for (Object file : files)
+        //System.out.println("Reading in file: " + ((File)file).getAbsoluteFile());
+
+        try (BufferedReader br = new BufferedReader(new FileReader(new File(LOGS_PATH + System.getProperty("file.separator") + user + System.getProperty("file.separator") + "workoutEntries.csv"))))
         {
+            String line;
 
-            //System.out.println("Reading in file: " + ((File)file).getAbsoluteFile());
-
-            try (BufferedReader br = new BufferedReader(new FileReader((File) file)))
+            while ((line = br.readLine()) != null)
             {
-                String line;
-
-                while ((line = br.readLine()) != null)
+                // TODO find better way
+                if (line.startsWith("date,"))
                 {
-                    if (line.startsWith("date,"))
-                    {
-                        continue;
-                    }
+                    continue;
+                }
 
-                    WorkoutEntry workoutEntry = WorkoutEntry.parseWorkoutEntry(line);
+                WorkoutEntry workoutEntry = WorkoutEntry.parseWorkoutEntry(line);
 
-                    // Check if the first provided is before the file date || date is equal to all
-                    if (date.equals("all") || stringDateCompareTo(workoutEntry.getDate(), date))
+                // Check if the first provided is before the file date || date is equal to all
+                if (date.equals("all") || stringDateCompareTo(workoutEntry.getDate(), date))
+                {
+                    // check if the exercise is all or a specific exercise
+                    if (exercise.equals("all") || workoutEntry.getExercise().equals(exercise))
                     {
-                        // check if the exercise is all or a specific exercise
-                        if (exercise.equals("all") || workoutEntry.getExercise().equals(exercise))
-                        {
-                            workoutEntries.add(workoutEntry);
-                        }
+                        workoutEntries.add(workoutEntry);
                     }
                 }
             }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
         }
 
         return workoutEntries;
@@ -78,7 +68,7 @@ public class DataManager
         BufferedWriter bw = null;
         FileWriter fw = null;
 
-        String filePath = LOGS_PATH + System.getProperty("file.separator") + user + System.getProperty("file.separator") + date.replaceAll("/", "_") + ".csv";
+        String filePath = LOGS_PATH + System.getProperty("file.separator") + user + System.getProperty("file.separator") + "workoutEntries.csv";
 
         try
         {

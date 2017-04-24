@@ -1,5 +1,53 @@
 Functionality:
 
+    get working first then refactor
+
+
+
+    option for range to start at zero on graph
+
+    should handle one datapoint better
+
+    make exercise an enum
+        -replace all places that use exercise
+
+    make onExitInfo a cfg
+
+    use csv code from budget here
+
+    centralize the main data
+
+    make the gui things extetend the object instead on the weird init thing they do now
+
+    review situations when fields are required / not required based on exercise selection
+
+    Restricted textfield
+        -takes regex
+
+    Only need one workout file, no need for the date to be the title, treat like a database
+
+    Date should be a datepicker
+
+    look at todos from budget to get todo ideas
+
+
+
+    display:
+        -specific workouts
+        -overall
+            -volume
+            -reps
+
+        over time:
+            -select time range
+
+        -show volume for each bodypart group mapped out
+            -all groups on same map
+            -shows where you should add or subtract volume
+
+
+
+
     user sign in
         password in future maybe
 
@@ -19,7 +67,6 @@ Functionality:
                 -should eventually come up with own
         -will need refactoring to handle these new type of workouts
             -make more general and call more functions from the super class
-
 
 
     Aditional actions:

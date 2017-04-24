@@ -1,15 +1,26 @@
 package gui;
 
+import Graphing.GRAPH_DATA_OPTION;
+import Graphing.GraphUtil;
+import Graphing.LineGraph;
+import data_control.Exercise;
+import data_control.WorkoutEntry;
+import data_control.WorkoutEntryFields;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
+import org.jfree.data.time.TimeSeriesDataItem;
 
+import java.text.ParseException;
+import java.util.List;
+
+import static data_control.DataManager.readInUserData;
 import static util.Constants.*;
 
 /**
@@ -20,7 +31,7 @@ public class InitDataDisplay
     final static Logger logger = Logger.getLogger(gui.InitMain.class);
 
     private static GridPane displayDataGridpane;
-    private static TextField sampleTextField;
+    private static Button showSampleData;
 
 
     public static void initDataDisplay(Stage stage)
@@ -71,15 +82,14 @@ public class InitDataDisplay
 
     private static void initTextFields()
     {
-        sampleTextField = new TextField();
-        sampleTextField.setPromptText("Sample");
-        GridPane.setConstraints(sampleTextField, 0, 0, 1, 1);
-        displayDataGridpane.getChildren().add(sampleTextField);
+
     }
 
     private static void initButtons()
     {
-
+        showSampleData = new Button("Show Graph");
+        GridPane.setConstraints(showSampleData, 0, 0, 6, 3);
+        displayDataGridpane.getChildren().add(showSampleData);
     }
 
     private static void initComboBoxes()
@@ -99,6 +109,28 @@ public class InitDataDisplay
 
     private static void initActions(Stage stage)
     {
+        showSampleData.setOnAction(event ->
+        {
+            LineGraph lineGraph = new LineGraph("Workout Tracker", "Total Volume for All Exercises Over Time", "Date", "Volume in lbs");
 
+            WorkoutEntryFields workoutEntryField = WorkoutEntryFields.exercise;
+
+            try
+            {
+
+                // TODO loop thought the exercises here
+
+                for (Exercise exercise : Exercise.values())
+                {
+                    List<TimeSeriesDataItem> timeSeriesDataItems = WorkoutEntry.getWorkoutValues(readInUserData("David", "all", exercise.exerciseName), workoutEntryField);
+
+                    lineGraph.getDataset().addSeries(GraphUtil.createTimeSeries(timeSeriesDataItems, GRAPH_DATA_OPTION.TOTAL_VOLUME, workoutEntryField, exercise.exerciseName));
+                }
+            }
+            catch (ParseException e)
+            {
+                e.printStackTrace();
+            }
+        });
     }
 }

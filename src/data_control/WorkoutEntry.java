@@ -119,6 +119,7 @@ public class WorkoutEntry
             return null;
         }
 
+        // Handle this like budget handles it, referencing the rows index not just a number
         return new WorkoutEntry(
                 workoutEntryLine.get(0),
                 Float.parseFloat(workoutEntryLine.get(1)),
@@ -130,6 +131,7 @@ public class WorkoutEntry
         );
     }
 
+    // TODO this should be in a different class
     public static List<TimeSeriesDataItem> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryFields field) throws ParseException
     {
         String stringField = field.toString();
@@ -180,6 +182,10 @@ public class WorkoutEntry
             case "exercise":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
+                    // TODO if the exercise is a bodyweight exercise then you add bodyweight else bdyweight = 1
+                    //if ()
+
+
                     // Multiply the reps x the sets for the total volume x (bodyweight + additional weight)
                     double volume = workoutEntry.reps * workoutEntry.sets * (workoutEntry.bodyweight + workoutEntry.additionalWeight);
 

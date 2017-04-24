@@ -32,7 +32,7 @@ public class GraphUtil
 
     // Util methods ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static TimeSeries createTimeSeries(List<TimeSeriesDataItem> timeSeriesDataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField)
+    public static TimeSeries createTimeSeries(List<TimeSeriesDataItem> timeSeriesDataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField, String setName)
     {
         if (!workoutEntryField.getGraphDataOptions().contains(option))
         {
@@ -98,7 +98,7 @@ public class GraphUtil
             case TOTAL_VOLUME:
                 for (TimeSeriesDataItem timeSeriesDataItem : timeSeriesDataItems)
                 {
-                    //System.out.println(timeSeriesDataItem.getPeriod());
+                    System.out.println(timeSeriesDataItem.getPeriod());
 
                     if (hashMap.containsKey(timeSeriesDataItem.getPeriod()))
                     {
@@ -120,7 +120,7 @@ public class GraphUtil
         }
 
         // Create the time series
-        TimeSeries timeSeries = new TimeSeries(workoutEntryField);
+        TimeSeries timeSeries = new TimeSeries(setName);
 
         Iterator it = hashMap.entrySet().iterator();
         while (it.hasNext())

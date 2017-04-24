@@ -28,9 +28,7 @@ public class Constants
     // PATHS
     public static final String PROJECT_PATH = System.getProperty("user.dir");
 
-    public static final String EXERCISE_PATH = PROJECT_PATH + "\\data\\exercises.txt";
-
     public static final String LOGS_PATH = PROJECT_PATH + "\\data\\logs\\";
 
-    public static final String ON_EXIT_INFO_PATH = PROJECT_PATH + "\\data\\" + "OnExitInfo.txt";
+    public static final String ON_EXIT_INFO_PATH = PROJECT_PATH + "\\data\\" + "OnExitInfo.cfg";
 }

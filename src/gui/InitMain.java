@@ -1,7 +1,7 @@
 package gui;
 
 import data_control.DataManager;
-import data_control.WodEntry;
+import data_control.Exercise;
 import data_control.WorkoutEntry;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -152,13 +152,10 @@ public class InitMain
         mainGrid.getChildren().add(adminButton);
     }
 
-    private static void initComboBoxes() {
-        ObservableList<String> exerciseOptions = loadExercises();
-
-        // load wods
-        for (WodEntry wod : WodEntry.values()) {
-            exerciseOptions.add(wod.getWorkoutEntry().getExercise());
-        }
+    private static void initComboBoxes()
+    {
+        // TODO make this take an exercise object
+        ObservableList<Exercise> exerciseOptions = loadExercises();
 
         exercises = new ComboBox(exerciseOptions);
         GridPane.setConstraints(exercises, 2, 1, 5, 1);
@@ -260,7 +257,7 @@ public class InitMain
 
     private static void writeOutPreviousInfo(List<String> info)
     {
-        File fnew=new File(ON_EXIT_INFO_PATH);
+        File fnew = new File(ON_EXIT_INFO_PATH);
         FileWriter fileWriter = null;
 
         try
@@ -324,7 +321,7 @@ public class InitMain
             // Collect data i want to write out to load on next start
             info.add("user:" + userComboBox.getSelectionModel().getSelectedItem());
 
-        if (bodyweightTextField.getText() != null)
+            if (bodyweightTextField.getText() != null)
             {
                 info.add("bodyweight:" + bodyweightTextField.getText());
             }
@@ -358,7 +355,7 @@ public class InitMain
         // listener for if the exercise that is selected is a wod
         exercises.setOnAction(e ->
         {
-            if (exercises.getSelectionModel().getSelectedItem() != null)
+            /*if (exercises.getSelectionModel().getSelectedItem() != null)
             {
                 if (exercises.getSelectionModel().getSelectedItem().toString().contains("Wod "))
                 {
@@ -371,7 +368,7 @@ public class InitMain
                     setTextField.setDisable(false);
                     repsTextField.setDisable(false);
                 }
-            }
+            }*/
         });
 
         // Commit a workout entry
@@ -392,45 +389,14 @@ public class InitMain
                 { // Do nothing, its allowed to be null
                 }
 
-                if (exercises.getSelectionModel().getSelectedItem().toString().contains("Wod "))
-                {
-                    for (WodEntry wodEntry : WodEntry.values())
-                    {
-                        if (exercises.getSelectionModel().getSelectedItem().toString().contains(wodEntry.getWorkoutEntry().getExercise()))
-                        {
-                            workoutEntry = wodEntry.getWorkoutEntry();
-                            break;
-                        }
-                    }
+                workoutEntry = new WorkoutEntry((String) datesComboBox.getSelectionModel().getSelectedItem(),
+                        Float.valueOf(bodyweightTextField.getText()),
+                        (String) exercises.getSelectionModel().getSelectedItem(),
+                        Float.valueOf(additionalWeightTextField.getText()),
+                        Integer.parseInt(repsTextField.getText()),
+                        Integer.parseInt(setTextField.getText()),
+                        time);
 
-                    if (workoutEntry == null)
-                    {
-                        // something went very wrong because the wod was loaded somewhere but not from the enum
-                        throw new Exception("something went very wrong because the wod was loaded somewhere but not from the enum");
-                    }
-                    else
-                    {
-                        if (time == 0f)
-                        {
-                            throw new Exception("For wods time needs to be set");
-                        }
-
-                        // Need to make sure date, bodyweight, time are not blank and are set in the workout entry
-                        workoutEntry.setDate((String) datesComboBox.getSelectionModel().getSelectedItem());
-                        workoutEntry.setBodyweight(Float.valueOf(bodyweightTextField.getText()));
-                        workoutEntry.setTime(time);
-                    }
-                }
-                else
-                {
-                    workoutEntry = new WorkoutEntry((String) datesComboBox.getSelectionModel().getSelectedItem(),
-                            Float.valueOf(bodyweightTextField.getText()),
-                            (String) exercises.getSelectionModel().getSelectedItem(),
-                            Float.valueOf(additionalWeightTextField.getText()),
-                            Integer.parseInt(repsTextField.getText()),
-                            Integer.parseInt(setTextField.getText()),
-                            time);
-                }
 
                 // Check if the user is set for the path
                 if (datesComboBox.getSelectionModel().getSelectedItem().equals(""))

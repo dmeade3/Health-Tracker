@@ -55,6 +55,11 @@ public class LineGraph extends Graph
         );
     }
 
+    public TimeSeriesCollection getDataset()
+    {
+        return dataset;
+    }
+
     public static void main(final String[] args)
     {
         BasicConfigurator.configure();
@@ -74,6 +79,6 @@ public class LineGraph extends Graph
             e.printStackTrace();
         }
 
-        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data, GRAPH_DATA_OPTION.LOWEST_VALUE, workoutEntryField));
+        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data, GRAPH_DATA_OPTION.LOWEST_VALUE, workoutEntryField, "Parallel Bar Dips"));
     }
 }

@@ -1,17 +1,14 @@
 package util;
 
+import data_control.Exercise;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.log4j.Logger;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static util.Constants.EXERCISE_PATH;
 import static util.Constants.LOGS_PATH;
 
 /**
@@ -100,46 +97,8 @@ public class MainUtility
         return FXCollections.observableArrayList(directories);
     }
 
-    public static ObservableList<String> loadExercises()
+    public static ObservableList<Exercise> loadExercises()
     {
-        try
-        {
-            List<String> listExercises = listExercises = Files.readAllLines(new File(EXERCISE_PATH).toPath(), Charset.defaultCharset());
-
-            int ctr = 0;
-            List<Integer> indecesToRemove = new ArrayList<>();
-
-            for (String s : listExercises)
-            {
-                if (s.trim().startsWith("#") || s.equals(""))
-                {
-                    indecesToRemove.add(ctr);
-                }
-
-                ctr++;
-            }
-
-            List <String> filteredList = new ArrayList<>();
-
-            ctr = 0;
-            // Perform the remove operation
-            for (String s : listExercises)
-            {
-                if (!indecesToRemove.contains(ctr))
-                {
-                    filteredList.add(s);
-                }
-
-                ctr++;
-            }
-
-            return FXCollections.observableArrayList(filteredList);
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        return null;
+        return FXCollections.observableList(Arrays.asList(Exercise.values()));
     }
 }
