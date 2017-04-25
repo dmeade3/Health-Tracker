@@ -16,6 +16,8 @@ Functionality:
 
 
 
+
+
     load my exercises into enum
 
     exercise drop down use exercise name not the enum name
@@ -45,6 +47,10 @@ Functionality:
     Date should be a datepicker
 
     look at todos from budget to get todo ideas
+
+    place for goals and theres charts showing progress towards goal
+
+    search specific prs
 
 
 
