@@ -1,22 +1,9 @@
 Functionality:
 
-    In chart all using Date.gettime as teverything up until the series insertion
-        -could have a converting function
-
-
-
-    use the date.gettime as the x axis
-
-
-
-    dont use jfreechart, use javafx charts
-
 
     get working first then refactor
 
-
-
-
+    if the exercise doesnt have and data in the series then dont put it in the graph
 
     load my exercises into enum
 

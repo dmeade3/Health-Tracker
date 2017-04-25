@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 import static util.MainUtility.DATE_FORMAT;
+import static util.ProgramInfo.CHART_HISTORY_DAYS;
 
 public class MyLineGraph extends LineChart {
     //private TimeSeriesCollection dataset = new TimeSeriesCollection(); // TODO might not need this
@@ -28,15 +29,20 @@ public class MyLineGraph extends LineChart {
         try
         {
             // TODO Eventually have this be a set number in the config
-            numberAxis.setLowerBound(DATE_FORMAT.parse("04-22-2017").getTime());
+            numberAxis.setUpperBound(DATE_FORMAT.parse(DATE_FORMAT.format(new Date())).getTime());
+
+            // Gets the upper bound minus the correct number of days in milliseconds
+            numberAxis.setLowerBound(numberAxis.getUpperBound() - (86400000 * CHART_HISTORY_DAYS));
         }
         catch (ParseException e)
         {
             e.printStackTrace();
         }
-        numberAxis.setUpperBound(new Date().getTime());
-        numberAxis.setTickUnit(.1);
-        numberAxis.setTickLength(1);
+
+        numberAxis.setTickLength(15);
+
+        // TODO 3 is the days between low and upper bound
+        numberAxis.setTickUnit((numberAxis.getUpperBound() - numberAxis.getLowerBound()) / CHART_HISTORY_DAYS);
 
 
         numberAxis.setTickLabelFormatter(new StringConverter<Number>()
