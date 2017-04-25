@@ -389,7 +389,8 @@ public class InitMain
                 { // Do nothing, its allowed to be null
                 }
 
-                workoutEntry = new WorkoutEntry((String) datesComboBox.getSelectionModel().getSelectedItem(),
+                workoutEntry = new WorkoutEntry(
+                        DATE_FORMAT.parse((String) datesComboBox.getSelectionModel().getSelectedItem()),
                         Float.valueOf(bodyweightTextField.getText()),
                         (String) exercises.getSelectionModel().getSelectedItem(),
                         Float.valueOf(additionalWeightTextField.getText()),

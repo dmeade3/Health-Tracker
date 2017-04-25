@@ -1,5 +1,14 @@
 Functionality:
 
+    In chart all using Date.gettime as teverything up until the series insertion
+        -could have a converting function
+
+
+
+    use the date.gettime as the x axis
+
+
+
     dont use jfreechart, use javafx charts
 
 

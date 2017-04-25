@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import static util.Constants.WORKOUT_CSV_HEADER;
@@ -18,7 +19,7 @@ public class WorkoutEntry
 {
     final static Logger logger = Logger.getLogger(WorkoutEntry.class);
 
-    private String date;
+    private Date date;
     private float bodyweight;
     private String exercise;
     private int reps;
@@ -26,7 +27,7 @@ public class WorkoutEntry
     private float time;
     private float additionalWeight;
 
-    public WorkoutEntry(String date, float bodyweight, String exercise, float additionalWeight, int reps, int sets, float time)
+    public WorkoutEntry(Date date, float bodyweight, String exercise, float additionalWeight, int reps, int sets, float time)
     {
         this.date = date;
         this.bodyweight = bodyweight;
@@ -37,7 +38,7 @@ public class WorkoutEntry
         this.time = time;
     }
 
-    public String getDate()
+    public Date getDate()
     {
         return date;
     }
@@ -72,7 +73,7 @@ public class WorkoutEntry
         return exercise;
     }
 
-    public void setDate(String date)
+    public void setDate(Date date)
     {
         this.date = date;
     }
@@ -119,23 +120,31 @@ public class WorkoutEntry
         }
 
         // Handle this like budget handles it, referencing the rows index not just a number
-        return new WorkoutEntry(
-                workoutEntryLine.get(0),
-                Float.parseFloat(workoutEntryLine.get(1)),
-                workoutEntryLine.get(2),
-                Float.parseFloat(workoutEntryLine.get(3)),
-                Integer.parseInt(workoutEntryLine.get(4)),
-                Integer.parseInt(workoutEntryLine.get(5)),
-                Float.parseFloat(workoutEntryLine.get(6))
-        );
+        try {
+            return new WorkoutEntry(
+                    DATE_FORMAT.parse(workoutEntryLine.get(0)),
+                    Float.parseFloat(workoutEntryLine.get(1)),
+                    workoutEntryLine.get(2),
+                    Float.parseFloat(workoutEntryLine.get(3)),
+                    Integer.parseInt(workoutEntryLine.get(4)),
+                    Integer.parseInt(workoutEntryLine.get(5)),
+                    Float.parseFloat(workoutEntryLine.get(6))
+            );
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     // TODO this should be in a different class
-    public static List<XYChart.Data> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryFields field) throws ParseException
+    public static List<XYChart.Data<Number, Number>> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryFields field) throws ParseException
     {
         String stringField = field.toString();
 
-        List<XYChart.Data> timeSeriesDataItems = new ArrayList<>();
+        List<XYChart.Data<Number, Number>> timeSeriesDataItems = new ArrayList<>();
 
         switch (stringField)
         {
@@ -146,35 +155,35 @@ public class WorkoutEntry
             case "bodyweight":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.bodyweight));
+                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.bodyweight));
                 }
                 break;
 
             case "weight":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.additionalWeight));
+                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.additionalWeight));
                 }
                 break;
 
             case "reps":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.reps));
+                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.reps));
                 }
                 break;
 
             case "sets":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.sets));
+                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.sets));
                 }
                 break;
 
             case "time":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), workoutEntry.time));
+                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.time));
                 }
                 break;
 
@@ -184,12 +193,11 @@ public class WorkoutEntry
                     // TODO if the exercise is a bodyweight exercise then you add bodyweight else bdyweight = 1
                     //if ()
 
-
                     // Multiply the reps x the sets for the total volume x (bodyweight + additional weight)
                     double volume = workoutEntry.reps * workoutEntry.sets * (workoutEntry.bodyweight + workoutEntry.additionalWeight);
 
                     //System.out.println("Volume: " + volume);
-                    timeSeriesDataItems.add(new XYChart.Data(DATE_FORMAT.parse(workoutEntry.date), volume));
+                    timeSeriesDataItems.add(new XYChart.Data<>(workoutEntry.date.getTime(), volume));
                 }
                 break;
 

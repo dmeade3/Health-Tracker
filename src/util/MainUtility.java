@@ -68,7 +68,7 @@ public class MainUtility
 
     public static String getCurrentDate()
     {
-        return DATE_FORMAT.format(new Date( ));
+        return DATE_FORMAT.format(new Date());
     }
 
     public static ObservableList<String> getDatesForDropDown()

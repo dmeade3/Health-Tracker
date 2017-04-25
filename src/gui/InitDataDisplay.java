@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
 import java.text.ParseException;
-import java.util.List;
+import java.util.*;
 
 import static data_control.DataManager.readInUserData;
 import static util.Constants.*;
@@ -123,15 +123,79 @@ public class InitDataDisplay
 
             try
             {
+                ArrayList<XYChart.Series<Number, Number>> seriesList = new ArrayList();
+
                 for (Exercise exercise : Exercise.values())
                 {
+                    List<XYChart.Data<Number, Number>> chartData = WorkoutEntry.getWorkoutValues(readInUserData("David", "all", exercise.exerciseName), workoutEntryField);
 
-                    // TODO .csv -> workoutentries -> time series -> chart
-
-                    List<XYChart.Data> chartData = WorkoutEntry.getWorkoutValues(readInUserData("David", "all", exercise.exerciseName), workoutEntryField);
-
-                    lineGraph.getData().addAll(GraphUtil.createTimeSeries(chartData, GRAPH_DATA_OPTION.TOTAL_VOLUME, workoutEntryField, exercise.exerciseName));
+                    seriesList.add(GraphUtil.createTimeSeries(chartData, GRAPH_DATA_OPTION.TOTAL_VOLUME, workoutEntryField, exercise.exerciseName));
                 }
+
+                //XYChart.Data<Number, Number> min = new XYChart.Data<>(DATE_FORMAT.parse("12-31-9999"), 0);
+                //XYChart.Data<Number, Number> max = new XYChart.Data<>(DATE_FORMAT.parse("00-00-0000"), 0);
+
+                // Find the min and max
+                /*for (XYChart.Series<Number, Number> series : seriesList)
+                {
+                    if (series.getData().size() > 0)
+                    {
+                        XYChart.Data<Number, Number> indexFirst = series.getData().get(0);
+                        XYChart.Data<Number, Number> indexLast = series.getData().get(series.getData().size() - 1);
+
+                        if (min.getXValue().after(indexFirst.getXValue()))
+                        {
+                            min = indexFirst;
+                        }
+
+                        if (max.getXValue().before(indexLast.getXValue()))
+                        {
+                            max = indexLast;
+                        }
+                    }
+                }*/
+
+                // Add in missing values
+                /*for (XYChart.Series<Number, Number> series : seriesList)
+                {
+                    /*List<Date> datesThatNeedToBeAdded = new ArrayList<>();
+
+                    for (Date dateInBetweenRange : getDaysBetweenAndIncludingDates(DATE_FORMAT.parse(min.getXValue()), DATE_FORMAT.parse(max.getXValue())))
+                    {
+                        for (XYChart.Data<Number, Number> dataPoint : series.getData())
+                        {
+                            // Found a data that needs to be inserted
+                            if (!dataPoint.getXValue().equals(DATE_FORMAT.format(dateInBetweenRange)))
+                            {
+                                datesThatNeedToBeAdded.add(dateInBetweenRange);
+                            }
+                        }
+                    }
+
+                    // Add in the missing dates
+                    for (Date needToAddDate : datesThatNeedToBeAdded)
+                    {
+                        XYChart.Data newPoint = new XYChart.Data<>(DATE_FORMAT.format(needToAddDate));
+
+                        series.getData().add(newPoint);
+                    }*/
+
+                    //series.setData(series.getData().sorted());
+                //}*/
+
+                for (XYChart.Series series : seriesList)
+                {
+                    for (Object data : series.getData().sorted())
+                    {
+                        System.out.println(data);
+                    }
+
+                    System.out.println();
+                }
+
+                lineGraph.getData().addAll(seriesList);
+
+                lineGraph.getXAxis().invalidateRange(Arrays.asList(0));
             }
             catch (ParseException e)
             {
@@ -139,10 +203,29 @@ public class InitDataDisplay
             }
 
 
+
             // TODO make these constants
             Scene scene  = new Scene(lineGraph, 800, 600);
             chartStage.setScene(scene);
             chartStage.show();
         });
+    }
+
+    public static List<Date> getDaysBetweenAndIncludingDates(Date startdate, Date enddate)
+    {
+        List<Date> dates = new ArrayList<Date>();
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(startdate);
+
+        while (calendar.getTime().before(enddate))
+        {
+            Date result = calendar.getTime();
+            dates.add(result);
+            calendar.add(Calendar.DATE, 1);
+        }
+
+        dates.add(enddate);
+
+        return dates;
     }
 }

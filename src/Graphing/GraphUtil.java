@@ -4,10 +4,7 @@ import data_control.WorkoutEntryFields;
 import javafx.scene.chart.XYChart;
 import org.apache.log4j.Logger;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by dcmeade on 3/23/2017.
@@ -30,24 +27,8 @@ public class GraphUtil
 
     // Util methods ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static XYChart.Series<String, Number> createTimeSeries(List<XYChart.Data<String, Number>> dataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField, String setName)
+    public static XYChart.Series<Number, Number> createTimeSeries(List<XYChart.Data<Number, Number>> dataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField, String setName)
     {
-
-        /*final XYChart.Series<String, Number> series1 = new XYChart.Series<>();
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        Date date1 = new Date();
-
-        for (int i = 0; i <= 10; i += 1)
-        {
-            date1.setTime(date1.getTime() + i * 11111);
-            series1.getData().add(new XYChart.Data(dateFormat.format(date1), Math.random() * 500));
-        }
-
-        return series1;*/ // TODO get rid of when done with
-
-
-
         if (!workoutEntryField.getGraphDataOptions().contains(option))
         {
             logger.warn("Option: " + option + " not compatible with field: " + workoutEntryField);
@@ -56,7 +37,7 @@ public class GraphUtil
 
         // Hashmap will map the date to the data point
         // operations to either replace it or update it are al that are necessary
-        HashMap<String, Number> hashMap = new HashMap();
+        HashMap<Number, Number> hashMap = new HashMap();
 
         switch (option)
         {
@@ -110,22 +91,22 @@ public class GraphUtil
                 break;*/
 
             case TOTAL_VOLUME:
-                for (XYChart.Data dataItem : dataItems)
+                for (XYChart.Data<Number, Number> dataItem : dataItems)
                 {
-                    //System.out.println(timeSeriesDataItem.getPeriod());
+                    /*//System.out.println(timeSeriesDataItem.getPeriod());
 
                     if (hashMap.containsKey(dataItem.getXValue()))
                     {
-                        double updatedValue = dataItem.getYValue() + hashMap.get(dataItem.getXValue());
+                        double updatedValue = dataItem.getYValue().doubleValue() + hashMap.get(dataItem.getXValue()).doubleValue();
 
                         //System.out.println("Updating value for Date: " + timeSeriesDataItem.getPeriod() + " with value: " + updatedValue);
-                        hashMap.put(dataItem.getPeriod(), updatedValue);
-                    }
-                    else
-                    {
+                        hashMap.put(dataItem.getXValue().toString(), updatedValue);
+                    }*/
+                    //else
+                    //{
                         //System.out.println("Inserting value: " + timeSeriesDataItem.getValue());
-                        hashMap.put(dataItem.getXValue(), dataItem.getYValue());
-                    }
+                        hashMap.put(dataItem.getXValue().longValue(), dataItem.getYValue());
+                    //}
                 }
                 break;
 
@@ -134,21 +115,38 @@ public class GraphUtil
         }
 
         // Create the time series
-        XYChart.Series<String, Number> series = new XYChart.Series();
+        XYChart.Series<Number, Number> series = new XYChart.Series();
 
         series.setName(setName);
 
+        // sort List
+        //List<Date> keyList = new ArrayList<>(hashMap.keySet());
 
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext())
+        //Collections.sort(keyList, Comparator.naturalOrder());
+
+        //System.out.println(keyList.size());
+
+
+        /**
+         * Here the Date is converted to a string
+         */
+        for (Map.Entry<Number, Number> entry : hashMap.entrySet())
         {
-            Map.Entry pair = (Map.Entry)it.next();
+            //System.out.println(sortedKey);
+
+            //Map.Entry<Number, Number> pair = (Map.Entry<Number, Number>) hashMap.get(sortedKey);
 
             // add to the time series from the hashmap
-            series.getData().add(new XYChart.Data(pair.getKey(), pair.getValue()));
-            it.remove();
+            series.getData().add(new XYChart.Data<>(entry.getKey().longValue(), entry.getValue()));
         }
 
         return series;
+    }
+
+    public static
+    <T extends Comparable<? super T>> List<T> asSortedList(Collection<T> c) {
+        List<T> list = new ArrayList<T>(c);
+        java.util.Collections.sort(list);
+        return list;
     }
 }

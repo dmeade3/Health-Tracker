@@ -10,6 +10,7 @@ import java.util.List;
 
 import static util.Constants.LOGS_PATH;
 import static util.Constants.WORKOUT_CSV_HEADER;
+import static util.MainUtility.DATE_FORMAT;
 import static util.MainUtility.stringDateCompareTo;
 
 /**
@@ -46,7 +47,7 @@ public class DataManager
                 WorkoutEntry workoutEntry = WorkoutEntry.parseWorkoutEntry(line);
 
                 // Check if the first provided is before the file date || date is equal to all
-                if (date.equals("all") || stringDateCompareTo(workoutEntry.getDate(), date))
+                if (date.equals("all") || stringDateCompareTo(DATE_FORMAT.format(workoutEntry.getDate()), date))
                 {
                     // check if the exercise is all or a specific exercise
                     if (exercise.equals("all") || workoutEntry.getExercise().equals(exercise))

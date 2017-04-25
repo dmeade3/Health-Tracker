@@ -1,32 +1,60 @@
 package Graphing;
 
-import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
+import javafx.util.StringConverter;
 
-public class MyLineGraph extends LineChart
-{
-    //private TimeSeriesCollection dataset = new TimeSeriesCollection();
+import java.text.ParseException;
+import java.util.Date;
+
+import static util.MainUtility.DATE_FORMAT;
+
+public class MyLineGraph extends LineChart {
+    //private TimeSeriesCollection dataset = new TimeSeriesCollection(); // TODO might not need this
 
     public MyLineGraph(String chartTitle)
     {
-        //super(frameTitle);
-
-        /*final JFreeChart chart = createChart(chartTitle, xAxisLabel, yAxisLabel);
-        final ChartPanel chartPanel = new ChartPanel(chart);
-        chartPanel.setPreferredSize(new java.awt.Dimension(LINECHART_WINDOW_WIDTH, LINECHART_WINDOW_HEIGHT));
-        applicationFrame.setContentPane(chartPanel);
-
-        // Set the number formatting for the y axis
-        XYPlot plot = (XYPlot) chart.getPlot();
-        NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-        DecimalFormat pctFormat = new DecimalFormat("###.##");
-        rangeAxis.setNumberFormatOverride(pctFormat);*/
-
         //creating the chart
-        super(new CategoryAxis(), new NumberAxis());
+        super(getDateFormatedNumberAxis(), new NumberAxis());
 
         setTitle(chartTitle);
+    }
+
+    private static NumberAxis getDateFormatedNumberAxis()
+    {
+        NumberAxis numberAxis = new NumberAxis();
+
+        numberAxis.setAutoRanging(false);
+        try
+        {
+            // TODO Eventually have this be a set number in the config
+            numberAxis.setLowerBound(DATE_FORMAT.parse("04-22-2017").getTime());
+        }
+        catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        numberAxis.setUpperBound(new Date().getTime());
+        numberAxis.setTickUnit(.1);
+        numberAxis.setTickLength(1);
+
+
+        numberAxis.setTickLabelFormatter(new StringConverter<Number>()
+        {
+            @Override
+            public String toString(Number object)
+            {
+                return DATE_FORMAT.format(new Date(object.longValue()));
+            }
+
+            @Override
+            public Number fromString(String string)
+            {
+                return 0;
+            }
+        });
+
+        return numberAxis;
     }
 
     public static void main(final String[] args)
