@@ -1,7 +1,5 @@
 package util;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
@@ -10,12 +8,11 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Tooltip;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
+import static util.MainUtility.hackTooltipStartTiming;
 
 public class Test extends Application {
 
@@ -80,23 +77,7 @@ public class Test extends Application {
 		}
 	}
 
-	public static void hackTooltipStartTiming(Tooltip tooltip) {
-		try
-		{
-			Field fieldBehavior = tooltip.getClass().getDeclaredField("BEHAVIOR");
-			fieldBehavior.setAccessible(true);
-			Object objBehavior = fieldBehavior.get(tooltip);
 
-			Field fieldTimer = objBehavior.getClass().getDeclaredField("activationTimer");
-			fieldTimer.setAccessible(true);
-			Timeline objTimer = (Timeline) fieldTimer.get(objBehavior);
-
-			objTimer.getKeyFrames().clear();
-			objTimer.getKeyFrames().add(new KeyFrame(new Duration(175)));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	public static void main(String[] args) {
 		launch(args);

@@ -1,16 +1,12 @@
 package gui;
 
-import Graphing.GRAPH_DATA_OPTION;
-import Graphing.GraphUtil;
-import Graphing.MyLineGraph;
-import data_control.Exercise;
-import data_control.WorkoutEntry;
-import data_control.WorkoutEntryFields;
+import Graphing.ChartDataUtil;
+import Graphing.CustomLineGraph;
+import data_control.WorkoutEntryField;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -18,10 +14,6 @@ import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
-import java.text.ParseException;
-import java.util.*;
-
-import static data_control.DataManager.readInUserData;
 import static util.Constants.*;
 
 /**
@@ -113,38 +105,11 @@ public class InitDataDisplay
         showSampleData.setOnAction((ActionEvent event) ->
         {
             Stage chartStage = new Stage();
+            chartStage.setTitle("Workout Tracker Stats");
 
-            chartStage.setTitle("Line Chart Sample");
-
-            MyLineGraph lineGraph = new MyLineGraph("Total Volume for All Exercises Over Time (lbs)");
-
-            // TODO Set a combo box and select, if doenst comply make a popup saying the error
-            WorkoutEntryFields workoutEntryField = WorkoutEntryFields.exercise;
-
-	        // TODO eventually have this be fed by options
-            try
-            {
-                ArrayList<XYChart.Series<Number, Number>> seriesList = new ArrayList();
-
-                for (Exercise exercise : Exercise.values())
-                {
-                    List<XYChart.Data<Number, Number>> chartData = WorkoutEntry.getWorkoutValues(readInUserData("David", "all", exercise.exerciseName), workoutEntryField);
-
-	                if (!chartData.isEmpty())
-	                {
-		                seriesList.add(GraphUtil.createTimeSeries(chartData, GRAPH_DATA_OPTION.TOTAL_VOLUME, workoutEntryField, exercise.exerciseName));
-	                }
-                }
-
-                lineGraph.getData().addAll(seriesList);
-
-                lineGraph.getXAxis().invalidateRange(Arrays.asList(0));
-            }
-            catch (ParseException e)
-            {
-                e.printStackTrace();
-            }
-
+            // Find a way for the program to set this and for it to make sense
+            // TODO make a private function that looks at the inputs and decides on a title
+            CustomLineGraph lineGraph = new CustomLineGraph("Total Volume for All Exercises Over Time (lbs)", ChartDataUtil.createChartData(WorkoutEntryField.exercise));
 
             // TODO make these constants
             Scene scene  = new Scene(lineGraph, 800, 600);

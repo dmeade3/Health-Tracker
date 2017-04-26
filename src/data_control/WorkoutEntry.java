@@ -135,14 +135,16 @@ public class WorkoutEntry
     }
 
     // TODO this should be in a different class
-    public static List<XYChart.Data<Number, Number>> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryFields field) throws ParseException
+    public static List<XYChart.Data<Number, Number>> getWorkoutValues(List<WorkoutEntry> workoutEntries, WorkoutEntryField field) throws ParseException
     {
         String stringField = field.toString();
 
-        List<XYChart.Data<Number, Number>> timeSeriesDataItems = new ArrayList<>();
+        List<XYChart.Data<Number, Number>> dataArrayList = new ArrayList<>();
 
         switch (stringField)
         {
+            // TODO some of these might nt make sense to make
+            // TODO Should probably make an enum
             case "date":
                 logger.warn("Cannot choose date as a field to graph");
                 break;
@@ -150,28 +152,28 @@ public class WorkoutEntry
             case "bodyweight":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.bodyweight));
+                    dataArrayList.add(new XYChart.Data(workoutEntry.date, workoutEntry.bodyweight));
                 }
                 break;
 
             case "weight":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.additionalWeight));
+                    dataArrayList.add(new XYChart.Data(workoutEntry.date, workoutEntry.additionalWeight));
                 }
                 break;
 
             case "reps":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.reps));
+                    dataArrayList.add(new XYChart.Data(workoutEntry.date, workoutEntry.reps));
                 }
                 break;
 
             case "sets":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.sets));
+                    dataArrayList.add(new XYChart.Data(workoutEntry.date, workoutEntry.sets));
                 }
                 break;
 
@@ -196,7 +198,7 @@ public class WorkoutEntry
 	                }
 
                     //System.out.println("Volume: " + volume);
-                    timeSeriesDataItems.add(new XYChart.Data<>(workoutEntry.date.getTime(), volume));
+                    dataArrayList.add(new XYChart.Data<>(workoutEntry.date.getTime(), volume));
                 }
                 break;
 
@@ -205,7 +207,7 @@ public class WorkoutEntry
                 return null;
         }
 
-        return timeSeriesDataItems;
+        return dataArrayList;
     }
 
     @Override

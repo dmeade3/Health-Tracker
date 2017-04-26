@@ -1,16 +1,16 @@
 package data_control;
 
-import Graphing.GRAPH_DATA_OPTION;
+import Graphing.GraphDataOption;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static Graphing.GRAPH_DATA_OPTION.*;
+import static Graphing.GraphDataOption.*;
 
 /**
  * Created by dcmeade on 3/24/2017.
  */
-public enum WorkoutEntryFields
+public enum WorkoutEntryField
 {
     date(), // Not currently used with anything
     bodyweight(LOWEST_VALUE),
@@ -21,14 +21,14 @@ public enum WorkoutEntryFields
     additionalWeight(HIGHEST_VALUE)
     ;
 
-    private GRAPH_DATA_OPTION[] graphDataOptions;
+    private GraphDataOption[] graphDataOptions;
 
-    WorkoutEntryFields(GRAPH_DATA_OPTION... graphDataOptions)
+    WorkoutEntryField(GraphDataOption... graphDataOptions)
     {
         this.graphDataOptions = graphDataOptions;
     }
 
-    public List<GRAPH_DATA_OPTION> getGraphDataOptions()
+    public List<GraphDataOption> getGraphDataOptions()
     {
         return Arrays.asList(graphDataOptions);
     }

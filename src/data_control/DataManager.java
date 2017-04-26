@@ -3,6 +3,7 @@ package data_control;
 import gui.InitMain;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import util.ProgramInfo;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class DataManager
 
     // Reads in all from a user back to a certain date
     // if date is "all" then all user data read in
-    public static List<WorkoutEntry> readInUserData(String user, String date, String exercise)
+    public static List<WorkoutEntry> readInUserData(String date, Exercise... exerciseList)
     {
         // todo check if the user dir exists
         // TODO make sure the date portion of this function works
@@ -32,7 +33,7 @@ public class DataManager
 
         //System.out.println("Reading in file: " + ((File)file).getAbsoluteFile());
 
-        try (BufferedReader br = new BufferedReader(new FileReader(new File(LOGS_PATH + System.getProperty("file.separator") + user + System.getProperty("file.separator") + "workoutEntries.csv"))))
+        try (BufferedReader br = new BufferedReader(new FileReader(new File(LOGS_PATH + System.getProperty("file.separator") + ProgramInfo.CURRENT_USER + System.getProperty("file.separator") + "workoutEntries.csv"))))
         {
             String line;
 
@@ -51,10 +52,13 @@ public class DataManager
                 {
                     // check if the exercise is all or a specific exercise
 
-	                //System.out.println(workoutEntry.getExercise().exerciseName + "      " + exercise);
-                    if (exercise.equals("all") || workoutEntry.getExercise().exerciseName.equals(exercise))
+                    for (Exercise exercise : exerciseList)
                     {
-                        workoutEntries.add(workoutEntry);
+                        //System.out.println(workoutEntry.getExercise().exerciseName + "      " + exercise);
+                        if (workoutEntry.getExercise().exerciseName.equals(exercise.exerciseName))
+                        {
+                            workoutEntries.add(workoutEntry);
+                        }
                     }
                 }
             }
@@ -146,11 +150,11 @@ public class DataManager
         //storeWorkoutEntry(workoutEntry, "David", "3/13/2017");
 
 
-        List<WorkoutEntry> workoutEntries = readInUserData("David", "03-21-2017", "all");
+        /*List<WorkoutEntry> workoutEntries = readInUserData("David", "03-21-2017", "all");
 
         for (WorkoutEntry workoutEntry : workoutEntries)
         {
             System.out.println(workoutEntry.toString());
-        }
+        }*/
     }
 }

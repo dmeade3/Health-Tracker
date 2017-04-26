@@ -8,4 +8,6 @@ public class ProgramInfo
 
     public static int CHART_HISTORY_DAYS = 5;
 
+    public static String CURRENT_USER = "";
+
 }

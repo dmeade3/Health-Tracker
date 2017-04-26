@@ -1,13 +1,10 @@
 Functionality:
 
-    Handle unilateral exervcses vol * 2
-
-    "Tool tips" for lines on graph
-
-    make exercise an enum
-        -replace all places that use exercise
+    gradually pass the show graph button more data till it is completely customizable
 
     use csv code from budget here
+
+    make or find a daterange object then use it for read in userdata date field
 
     centralize the main data
 
@@ -20,6 +17,8 @@ Functionality:
         -takes regex
             -enum of restriction options
         -use everywhere
+
+    Should have stats for whole workout (Day volume all added up)
 
     Date should be a datepicker
 
@@ -51,22 +50,13 @@ Functionality:
         -css
         -budget css
 
-    add wods as an exercise, time is now required
-        -workout should be a super class and the different ones should inherit from then add on to (Strength, wod, walking)
-            -within wod: should be an enum of the different wods i have
-                -should eventually come up with own
-        -will need refactoring to handle these new type of workouts
-            -make more general and call more functions from the super class
-
-
-    Aditional actions:
+    Additional actions:
 
         Button:
             Display data Button:
                 -opens window with display options
                     -options should be in a listview with a button under called show
                         -when show is pressed the selected option should be shown
-
 
             Admin button:
                 -add user

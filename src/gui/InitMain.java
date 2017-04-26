@@ -4,7 +4,6 @@ import data_control.DataManager;
 import data_control.Exercise;
 import data_control.WorkoutEntry;
 import javafx.application.Platform;
-import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -19,6 +18,7 @@ import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import org.apache.log4j.Logger;
+import util.ProgramInfo;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -218,6 +218,15 @@ public class InitMain
                 }
             }
         }
+
+        // Listener for user change
+        userComboBox.valueProperty().addListener(new ChangeListener<String>()
+        {
+            @Override public void changed(ObservableValue ov, String t, String newValue)
+            {
+                ProgramInfo.CURRENT_USER = newValue;
+            }
+        });
 
         userComboBox.getSelectionModel().select(ctr);
         GridPane.setConstraints(userComboBox, 3, 7, 5, 1);

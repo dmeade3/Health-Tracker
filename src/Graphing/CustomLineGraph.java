@@ -2,23 +2,45 @@ package Graphing;
 
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.Tooltip;
 import javafx.util.StringConverter;
 
 import java.text.ParseException;
 import java.util.Date;
+import java.util.List;
 
-import static util.MainUtility.DATE_FORMAT;
+import static util.MainUtility.*;
 import static util.ProgramInfo.CHART_HISTORY_DAYS;
 
-public class MyLineGraph extends LineChart {
-    //private TimeSeriesCollection dataset = new TimeSeriesCollection(); // TODO might not need this
-
-    public MyLineGraph(String chartTitle)
+public class CustomLineGraph extends LineChart
+{
+    public CustomLineGraph(String chartTitle, List<Series<Number, Number>> seriesList)
     {
         //creating the chart
         super(getDateFormatedNumberAxis(), new NumberAxis());
 
         setTitle(chartTitle);
+
+        getData().addAll(seriesList);
+
+        addToolTips();
+    }
+
+    private void addToolTips()
+    {
+        // Add in the ToolTips
+        for (Object s : getData())
+        {
+            for (XYChart.Data<Number, Number> d : ((XYChart.Series<Number, Number>) s).getData())
+            {
+                Tooltip tooltip = new Tooltip("Day: " + DATE_FORMAT.format(d.getXValue()) + "\n" + "Volume : " + NUMBER_FORMAT.format(d.getYValue()));
+
+                hackTooltipStartTiming(tooltip);
+
+                Tooltip.install(d.getNode(), tooltip);
+            }
+        }
     }
 
     private static NumberAxis getDateFormatedNumberAxis()

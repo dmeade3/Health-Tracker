@@ -1,6 +1,6 @@
 package Graphing;
 
-import data_control.WorkoutEntryFields;
+import data_control.WorkoutEntryField;
 import javafx.scene.chart.XYChart;
 import org.apache.log4j.Logger;
 
@@ -27,7 +27,7 @@ public class GraphUtil
 
     // Util methods ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static XYChart.Series<Number, Number> createTimeSeries(List<XYChart.Data<Number, Number>> dataItems, GRAPH_DATA_OPTION option, WorkoutEntryFields workoutEntryField, String setName)
+    public static XYChart.Series<Number, Number> createTimeSeries(List<XYChart.Data<Number, Number>> dataItems, GraphDataOption option, WorkoutEntryField workoutEntryField, String setName)
     {
         if (!workoutEntryField.getGraphDataOptions().contains(option))
         {
