@@ -44,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChartDataUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChartDataUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Graphing/ChartDataUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="593">
@@ -109,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="79" lean-forward="false" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
+            <state relative-caret-position="704">
+              <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -198,7 +198,6 @@
         <option value="$PROJECT_DIR$/src/util/Test.java" />
         <option value="$PROJECT_DIR$/src/util/MainUtility.java" />
         <option value="$PROJECT_DIR$/src/data_control/WorkoutEntry.java" />
-        <option value="$PROJECT_DIR$/Todo.txt" />
         <option value="$PROJECT_DIR$/src/util/ProgramInfo.java" />
         <option value="$PROJECT_DIR$/src/gui/InitMain.java" />
         <option value="$PROJECT_DIR$/src/Graphing/MyLineGraph.java" />
@@ -208,6 +207,7 @@
         <option value="$PROJECT_DIR$/src/Graphing/GraphDataOption.java" />
         <option value="$PROJECT_DIR$/src/Graphing/GraphViewOption.java" />
         <option value="$PROJECT_DIR$/src/Graphing/ChartDataUtil.java" />
+        <option value="$PROJECT_DIR$/Todo.txt" />
       </list>
     </option>
   </component>
@@ -360,7 +360,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SRMS" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -918,7 +918,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="42" width="2448" height="1356" extended-state="1" />
+    <frame x="-8" y="42" width="2448" height="1356" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1223,14 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="79" lean-forward="false" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/InitMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1318,6 +1310,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>

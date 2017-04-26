@@ -1,14 +1,24 @@
 Functionality:
 
+
+    centralize the main data
+
+    make the gui things extend the object instead on the weird init thing they do now
+
+
+
+
+
+
+
     gradually pass the show graph button more data till it is completely customizable
 
     use csv code from budget here
 
     make or find a daterange object then use it for read in userdata date field
 
-    centralize the main data
-
-    make the gui things extend the object instead on the weird init thing they do now
+    some fields hsould be search feilds like exercise
+        -dont currently know how to do this
 
     review situations when fields are required / not required based on exercise selection
         -for exercise logging
@@ -19,6 +29,8 @@ Functionality:
         -use everywhere
 
     Should have stats for whole workout (Day volume all added up)
+
+    improve aesthetics of the program
 
     Date should be a datepicker
 
