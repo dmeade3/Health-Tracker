@@ -4,6 +4,9 @@ import data_control.DataManager;
 import data_control.Exercise;
 import data_control.WorkoutEntry;
 import javafx.application.Platform;
+import javafx.beans.InvalidationListener;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -380,7 +383,7 @@ public class InitMain
                 workoutEntry = new WorkoutEntry(
                         DATE_FORMAT.parse(datesComboBox.getSelectionModel().getSelectedItem().toString()),
                         Float.valueOf(bodyweightTextField.getText()),
-                        exercises.getSelectionModel().getSelectedItem().exerciseName,
+		                exercises.getSelectionModel().getSelectedItem(),
                         Float.valueOf(additionalWeightTextField.getText()),
                         Integer.parseInt(repsTextField.getText()),
                         Integer.parseInt(setTextField.getText())

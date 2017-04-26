@@ -21,12 +21,12 @@ public class WorkoutEntry
 
     private Date date;
     private float bodyweight;
-    private String exercise;
+    private Exercise exercise;
     private int reps;
     private int sets;
     private float additionalWeight;
 
-    public WorkoutEntry(Date date, float bodyweight, String exercise, float additionalWeight, int reps, int sets)
+    public WorkoutEntry(Date date, float bodyweight, Exercise exercise, float additionalWeight, int reps, int sets)
     {
         this.date = date;
         this.bodyweight = bodyweight;
@@ -61,7 +61,7 @@ public class WorkoutEntry
         return additionalWeight;
     }
 
-    public String getExercise()
+    public Exercise getExercise()
     {
         return exercise;
     }
@@ -76,7 +76,7 @@ public class WorkoutEntry
         this.bodyweight = bodyweight;
     }
 
-    public void setExercise(String exercise)
+    public void setExercise(Exercise exercise)
     {
         this.exercise = exercise;
     }
@@ -109,10 +109,18 @@ public class WorkoutEntry
 
         // Handle this like budget handles it, referencing the rows index not just a number
         try {
+
+	        if (Exercise.nameToEnum(workoutEntryLine.get(2)) == null)
+	        {
+		        System.out.println(workoutEntryLine.get(2) + ":caused an error");
+
+		        throw new ParseException("Error", 0);
+	        }
+
             return new WorkoutEntry(
                     DATE_FORMAT.parse(workoutEntryLine.get(0)),
                     Float.parseFloat(workoutEntryLine.get(1)),
-                    workoutEntryLine.get(2),
+		            Exercise.nameToEnum(workoutEntryLine.get(2)),
                     Float.parseFloat(workoutEntryLine.get(3)),
                     Integer.parseInt(workoutEntryLine.get(4)),
                     Integer.parseInt(workoutEntryLine.get(5))
@@ -170,11 +178,22 @@ public class WorkoutEntry
             case "exercise":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
-                    // TODO if the exercise is a bodyweight exercise then you add bodyweight else bdyweight = 1
-                    //if ()
+	                double weight = workoutEntry.additionalWeight;
+
+	                // Bodyweight exercise
+	                if (workoutEntry.exercise.bodyweight)
+	                {
+						weight += workoutEntry.bodyweight;
+	                }
 
                     // Multiply the reps x the sets for the total volume x (bodyweight + additional weight)
-                    double volume = workoutEntry.reps * workoutEntry.sets * (workoutEntry.bodyweight + workoutEntry.additionalWeight);
+                    double volume = workoutEntry.reps * workoutEntry.sets * weight;
+
+	                // Unilateral
+	                if (workoutEntry.exercise.unilateral)
+	                {
+						volume *= 2;
+	                }
 
                     //System.out.println("Volume: " + volume);
                     timeSeriesDataItems.add(new XYChart.Data<>(workoutEntry.date.getTime(), volume));
@@ -192,6 +211,6 @@ public class WorkoutEntry
     @Override
     public String toString()
     {
-        return DATE_FORMAT.format(date) + "," + bodyweight + "," + exercise + "," + additionalWeight + "," + reps + "," + sets;
+        return DATE_FORMAT.format(date) + "," + bodyweight + "," + exercise.exerciseName + "," + additionalWeight + "," + reps + "," + sets;
     }
 }

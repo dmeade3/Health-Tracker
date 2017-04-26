@@ -1,5 +1,7 @@
 Functionality:
 
+    Handle unilateral exervcses vol * 2
+
     "Tool tips" for lines on graph
 
     make exercise an enum

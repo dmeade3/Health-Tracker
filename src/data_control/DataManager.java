@@ -50,7 +50,9 @@ public class DataManager
                 if (date.equals("all") || stringDateCompareTo(DATE_FORMAT.format(workoutEntry.getDate()), date))
                 {
                     // check if the exercise is all or a specific exercise
-                    if (exercise.equals("all") || workoutEntry.getExercise().equals(exercise))
+
+	                //System.out.println(workoutEntry.getExercise().exerciseName + "      " + exercise);
+                    if (exercise.equals("all") || workoutEntry.getExercise().exerciseName.equals(exercise))
                     {
                         workoutEntries.add(workoutEntry);
                     }
