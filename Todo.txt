@@ -6,6 +6,7 @@ Functionality:
     make the gui things extend the object instead on the weird init thing they do now
 
 
+    include the excersise name in the tooltip
 
 
 
@@ -17,7 +18,7 @@ Functionality:
 
     make or find a daterange object then use it for read in userdata date field
 
-    some fields hsould be search feilds like exercise
+    some fields should be search feilds like exercise
         -dont currently know how to do this
 
     review situations when fields are required / not required based on exercise selection

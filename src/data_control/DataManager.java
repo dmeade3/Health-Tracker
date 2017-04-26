@@ -23,7 +23,7 @@ public class DataManager
 
     // Reads in all from a user back to a certain date
     // if date is "all" then all user data read in
-    public static List<WorkoutEntry> readInUserData(String date, Exercise... exerciseList)
+    public static List<WorkoutEntry> readInUserData(String date, Exercise exercise)
     {
         // todo check if the user dir exists
         // TODO make sure the date portion of this function works
@@ -52,13 +52,10 @@ public class DataManager
                 {
                     // check if the exercise is all or a specific exercise
 
-                    for (Exercise exercise : exerciseList)
+                    //System.out.println(workoutEntry.getExercise().exerciseName + "      " + exercise);
+                    if (workoutEntry.getExercise().exerciseName.equals(exercise.exerciseName))
                     {
-                        //System.out.println(workoutEntry.getExercise().exerciseName + "      " + exercise);
-                        if (workoutEntry.getExercise().exerciseName.equals(exercise.exerciseName))
-                        {
-                            workoutEntries.add(workoutEntry);
-                        }
+                        workoutEntries.add(workoutEntry);
                     }
                 }
             }

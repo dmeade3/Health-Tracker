@@ -1,5 +1,6 @@
 package Graphing;
 
+import data_control.Exercise;
 import data_control.WorkoutEntryField;
 import javafx.scene.chart.XYChart;
 import org.apache.log4j.Logger;
@@ -27,7 +28,7 @@ public class GraphUtil
 
     // Util methods ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static XYChart.Series<Number, Number> createTimeSeries(List<XYChart.Data<Number, Number>> dataItems, GraphDataOption option, WorkoutEntryField workoutEntryField, String setName)
+    public static XYChart.Series<Number, Number> createTimeSeries(List<XYChart.Data<Number, Number>> dataItems, GraphDataOption option, WorkoutEntryField workoutEntryField, Exercise setName)
     {
         if (!workoutEntryField.getGraphDataOptions().contains(option))
         {
@@ -93,7 +94,7 @@ public class GraphUtil
             case TOTAL_VOLUME:
                 for (XYChart.Data<Number, Number> dataItem : dataItems)
                 {
-                    //System.out.println(timeSeriesDataItem.getPeriod());
+                    //System.out.println(dataItem.getYValue());
 
                     if (hashMap.containsKey(dataItem.getXValue()))
                     {
@@ -116,7 +117,7 @@ public class GraphUtil
 
         // Create the time series
         XYChart.Series<Number, Number> series = new XYChart.Series();
-        series.setName(setName);
+        series.setName(setName.exerciseName);
 
         for (Map.Entry<Number, Number> entry : hashMap.entrySet())
         {

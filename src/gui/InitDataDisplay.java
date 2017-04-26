@@ -2,6 +2,8 @@ package gui;
 
 import Graphing.ChartDataUtil;
 import Graphing.CustomLineGraph;
+import Graphing.GraphViewOption;
+import data_control.Exercise;
 import data_control.WorkoutEntryField;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -14,6 +16,7 @@ import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
+import static data_control.Exercise.*;
 import static util.Constants.*;
 
 /**
@@ -109,7 +112,13 @@ public class InitDataDisplay
 
             // Find a way for the program to set this and for it to make sense
             // TODO make a private function that looks at the inputs and decides on a title
-            CustomLineGraph lineGraph = new CustomLineGraph("Total Volume for All Exercises Over Time (lbs)", ChartDataUtil.createChartData(WorkoutEntryField.exercise));
+            CustomLineGraph lineGraph = new CustomLineGraph("Total Volume for All Exercises Over Time (lbs)",
+		            ChartDataUtil.createChartData(
+				            GraphViewOption.ALL_TOTAL_VOLUME,
+				            WorkoutEntryField.exercise,
+				            SANDBAG_CURL, PARALLEL_BAR_DIPS
+		            )
+            );
 
             // TODO make these constants
             Scene scene  = new Scene(lineGraph, 800, 600);
