@@ -24,10 +24,9 @@ public class WorkoutEntry
     private String exercise;
     private int reps;
     private int sets;
-    private float time;
     private float additionalWeight;
 
-    public WorkoutEntry(Date date, float bodyweight, String exercise, float additionalWeight, int reps, int sets, float time)
+    public WorkoutEntry(Date date, float bodyweight, String exercise, float additionalWeight, int reps, int sets)
     {
         this.date = date;
         this.bodyweight = bodyweight;
@@ -35,7 +34,6 @@ public class WorkoutEntry
         this.additionalWeight = additionalWeight;
         this.reps = reps;
         this.sets = sets;
-        this.time = time;
     }
 
     public Date getDate()
@@ -56,11 +54,6 @@ public class WorkoutEntry
     public int getSets()
     {
         return sets;
-    }
-
-    public float getTime()
-    {
-        return time;
     }
 
     public float getAdditionalWeight()
@@ -98,11 +91,6 @@ public class WorkoutEntry
         this.sets = sets;
     }
 
-    public void setTime(float time)
-    {
-        this.time = time;
-    }
-
     public void setAdditionalWeight(float additionalWeight)
     {
         this.additionalWeight = additionalWeight;
@@ -127,8 +115,7 @@ public class WorkoutEntry
                     workoutEntryLine.get(2),
                     Float.parseFloat(workoutEntryLine.get(3)),
                     Integer.parseInt(workoutEntryLine.get(4)),
-                    Integer.parseInt(workoutEntryLine.get(5)),
-                    Float.parseFloat(workoutEntryLine.get(6))
+                    Integer.parseInt(workoutEntryLine.get(5))
             );
         }
         catch (ParseException e)
@@ -180,13 +167,6 @@ public class WorkoutEntry
                 }
                 break;
 
-            case "time":
-                for (WorkoutEntry workoutEntry : workoutEntries)
-                {
-                    timeSeriesDataItems.add(new XYChart.Data(workoutEntry.date, workoutEntry.time));
-                }
-                break;
-
             case "exercise":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
@@ -212,6 +192,6 @@ public class WorkoutEntry
     @Override
     public String toString()
     {
-        return date + "," + bodyweight + "," + exercise + "," + additionalWeight + "," + reps + "," + sets + "," + time;
+        return DATE_FORMAT.format(date) + "," + bodyweight + "," + exercise + "," + additionalWeight + "," + reps + "," + sets;
     }
 }

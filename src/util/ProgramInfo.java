@@ -6,6 +6,6 @@ package util;
 public class ProgramInfo
 {
 
-    public static int CHART_HISTORY_DAYS = 3;
+    public static int CHART_HISTORY_DAYS = 5;
 
 }

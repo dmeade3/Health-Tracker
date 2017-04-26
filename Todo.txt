@@ -1,18 +1,6 @@
 Functionality:
 
-
-    get working first then refactor
-
-    if the exercise doesnt have and data in the series then dont put it in the graph
-
-    load my exercises into enum
-
-    exercise drop down use exercise name not the enum name
-        -but should still hold an exercise Object not a string
-
-    option for range to start at zero on graph
-
-    should handle one datapoint better
+    "Tool tips" for lines on graph
 
     make exercise an enum
         -replace all places that use exercise
@@ -21,7 +9,7 @@ Functionality:
 
     centralize the main data
 
-    make the gui things extetend the object instead on the weird init thing they do now
+    make the gui things extend the object instead on the weird init thing they do now
 
     review situations when fields are required / not required based on exercise selection
         -for exercise logging
@@ -38,8 +26,6 @@ Functionality:
     place for goals and theres charts showing progress towards goal
 
     search specific prs
-
-
 
     display:
         -specific workouts

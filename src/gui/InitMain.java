@@ -14,6 +14,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import org.apache.log4j.Logger;
 
 import java.io.File;
@@ -37,10 +38,9 @@ public class InitMain
     private static GridPane mainGrid;
     private static TextField repsTextField;
     private static TextField setTextField;
-    private static TextField timeTextField;
     private static TextField bodyweightTextField;
     private static TextField additionalWeightTextField;
-    private static ComboBox exercises;
+    private static ComboBox<Exercise> exercises;
     private static ComboBox datesComboBox;
     private static ComboBox userComboBox;
     private static Button submitButton;
@@ -49,7 +49,6 @@ public class InitMain
     private static Label dateLabel;
     private static Label repsLabel;
     private static Label setsLabel;
-    private static Label timeLabel;
     private static Label bodyweightLabel;
     private static Label additionalWeightLabel;
     private static Label exerciseLabel;
@@ -125,11 +124,6 @@ public class InitMain
         GridPane.setConstraints(setTextField, 3, 4, 3, 1);
         mainGrid.getChildren().add(setTextField);
 
-        timeTextField = new TextField();
-        timeTextField.setPromptText("Time...");
-        GridPane.setConstraints(timeTextField, 3, 5, 3, 1);
-        mainGrid.getChildren().add(timeTextField);
-
         bodyweightTextField = new TextField();
         bodyweightTextField.setPromptText("Bodyweight...");
         bodyweightTextField.setText(loadOnExitDataEntry("bodyweight"));
@@ -158,6 +152,34 @@ public class InitMain
         ObservableList<Exercise> exerciseOptions = loadExercises();
 
         exercises = new ComboBox(exerciseOptions);
+
+	    exercises.setCellFactory(new Callback<ListView<Exercise>,ListCell<Exercise>>()
+	    {
+		    @Override
+		    public ListCell<Exercise> call(ListView<Exercise> p)
+		    {
+			    final ListCell<Exercise> cell = new ListCell<Exercise>()
+			    {
+				    @Override
+				    protected void updateItem(Exercise exercise, boolean bln)
+				    {
+					    super.updateItem(exercise, bln);
+
+					    if(exercise != null)
+					    {
+						    setText(exercise.exerciseName);
+					    }
+					    else
+					    {
+						    setText(null);
+					    }
+				    }
+			    };
+
+			    return cell;
+		    }
+	    });
+
         GridPane.setConstraints(exercises, 2, 1, 5, 1);
         mainGrid.getChildren().add(exercises);
 
@@ -216,20 +238,15 @@ public class InitMain
         GridPane.setColumnSpan(additionalWeightLabel, 4);
         mainGrid.getChildren().add(additionalWeightLabel);
 
-        repsLabel = new Label("Reps");
-        GridPane.setConstraints(repsLabel, 1, 3);
-        GridPane.setColumnSpan(repsLabel, 2);
+        repsLabel = new Label("Reps or Secs");
+        GridPane.setConstraints(repsLabel, 0, 3);
+        GridPane.setColumnSpan(repsLabel, 4);
         mainGrid.getChildren().add(repsLabel);
 
         setsLabel = new Label("Sets");
         GridPane.setConstraints(setsLabel, 1, 4);
         GridPane.setColumnSpan(setsLabel, 2);
         mainGrid.getChildren().add(setsLabel);
-
-        timeLabel = new Label("Time");
-        GridPane.setConstraints(timeLabel, 1, 5);
-        GridPane.setColumnSpan(timeLabel, 2);
-        mainGrid.getChildren().add(timeLabel);
 
         bodyweightLabel = new Label("Bodyweight");
         GridPane.setConstraints(bodyweightLabel, 0, 6);
@@ -352,25 +369,6 @@ public class InitMain
             //displayAdminStage.show();
         });
 
-        // listener for if the exercise that is selected is a wod
-        exercises.setOnAction(e ->
-        {
-            /*if (exercises.getSelectionModel().getSelectedItem() != null)
-            {
-                if (exercises.getSelectionModel().getSelectedItem().toString().contains("Wod "))
-                {
-                    setTextField.setDisable(true);
-                    repsTextField.setDisable(true);
-                    additionalWeightTextField.setText("0");
-                }
-                else
-                {
-                    setTextField.setDisable(false);
-                    repsTextField.setDisable(false);
-                }
-            }*/
-        });
-
         // Commit a workout entry
         submitButton.setOnAction(e ->
         {
@@ -379,25 +377,14 @@ public class InitMain
 
             try
             {
-                Float time = 0f;
-
-                try
-                {
-                    time = Float.parseFloat(timeTextField.getText());
-                }
-                catch (NumberFormatException numExp)
-                { // Do nothing, its allowed to be null
-                }
-
                 workoutEntry = new WorkoutEntry(
-                        DATE_FORMAT.parse((String) datesComboBox.getSelectionModel().getSelectedItem()),
+                        DATE_FORMAT.parse(datesComboBox.getSelectionModel().getSelectedItem().toString()),
                         Float.valueOf(bodyweightTextField.getText()),
-                        (String) exercises.getSelectionModel().getSelectedItem(),
+                        exercises.getSelectionModel().getSelectedItem().exerciseName,
                         Float.valueOf(additionalWeightTextField.getText()),
                         Integer.parseInt(repsTextField.getText()),
-                        Integer.parseInt(setTextField.getText()),
-                        time);
-
+                        Integer.parseInt(setTextField.getText())
+                );
 
                 // Check if the user is set for the path
                 if (datesComboBox.getSelectionModel().getSelectedItem().equals(""))

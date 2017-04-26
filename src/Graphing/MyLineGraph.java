@@ -62,26 +62,4 @@ public class MyLineGraph extends LineChart {
 
         return numberAxis;
     }
-
-    public static void main(final String[] args)
-    {
-        /*BasicConfigurator.configure();
-
-        MyLineGraph lineGraph = new MyLineGraph("Workout Tracker", "Total Volume for Parallel Bar Dips Over Time", "Date", "Volume in lbs");
-
-        WorkoutEntryFields workoutEntryField = WorkoutEntryFields.bodyweight;
-
-        List<TimeSeriesDataItem> data = null;
-
-        try
-        {
-            data = WorkoutEntry.getWorkoutValues(readInUserData("David", "all", "all"), workoutEntryField);
-        }
-        catch (ParseException e)
-        {
-            e.printStackTrace();
-        }
-
-        lineGraph.dataset.addSeries(GraphUtil.createTimeSeries(data, GRAPH_DATA_OPTION.LOWEST_VALUE, workoutEntryField, "Parallel Bar Dips"));*/
-    }
 }

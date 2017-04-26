@@ -14,11 +14,11 @@ public class Constants
 
     public static final int DATA_DISPLAY_PAGE_HEIGHT = 850;
 
-    public static final int WORKOUT_ENTRY_SIZE = 6;
+    //public static final int WORKOUT_ENTRY_SIZE = 5;
 
 
     // MISC STRINGS
-    public static final String WORKOUT_CSV_HEADER = "date,bodyweight,exercise,weight,reps,sets,time";
+    public static final String WORKOUT_CSV_HEADER = "date,bodyweight,exercise,weight,reps,sets";
 
     public static final String PROJECT_TITLE = "Workout Tracker";
 
