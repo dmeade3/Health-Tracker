@@ -1,4 +1,4 @@
-package Graphing;
+package gui.Graphing.charts;
 
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;

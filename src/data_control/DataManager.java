@@ -1,6 +1,5 @@
 package data_control;
 
-import gui.InitMain;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import util.ProgramInfo;
@@ -9,6 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static gui.components.MainPageGridpane.writeToConsole;
 import static util.Constants.LOGS_PATH;
 import static util.Constants.WORKOUT_CSV_HEADER;
 import static util.MainUtility.DATE_FORMAT;
@@ -100,8 +100,6 @@ public class DataManager
             e.printStackTrace();
         }
 
-        System.out.println(workoutEntries.size());
-
         return workoutEntries;
     }
 
@@ -129,13 +127,13 @@ public class DataManager
                     logger.info("Creating new log file: " + filePath);
 
                     bw.write(WORKOUT_CSV_HEADER + "\n" + workoutEntry.toString() + "\n");
-                    InitMain.writeToConsole("Adding entry: " + workoutEntry.toString());
+                    writeToConsole("Adding entry: " + workoutEntry.toString());
                 }
                 catch (IOException ioExp)
                 {
                     logger.warn("File path cannot be used: " + file.getAbsolutePath());
 
-                    InitMain.writeToConsole("Path not able to be created, User may be wrong / not exist");
+                    writeToConsole("Path not able to be created, User may be wrong / not exist");
                 }
             }
             else
@@ -146,7 +144,7 @@ public class DataManager
 
                 bw.write(workoutEntry.toString() + "\n");
 
-                InitMain.writeToConsole("Adding entry: " + workoutEntry.toString());
+                writeToConsole("Adding entry: " + workoutEntry.toString());
             }
         }
         catch (IOException e)

@@ -1,4 +1,4 @@
-package Graphing;
+package gui.Graphing;
 
 /**
  * Created by dcmeade on 4/26/2017.

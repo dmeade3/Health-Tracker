@@ -1,4 +1,4 @@
-package Graphing;
+package gui.Graphing;
 
 import data_control.Exercise;
 import data_control.MuscleGroup;

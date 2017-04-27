@@ -10,9 +10,9 @@ public class Constants
 
     public static final int MAIN_PAGE_HEIGHT = 1000;
 
-    public static final int DATA_DISPLAY_PAGE_WIDTH = 850;
+    public static final int DATA_DISPLAY_PAGE_WIDTH = 800;
 
-    public static final int DATA_DISPLAY_PAGE_HEIGHT = 850;
+    public static final int DATA_DISPLAY_PAGE_HEIGHT = 600;
 
     //public static final int WORKOUT_ENTRY_SIZE = 5;
 

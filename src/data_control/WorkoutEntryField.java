@@ -1,11 +1,11 @@
 package data_control;
 
-import Graphing.GraphDataOption;
+import gui.Graphing.GraphDataOption;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static Graphing.GraphDataOption.*;
+import static gui.Graphing.GraphDataOption.*;
 
 /**
  * Created by dcmeade on 3/24/2017.

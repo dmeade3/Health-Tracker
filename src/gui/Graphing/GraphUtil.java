@@ -1,4 +1,4 @@
-package Graphing;
+package gui.Graphing;
 
 import data_control.WorkoutEntryField;
 import javafx.scene.chart.XYChart;

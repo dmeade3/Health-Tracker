@@ -2,10 +2,8 @@ Functionality:
 
     Refactor:
         -make the graph process as simple as possible
-        -gui make extended objects instead os init things
-        -refactor packaging structure, organize better
         -essentially make it easier to work on if i stop and come back in 6 months
-        -add in comments everywhere
+
 
 
 
@@ -32,7 +30,7 @@ Functionality:
 
     make or find a daterange object then use it for read in userdata date field
 
-    some fields should be search feilds like exercise
+    some fields should be search fields like exercise
         -dont currently know how to do this
 
     review situations when fields are required / not required based on exercise selection
@@ -52,6 +50,9 @@ Functionality:
     look at todos from budget to get todo ideas
 
     place for goals and theres charts showing progress towards goal
+        -weight goal
+        -lifting goal
+            -volume reps with weight
 
     search specific prs
 
