@@ -1,29 +1,0 @@
-
-vsquid:S1488"\Immediately return this expression instead of assigning it to the temporary variable "cell".(±Â ðøÿÿÿÿ
-Fsquid:S1166"%Either log or rethrow this exception.(É˜ÙŽúÿÿÿÿ8¼ï–Ôº+
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Ø––˜
-~squid:S1450"dRemove the "additionalWeightLabel" field and declare it as a local variable in the relevant methods.(Ý‘ñÒüÿÿÿÿ
-bsquid:S1132"FMove the "" string literal on the left side of this string comparison.(š¤™š8¼ï–Ôº+
-]
-squid:S899"BDo something with the "boolean" value returned by "createNewFile".(£ªÝÊ8¼ï–Ôº+
-fsquid:S2259"ENullPointerException might be thrown as 'fileWriter' is nullable here(§¾áïûÿÿÿÿ8¼ï–Ôº+
-Nsquid:S1135"2Complete the task associated to this TODO comment.(…ïœ†8¼ï–Ôº+
-vsquid:S1188"\Reduce this anonymous class number of lines from 23 to at most 20, or make it a named class.(—ñ’‡þÿÿÿÿ
-lsquid:S1450"XRemove the "dateLabel" field and declare it as a local variable in the relevant methods.(ñ«ð
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¼ï–Ôº+
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(öï›™ýÿÿÿÿ8¼ï–Ôº+
-csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Õ³Ú—8¼ï–Ôº+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¼ï–Ôº+
-esquid:S1188"DReduce this lambda expression number of lines from 26 to at most 20.(ð·é„ùÿÿÿÿ8¼ï–Ôº+
-rsquid:S1450"XRemove the "repsLabel" field and declare it as a local variable in the relevant methods.(à£àùøÿÿÿÿ
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ž£Öþÿÿÿÿ8¼ï–Ôº+
-lsquid:S1450"XRemove the "userLabel" field and declare it as a local variable in the relevant methods.(¼Ã®w
-qsquid:S1450"\Remove the "exerciseLabel" field and declare it as a local variable in the relevant methods.(ŠÂŽ²
-lsquid:S1450"WRemove the "listInfo" field and declare it as a local variable in the relevant methods.(‚ ú
-Rsquid:S1481"6Remove this unused "displayAdminStage" local variable.(ÀÊûò8¼ï–Ôº+
-Fsquid:S1166"%Either log or rethrow this exception.(É˜ÙŽúÿÿÿÿ8¼ï–Ôº+
-Tsquid:S1118":Add a private constructor to hide the implicit public one.(¼©„Áùÿÿÿÿ
-Ksquid:S2093"*Change this "try" to a try-with-resources.(ç£êúÿÿÿÿ8¼ï–Ôº+
-rsquid:S1450"XRemove the "setsLabel" field and declare it as a local variable in the relevant methods.(èõâÁýÿÿÿÿ
-ssquid:S1450"^Remove the "bodyweightLabel" field and declare it as a local variable in the relevant methods.(ä©ãÀ
-Gsquid:S1135"2Complete the task associated to this TODO comment.(›½

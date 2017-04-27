@@ -25,14 +25,10 @@ public class DataManager
     // if date is "all" then all user data read in
     public static List<WorkoutEntry> readInUserData(String date, Exercise exercise)
     {
-        // todo check if the user dir exists
-        // TODO make sure the date portion of this function works
-
         // get all csv files
         ArrayList<WorkoutEntry> workoutEntries = new ArrayList<>();
 
         //System.out.println("Reading in file: " + ((File)file).getAbsoluteFile());
-
         try (BufferedReader br = new BufferedReader(new FileReader(new File(LOGS_PATH + System.getProperty("file.separator") + ProgramInfo.CURRENT_USER + System.getProperty("file.separator") + "workoutEntries.csv"))))
         {
             String line;
@@ -40,18 +36,17 @@ public class DataManager
             while ((line = br.readLine()) != null)
             {
                 // TODO find better way
-                if (line.startsWith("date,"))
+                if (line.startsWith(WORKOUT_CSV_HEADER))
                 {
                     continue;
                 }
 
                 WorkoutEntry workoutEntry = WorkoutEntry.parseWorkoutEntry(line);
 
+                // TODO get rid of all, should be a daterange option
                 // Check if the first provided is before the file date || date is equal to all
                 if (date.equals("all") || stringDateCompareTo(DATE_FORMAT.format(workoutEntry.getDate()), date))
                 {
-                    // check if the exercise is all or a specific exercise
-
                     //System.out.println(workoutEntry.getExercise().exerciseName + "      " + exercise);
                     if (workoutEntry.getExercise().exerciseName.equals(exercise.exerciseName))
                     {
@@ -64,6 +59,48 @@ public class DataManager
         {
             e.printStackTrace();
         }
+
+        return workoutEntries;
+    }
+
+    public static List<WorkoutEntry> readInUserData(String date, MuscleGroup muscleGroup)
+    {
+        // get all csv files
+        ArrayList<WorkoutEntry> workoutEntries = new ArrayList<>();
+
+        //System.out.println("Reading in file: " + ((File)file).getAbsoluteFile());
+        try (BufferedReader br = new BufferedReader(new FileReader(new File(LOGS_PATH + System.getProperty("file.separator") + ProgramInfo.CURRENT_USER + System.getProperty("file.separator") + "workoutEntries.csv"))))
+        {
+            String line;
+
+            while ((line = br.readLine()) != null)
+            {
+                // TODO find better way
+                if (line.startsWith(WORKOUT_CSV_HEADER))
+                {
+                    continue;
+                }
+
+                WorkoutEntry workoutEntry = WorkoutEntry.parseWorkoutEntry(line);
+
+                // TODO get rid of all, should be a daterange option
+                // Check if the first provided is before the file date || date is equal to all
+                if (date.equals("all") || stringDateCompareTo(DATE_FORMAT.format(workoutEntry.getDate()), date))
+                {
+                    //System.out.println(workoutEntry.getExercise().muscleGroupsList.contains(muscleGroup) + "      " + muscleGroup);
+                    if (workoutEntry.getExercise().muscleGroupsList.contains(muscleGroup))
+                    {
+                        workoutEntries.add(workoutEntry);
+                    }
+                }
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        System.out.println(workoutEntries.size());
 
         return workoutEntries;
     }

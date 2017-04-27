@@ -1,12 +1,0 @@
-
-lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(±£ä‹úÿÿÿÿ8º¤Õº+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8½‰­Õº+
-Tsquid:S1172"3Remove this unused method parameter "exerciseList".(³Ì¹Šûÿÿÿÿ8ê²Õº+
-[
-squid:S106";Replace this usage of System.out or System.err by a logger.(±¢·»ùÿÿÿÿ8º¤Õº+
-Nsquid:S1135"2Complete the task associated to this TODO comment.(Å²®¨8Œú©Õº+
-†squid:S1151"jReduce this switch case number of lines from 14 to at most 5, for example by extracting code into methods.(Úï¹Î8ıı«Õº+
-rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(äÛ•¬úÿÿÿÿ
-Nsquid:S1135"2Complete the task associated to this TODO comment.(Å—­8Œú©Õº+
-Vsquid:S1118":Add a private constructor to hide the implicit public one.(ü¹’‘8œ“åÔº+
-Ssquid:S1135"2Complete the task associated to this TODO comment.(¯Áºáÿÿÿÿÿ8Œú©Õº+

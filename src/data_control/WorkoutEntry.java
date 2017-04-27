@@ -149,7 +149,7 @@ public class WorkoutEntry
                 logger.warn("Cannot choose date as a field to graph");
                 break;
 
-            case "bodyweight":
+            /*case "bodyweight":
                 for (WorkoutEntry workoutEntry : workoutEntries)
                 {
                     dataArrayList.add(new XYChart.Data(workoutEntry.date, workoutEntry.bodyweight));
@@ -175,7 +175,7 @@ public class WorkoutEntry
                 {
                     dataArrayList.add(new XYChart.Data(workoutEntry.date, workoutEntry.sets));
                 }
-                break;
+                break;*/
 
             case "exercise":
                 for (WorkoutEntry workoutEntry : workoutEntries)
@@ -205,6 +205,37 @@ public class WorkoutEntry
             default:
                 logger.warn("Could not process field: " + field);
                 return null;
+        }
+
+        return dataArrayList;
+    }
+
+    public static List<XYChart.Data<Number, Number>> getMuscleGroupValues(List<WorkoutEntry> workoutEntries)
+    {
+        List<XYChart.Data<Number, Number>> dataArrayList = new ArrayList<>();
+
+        // Calculates volume
+        for (WorkoutEntry workoutEntry : workoutEntries)
+        {
+            double weight = workoutEntry.additionalWeight;
+
+            // Bodyweight exercise
+            if (workoutEntry.exercise.bodyweight)
+            {
+                weight += workoutEntry.bodyweight;
+            }
+
+            // Multiply the reps x the sets for the total volume x (bodyweight + additional weight)
+            double volume = workoutEntry.reps * workoutEntry.sets * weight;
+
+            // Unilateral
+            if (workoutEntry.exercise.unilateral)
+            {
+                volume *= 2;
+            }
+
+            //System.out.println("Volume: " + volume);
+            dataArrayList.add(new XYChart.Data<>(workoutEntry.date.getTime(), volume));
         }
 
         return dataArrayList;

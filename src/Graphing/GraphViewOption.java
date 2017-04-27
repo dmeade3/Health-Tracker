@@ -6,6 +6,7 @@ package Graphing;
 public enum GraphViewOption
 {
     ALL_TOTAL_VOLUME,
-    //LIST_TOTAL_VOLUME,
-    //MUSCLE_GROUP_TOTAL_VOLUME
+    ALL_MUSCLE_GROUP_TOTAL_VOLUME,
+    //LIST_TOTAL_VOLUME
+
 }

@@ -1,6 +1,7 @@
 package Graphing;
 
 import data_control.Exercise;
+import data_control.MuscleGroup;
 import data_control.WorkoutEntry;
 import data_control.WorkoutEntryField;
 import javafx.scene.chart.XYChart;
@@ -18,40 +19,62 @@ public class ChartDataUtil
 {
     public static List<XYChart.Series<Number, Number>> createChartData(GraphViewOption graphViewOption, WorkoutEntryField workoutEntryField, Exercise... exerciseList)
     {
-        ArrayList<XYChart.Series<Number, Number>> seriesList = new ArrayList();
+        ArrayList<XYChart.Series<Number, Number>> seriesList = new ArrayList<>();
+
+        List<XYChart.Data<Number, Number>> chartData = null;
 
         switch(graphViewOption)
         {
 	        // Section is all total volume so it disregards the exercise input
             case ALL_TOTAL_VOLUME:
-                // TODO Set workoutentryfield a combo box and select, if doenst comply make a popup saying the error
-                // TODO should be passed this list, have utility class create the data given arguements, /  enum options / or only enum options
-                List<XYChart.Data<Number, Number>> chartData = null;
 
-	            // Section is all total volume so it disregards the exercise input
                 for (Exercise exercise : Exercise.values())
                 {
 	                try
 	                {
 		                // TODO all is for the date, should eventually be a daterange object
-
-		                // this gets all workout entries
+		                // This gets all workout entries within the date range associated with the exercise
 		                chartData = WorkoutEntry.getWorkoutValues(readInUserData("all", exercise), workoutEntryField);
-	                }
-	                catch (ParseException e)
-	                {
-		                e.printStackTrace();
-	                }
 
-	                XYChart.Series<Number, Number> series = GraphUtil.createTimeSeries(chartData, GraphDataOption.TOTAL_VOLUME, workoutEntryField, exercise);
+                        // Creates a series from the chart data from the exercise
+                        XYChart.Series<Number, Number> series = GraphUtil.createTimeSeries(chartData, GraphDataOption.TOTAL_VOLUME, workoutEntryField, exercise.exerciseName);
 
-	                //System.out.println(exercise);
-	                //System.out.println(series.getData().size());
-
-	                if (!series.getData().isEmpty())
-	                {
-		                seriesList.add(series);
+                        if (!series.getData().isEmpty())
+                        {
+                            seriesList.add(series);
+                        }
 	                }
+	                catch (NullPointerException | ParseException e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+                break;
+
+            case ALL_MUSCLE_GROUP_TOTAL_VOLUME:
+
+                // TODO Still needs testing to verify if working
+
+                for (MuscleGroup muscleGroup : MuscleGroup.values())
+                {
+                    try
+                    {
+                        // TODO all is for the date, should eventually be a daterange object
+                        // This gets all workout entries within the date range associated with the exercise
+                        chartData = WorkoutEntry.getMuscleGroupValues(readInUserData("all", muscleGroup));
+
+                        // Creates a series from the chart data from the exercise
+                        XYChart.Series<Number, Number> series = GraphUtil.createTimeSeries(chartData, GraphDataOption.TOTAL_VOLUME, workoutEntryField, muscleGroup.name());
+
+                        if (!series.getData().isEmpty())
+                        {
+                            seriesList.add(series);
+                        }
+                    }
+                    catch (NullPointerException e)
+                    {
+                        e.printStackTrace();
+                    }
                 }
                 break;
 

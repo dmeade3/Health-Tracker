@@ -1,16 +1,30 @@
 Functionality:
 
+    Refactor:
+        -make the graph process as simple as possible
+        -gui make extended objects instead os init things
+        -refactor packaging structure, organize better
+        -essentially make it easier to work on if i stop and come back in 6 months
+        -add in comments everywhere
 
-    centralize the main data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     make the gui things extend the object instead on the weird init thing they do now
 
-
-    include the excersise name in the tooltip
-
-
-
-
+    include the series name in the tooltip
 
     gradually pass the show graph button more data till it is completely customizable
 

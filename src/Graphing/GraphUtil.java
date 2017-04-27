@@ -1,11 +1,12 @@
 package Graphing;
 
-import data_control.Exercise;
 import data_control.WorkoutEntryField;
 import javafx.scene.chart.XYChart;
 import org.apache.log4j.Logger;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by dcmeade on 3/23/2017.
@@ -28,7 +29,7 @@ public class GraphUtil
 
     // Util methods ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static XYChart.Series<Number, Number> createTimeSeries(List<XYChart.Data<Number, Number>> dataItems, GraphDataOption option, WorkoutEntryField workoutEntryField, Exercise setName)
+    public static XYChart.Series<Number, Number> createTimeSeries(List<XYChart.Data<Number, Number>> dataItems, GraphDataOption option, WorkoutEntryField workoutEntryField, String seriesName)
     {
         if (!workoutEntryField.getGraphDataOptions().contains(option))
         {
@@ -94,8 +95,6 @@ public class GraphUtil
             case TOTAL_VOLUME:
                 for (XYChart.Data<Number, Number> dataItem : dataItems)
                 {
-                    //System.out.println(dataItem.getYValue());
-
                     if (hashMap.containsKey(dataItem.getXValue()))
                     {
                         double updatedValue = dataItem.getYValue().doubleValue() + hashMap.get(dataItem.getXValue()).doubleValue();
@@ -115,13 +114,13 @@ public class GraphUtil
                 logger.warn("Option: " + option + " not handled");
         }
 
-        // Create the time series
-        XYChart.Series<Number, Number> series = new XYChart.Series();
-        series.setName(setName.exerciseName);
+        // Create the series
+        XYChart.Series<Number, Number> series = new XYChart.Series<>();
+        series.setName(seriesName);
 
         for (Map.Entry<Number, Number> entry : hashMap.entrySet())
         {
-            // add to the time series from the hashmap
+            // add to the series from the hashmap
             series.getData().add(new XYChart.Data<>(entry.getKey().longValue(), entry.getValue()));
         }
 

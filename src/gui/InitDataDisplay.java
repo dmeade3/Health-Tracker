@@ -3,7 +3,6 @@ package gui;
 import Graphing.ChartDataUtil;
 import Graphing.CustomLineGraph;
 import Graphing.GraphViewOption;
-import data_control.Exercise;
 import data_control.WorkoutEntryField;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -16,7 +15,8 @@ import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
-import static data_control.Exercise.*;
+import static data_control.Exercise.PARALLEL_BAR_DIPS;
+import static data_control.Exercise.SANDBAG_CURL;
 import static util.Constants.*;
 
 /**
@@ -110,13 +110,14 @@ public class InitDataDisplay
             Stage chartStage = new Stage();
             chartStage.setTitle("Workout Tracker Stats");
 
-            // Find a way for the program to set this and for it to make sense
+
+            // TODO Set Graphviewoption a combo box and select, if doenst comply make a popup saying the error
             // TODO make a private function that looks at the inputs and decides on a title
             CustomLineGraph lineGraph = new CustomLineGraph("Total Volume for All Exercises Over Time (lbs)",
 		            ChartDataUtil.createChartData(
-				            GraphViewOption.ALL_TOTAL_VOLUME,
+				            GraphViewOption.ALL_MUSCLE_GROUP_TOTAL_VOLUME,
 				            WorkoutEntryField.exercise,
-				            SANDBAG_CURL, PARALLEL_BAR_DIPS
+				            SANDBAG_CURL, PARALLEL_BAR_DIPS // in ALL_... will disregard the given exercises
 		            )
             );
 
