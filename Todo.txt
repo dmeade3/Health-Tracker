@@ -1,27 +1,5 @@
 Functionality:
 
-    Refactor:
-        -make the graph process as simple as possible
-        -essentially make it easier to work on if i stop and come back in 6 months
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    make the gui things extend the object instead on the weird init thing they do now
-
     include the series name in the tooltip
 
     gradually pass the show graph button more data till it is completely customizable
@@ -46,6 +24,7 @@ Functionality:
     improve aesthetics of the program
 
     Date should be a datepicker
+        -restrict the range to be nothing after today
 
     look at todos from budget to get todo ideas
 
@@ -73,6 +52,8 @@ Functionality:
         password in future maybe
 
     able to read in data and use it to give back results / progress / stats on workouts (total weight moved)
+
+    make with jar so launchable like a real app so i can distribute easy if someone else wants it like josh or brian
 
     look into using css with the gui to make it look good
         -css

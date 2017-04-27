@@ -19,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DataDisplayGridpane.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataDisplayGridpane.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/components/DataDisplayGridpane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+            <state relative-caret-position="377">
+              <caret line="109" column="43" lean-forward="false" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#DataDisplayGridpane#0;class#DataDisplayGridpane#0" expanded="true" />
@@ -34,12 +34,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChartDataUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/Graphing/ChartDataUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11">
+              <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#createChartData#0;class#ChartDataUtil#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workoutEntries.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/logs/David/workoutEntries.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            <state relative-caret-position="263">
+              <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="31" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InitMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/InitMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainPageGridpane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/components/MainPageGridpane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="619">
+              <caret line="413" column="17" lean-forward="true" selection-start-line="413" selection-start-column="17" selection-end-line="413" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#MainPageGridpane#0;class#MainPageGridpane#0" expanded="true" />
+                <element signature="method#initComboBoxes#0;class#MainPageGridpane#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,6 +124,7 @@
       <find>chart</find>
       <find>maingrid.</find>
       <find>goal</find>
+      <find>datepicker</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -125,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/Graphing/GraphViewOption.java" />
         <option value="$PROJECT_DIR$/src/data_control/WorkoutEntry.java" />
         <option value="$PROJECT_DIR$/src/Graphing/ChartDataUtil.java" />
-        <option value="$PROJECT_DIR$/data/logs/David/workoutEntries.csv" />
         <option value="$PROJECT_DIR$/src/util/ProgramInfo.java" />
         <option value="$PROJECT_DIR$/src/util/Constants.java" />
         <option value="$PROJECT_DIR$/src/gui/InitDataDisplay.java" />
@@ -135,9 +182,10 @@
         <option value="$PROJECT_DIR$/src/gui/GUIMain.java" />
         <option value="$PROJECT_DIR$/src/Graphing/charts/CustomLineGraph.java" />
         <option value="$PROJECT_DIR$/src/data_control/DataManager.java" />
-        <option value="$PROJECT_DIR$/src/gui/components/MainPageGridpane.java" />
-        <option value="$PROJECT_DIR$/Todo.txt" />
         <option value="$PROJECT_DIR$/src/gui/components/DataDisplayGridpane.java" />
+        <option value="$PROJECT_DIR$/src/gui/components/MainPageGridpane.java" />
+        <option value="$PROJECT_DIR$/data/logs/David/workoutEntries.csv" />
+        <option value="$PROJECT_DIR$/Todo.txt" />
       </list>
     </option>
   </component>
@@ -313,7 +361,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SRMS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Budget" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -882,7 +930,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="40" width="2576" height="1356" extended-state="1" />
+    <frame x="-4" y="40" width="2576" height="1356" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1241,28 +1289,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Graphing/ChartDataUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data_control/Exercise.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/logs/David/workoutEntries.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1327,16 +1357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/InitMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding>
-            <element signature="method#initMain#0;class#InitMain#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GUIMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1348,34 +1368,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/components/MainPageGridpane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="358" column="49" lean-forward="false" selection-start-line="358" selection-start-column="49" selection-end-line="358" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/components/DataDisplayGridpane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+        <state relative-caret-position="377">
+          <caret line="109" column="43" lean-forward="false" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#DataDisplayGridpane#0;class#DataDisplayGridpane#0" expanded="true" />
             <element signature="method#initButtons#0;class#DataDisplayGridpane#0" expanded="true" />
             <element signature="method#initComboBoxes#0;class#DataDisplayGridpane#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/Graphing/ChartDataUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createChartData#0;class#ChartDataUtil#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/InitMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/components/MainPageGridpane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="413" column="17" lean-forward="true" selection-start-line="413" selection-start-column="17" selection-end-line="413" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MainPageGridpane#0;class#MainPageGridpane#0" expanded="true" />
+            <element signature="method#initComboBoxes#0;class#MainPageGridpane#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/logs/David/workoutEntries.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

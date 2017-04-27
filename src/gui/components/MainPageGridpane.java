@@ -24,7 +24,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static util.Constants.*;
@@ -42,7 +46,7 @@ public class MainPageGridpane extends GridPane
     private static TextField bodyweightTextField;
     private static TextField additionalWeightTextField;
     private static ComboBox<Exercise> exercises;
-    private static ComboBox datesComboBox;
+    private static DatePicker datePicker;
     private static ComboBox userComboBox;
     private static Button submitButton;
     private static Button displayDataButton;
@@ -180,11 +184,18 @@ public class MainPageGridpane extends GridPane
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         // Load dates
-        ObservableList<String> dateOptions = getDatesForDropDown();
+        Date input = new Date();
+        LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        datePicker = new DatePicker(date);
+        GridPane.setConstraints(datePicker, 2, 0, 5, 1);
+        getChildren().add(datePicker);
+
+
+        /*ObservableList<String> dateOptions = getDatesForDropDown();
         datesComboBox = new ComboBox(dateOptions);
         datesComboBox.getSelectionModel().selectFirst();
         GridPane.setConstraints(datesComboBox, 2, 0, 5, 1);
-        getChildren().add(datesComboBox);
+        getChildren().add(datesComboBox);*/
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -384,8 +395,13 @@ public class MainPageGridpane extends GridPane
 
             try
             {
+                LocalDate localDate = datePicker.getValue();
+                Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
+                Date date = Date.from(instant);
+
+
                 workoutEntry = new WorkoutEntry(
-                        DATE_FORMAT.parse(datesComboBox.getSelectionModel().getSelectedItem().toString()),
+                        date,
                         Float.valueOf(bodyweightTextField.getText()),
                         exercises.getSelectionModel().getSelectedItem(),
                         Float.valueOf(additionalWeightTextField.getText()),
@@ -394,12 +410,12 @@ public class MainPageGridpane extends GridPane
                 );
 
                 // Check if the user is set for the path
-                if (datesComboBox.getSelectionModel().getSelectedItem().equals(""))
+                if (datePicker.getValue().toString().equals(""))
                 {
                     throw new Exception("User cant be blank");
                 }
 
-                DataManager.storeWorkoutEntry(workoutEntry, (String) userComboBox.getSelectionModel().getSelectedItem(), (String) datesComboBox.getSelectionModel().getSelectedItem());
+                DataManager.storeWorkoutEntry(workoutEntry, (String) userComboBox.getSelectionModel().getSelectedItem(), DATE_FORMAT.format(date));
             }
             catch (Exception ex)
             {
