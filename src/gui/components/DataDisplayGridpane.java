@@ -1,5 +1,6 @@
 package gui.components;
 
+import data_control.Exercise;
 import data_control.WorkoutEntryField;
 import gui.Graphing.ChartDataUtil;
 import gui.Graphing.GraphViewOption;
@@ -10,6 +11,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
@@ -24,8 +26,12 @@ public class DataDisplayGridpane extends GridPane
 {
     final static Logger logger = Logger.getLogger(gui.InitMain.class);
 
+    private Label showDataLabel;
+    private Label prTableLabel;
     private Button showData;
+    private Button prButton;
     private ComboBox<GraphViewOption> comboGraphViewOption;
+    private ComboBox<Exercise> comboExercise;
 
     public DataDisplayGridpane()
     {
@@ -39,7 +45,6 @@ public class DataDisplayGridpane extends GridPane
         initListView();
         initActions();
     }
-
 
     private  void initSelf()
     {
@@ -75,6 +80,9 @@ public class DataDisplayGridpane extends GridPane
     {
         showData = new Button("Show Graph");
         add(showData, 5, 5);
+
+        prButton = new Button("Show Prs");
+        add(prButton, 8, 5);
     }
 
     private void initComboBoxes()
@@ -82,13 +90,21 @@ public class DataDisplayGridpane extends GridPane
         comboGraphViewOption = new ComboBox<>();
         comboGraphViewOption.setItems(FXCollections.observableArrayList(GraphViewOption.values()));
         comboGraphViewOption.getSelectionModel().selectFirst();
-
         add(comboGraphViewOption, 5, 4);
+
+        comboExercise = new ComboBox<>();
+        comboExercise.setItems(FXCollections.observableArrayList(Exercise.values()));
+        comboExercise.getSelectionModel().selectFirst();
+        add(comboExercise, 8, 4);
     }
 
     private void initLabels()
     {
+        showDataLabel = new Label("Data Display View");
+        add(showDataLabel, 5, 3);
 
+        prTableLabel = new Label("Pr Table View");
+        add(prTableLabel, 8, 3);
     }
 
     private void initListView()
@@ -115,6 +131,27 @@ public class DataDisplayGridpane extends GridPane
             );
 
             Scene scene  = new Scene(lineGraph, DATA_DISPLAY_PAGE_WIDTH, DATA_DISPLAY_PAGE_HEIGHT);
+            chartStage.setScene(scene);
+            chartStage.show();
+        });
+
+        prButton.setOnAction((ActionEvent event) ->
+        {
+            Stage chartStage = new Stage();
+            chartStage.setTitle("Pr Table");
+
+            // TODO Set Graphviewoption a combo box and select, if doenst comply make a popup saying the error
+            // TODO make a private function that looks at the inputs and decides on a title
+            /*CustomLineGraph lineGraph = new CustomLineGraph(
+                    "Total Volume for All Muscle Groups Over Time (lbs)",
+                    ChartDataUtil.createChartData(
+                            comboGraphViewOption.getValue(),
+                            WorkoutEntryField.exercise, // TODO make it so this field is associated witht the graphviewoption
+                            null // in ALL_... will disregard the given exercises
+                    )
+            );*/
+
+            Scene scene  = new Scene(new PrTableView(comboExercise.getSelectionModel().getSelectedItem()), 250, DATA_DISPLAY_PAGE_HEIGHT);
             chartStage.setScene(scene);
             chartStage.show();
         });

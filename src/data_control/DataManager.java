@@ -11,8 +11,6 @@ import java.util.List;
 import static gui.components.MainPageGridpane.writeToConsole;
 import static util.Constants.LOGS_PATH;
 import static util.Constants.WORKOUT_CSV_HEADER;
-import static util.MainUtility.DATE_FORMAT;
-import static util.MainUtility.stringDateCompareTo;
 
 /**
  * Created by dcmeade on 3/9/2017.
@@ -23,7 +21,7 @@ public class DataManager
 
     // Reads in all from a user back to a certain date
     // if date is "all" then all user data read in
-    public static List<WorkoutEntry> readInUserData(String date, Exercise exercise)
+    public static List<WorkoutEntry> readInUserData(DateRange dateRange, Exercise exercise)
     {
         // get all csv files
         ArrayList<WorkoutEntry> workoutEntries = new ArrayList<>();
@@ -35,7 +33,6 @@ public class DataManager
 
             while ((line = br.readLine()) != null)
             {
-                // TODO find better way
                 if (line.startsWith(WORKOUT_CSV_HEADER))
                 {
                     continue;
@@ -43,9 +40,8 @@ public class DataManager
 
                 WorkoutEntry workoutEntry = WorkoutEntry.parseWorkoutEntry(line);
 
-                // TODO get rid of all, should be a daterange option
                 // Check if the first provided is before the file date || date is equal to all
-                if (date.equals("all") || stringDateCompareTo(DATE_FORMAT.format(workoutEntry.getDate()), date))
+                if (dateRange.inRange(workoutEntry.getDate()))
                 {
                     //System.out.println(workoutEntry.getExercise().exerciseName + "      " + exercise);
                     if (workoutEntry.getExercise().exerciseName.equals(exercise.exerciseName))
@@ -63,7 +59,7 @@ public class DataManager
         return workoutEntries;
     }
 
-    public static List<WorkoutEntry> readInUserData(String date, MuscleGroup muscleGroup)
+    public static List<WorkoutEntry> readInUserData(DateRange dateRange, MuscleGroup muscleGroup)
     {
         // get all csv files
         ArrayList<WorkoutEntry> workoutEntries = new ArrayList<>();
@@ -75,7 +71,6 @@ public class DataManager
 
             while ((line = br.readLine()) != null)
             {
-                // TODO find better way
                 if (line.startsWith(WORKOUT_CSV_HEADER))
                 {
                     continue;
@@ -85,7 +80,7 @@ public class DataManager
 
                 // TODO get rid of all, should be a daterange option
                 // Check if the first provided is before the file date || date is equal to all
-                if (date.equals("all") || stringDateCompareTo(DATE_FORMAT.format(workoutEntry.getDate()), date))
+                if (dateRange.inRange(workoutEntry.getDate()))
                 {
                     //System.out.println(workoutEntry.getExercise().muscleGroupsList.contains(muscleGroup) + "      " + muscleGroup);
                     if (workoutEntry.getExercise().muscleGroupsList.contains(muscleGroup))
