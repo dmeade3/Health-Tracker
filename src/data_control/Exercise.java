@@ -45,7 +45,8 @@ public enum Exercise
 	   BOARD_2_PINCH_SEC("2 Board Pinch One Hand", false, true,  FOREARMS),
 	   BOARD_3_PINCH_SEC("3 Board Pinch One Hand", false, true,  FOREARMS),
 HAND_2_2_BOARD_PINCH_SEC("2 Board Pinch Two Hand", false, true,  FOREARMS),
-HAND_2_3_BOARD_PINCH_SEC("3 Board Pinch Two Hand", false, true,  FOREARMS)
+HAND_2_3_BOARD_PINCH_SEC("3 Board Pinch Two Hand", false, true,  FOREARMS),
+            HAND_GRIPPER("Hand Gripper",           false, true,  FOREARMS)
     ;
 
     public final String exerciseName;

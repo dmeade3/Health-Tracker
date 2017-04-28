@@ -1,21 +1,93 @@
 date,bodyweight,exercise,weight,reps,sets
-04-20-2017,196.4,Parallel Bar Dips,45.0,25,1
-04-20-2017,196.4,Parallel Bar Dips,45.0,15,1
-04-21-2017,196.4,Parallel Bar Dips,45.0,15,1
-04-21-2017,196.4,Sandbag Curl,20.0,40,1
-04-22-2017,196.4,Situp,0.0,30,1
-04-22-2017,196.4,Neck Curl,20.0,100,1
-04-23-2017,196.4,Sandbag Reverse Curl,10.0,30,1
-04-25-2017,196.4,One Leg Calve Raise,0.0,20,1
-04-25-2017,196.4,Parallel Bar Dips,45.0,55,2
-04-25-2017,196.4,Parallel Bar Dips,45.0,80,2
-04-25-2017,196.4,One Leg Calve Raise,0.0,30,1
-04-24-2017,191.6,Parallel Bar Dips,123.0,23,2
-04-24-2017,191.6,Sandbag Curl,60.0,5,5
-04-25-2017,196.4,Sandbag Reverse Curl,50.0,30,3
-04-25-2017,191.0,Parallel Bar Dips,115.0,6,1
-04-25-2017,191.0,Parallel Bar Dips,0.0,10,5
-04-25-2017,191.0,Ring Dips,123.0,50,5
-04-23-2017,191.0,Ring Dips,123.0,50,15
-04-23-2017,191.0,Handstand Pushup,40.0,30,5
-04-14-2017,191.0,Parallel Bar Dips,8.0,8,8
+04-25-2017,191.0,Sandbag Shouldering,170.0,2,1
+04-25-2017,191.0,Sandbag Shouldering,90.0,10,5
+04-25-2017,191.0,Clapping Puhsup,20.0,10,1
+04-25-2017,191.0,Clapping Puhsup,20.0,6,1
+04-25-2017,191.0,Clapping Puhsup,20.0,5,1
+04-25-2017,191.0,Clapping Puhsup,20.0,5,1
+04-25-2017,191.0,Clapping Puhsup,20.0,3,2
+04-25-2017,191.0,Sandbag Reverse Curl,20.0,10,1
+04-25-2017,191.0,Sandbag Reverse Curl,20.0,6,2
+04-25-2017,191.0,Sandbag Reverse Curl,20.0,5,3
+04-25-2017,191.0,Neck Curl,20.0,40,1
+04-25-2017,191.0,Neck Curl,20.0,23,1
+04-25-2017,191.0,Neck Curl,20.0,25,1
+04-25-2017,191.0,Neck Curl,20.0,17,1
+04-25-2017,191.0,Neck Curl,20.0,20,1
+04-25-2017,191.0,3 Board Pinch One Hand,25.0,15,1
+04-25-2017,191.0,3 Board Pinch One Hand,25.0,20,1
+04-25-2017,191.0,3 Board Pinch One Hand,25.0,25,1
+04-25-2017,191.0,3 Board Pinch One Hand,25.0,30,1
+04-25-2017,191.0,3 Board Pinch One Hand,25.0,15,1
+04-25-2017,191.0,3 Board Pinch One Hand,25.0,10,1
+04-25-2017,191.0,Russian Twist,25.0,10,3
+04-25-2017,191.0,Russian Twist,25.0,8,1
+04-25-2017,191.0,Russian Twist,25.0,5,2
+04-25-2017,191.0,One Leg Calve Raise,0.0,27,1
+04-25-2017,191.0,One Leg Calve Raise,0.0,15,1
+04-25-2017,191.0,One Leg Calve Raise,0.0,9,1
+04-25-2017,191.0,One Leg Calve Raise,0.0,10,1
+04-25-2017,191.0,One Leg Calve Raise,0.0,13,1
+04-25-2017,191.0,One Leg Calve Raise,0.0,15,1
+04-24-2017,192.0,Parallel Bar Dips,115.0,6,1
+04-24-2017,192.0,Parallel Bar Dips,0.0,10,5
+04-24-2017,192.0,Ring Pullups,40.0,5,1
+04-24-2017,192.0,Ring Pullups,40.0,3,1
+04-24-2017,192.0,Ring Pullups,40.0,2,1
+04-24-2017,192.0,Ring Pullups,40.0,2,1
+04-24-2017,192.0,Ring Pullups,40.0,2,1
+04-24-2017,192.0,Ring Pullups,40.0,5,1
+04-24-2017,192.0,Sandbag Curl,40.0,10,1
+04-24-2017,192.0,Sandbag Curl,40.0,7,1
+04-24-2017,192.0,Sandbag Curl,40.0,6,1
+04-24-2017,192.0,Sandbag Curl,40.0,5,1
+04-24-2017,192.0,Sandbag Curl,40.0,5,1
+04-24-2017,192.0,Sandbag Curl,40.0,4,1
+04-24-2017,192.0,Rear Delt Flies,40.0,50,1
+04-24-2017,192.0,Rear Delt Flies,40.0,30,1
+04-24-2017,192.0,Rear Delt Flies,40.0,25,1
+04-24-2017,192.0,Rear Delt Flies,40.0,23,1
+04-24-2017,192.0,Rear Delt Flies,40.0,20,1
+04-24-2017,192.0,Rear Delt Flies,40.0,37,1
+04-24-2017,192.0,Cannonball Pullup,20.0,4,1
+04-24-2017,192.0,Cannonball Pullup,20.0,3,1
+04-24-2017,192.0,Cannonball Pullup,20.0,4,1
+04-24-2017,192.0,Cannonball Pullup,20.0,3,1
+04-24-2017,192.0,Cannonball Pullup,20.0,3,1
+04-24-2017,192.0,Cannonball Pullup,20.0,2,1
+04-24-2017,192.0,Toe To Bar,0.0,8,1
+04-24-2017,192.0,Toe To Bar,0.0,4,1
+04-24-2017,192.0,Toe To Bar,0.0,3,1
+04-24-2017,192.0,Toe To Bar,0.0,3,1
+04-24-2017,192.0,Toe To Bar,0.0,3,1
+04-24-2017,192.0,Toe To Bar,0.0,3,1
+04-24-2017,192.0,Two Leg Calve Raise,40.0,60,1
+04-24-2017,192.0,Two Leg Calve Raise,40.0,30,1
+04-24-2017,192.0,Two Leg Calve Raise,40.0,23,1
+04-24-2017,192.0,Two Leg Calve Raise,40.0,24,1
+04-24-2017,192.0,Two Leg Calve Raise,40.0,26,1
+04-24-2017,192.0,Two Leg Calve Raise,40.0,30,1
+04-23-2017,192.0,Biceps Pullup,60.0,4,1
+04-23-2017,192.0,Biceps Pullup,0.0,10,5
+04-23-2017,192.0,Ring Tricep Extension Belly Button,0.0,16,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,0.0,7,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,0.0,8,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,0.0,7,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,0.0,7,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,0.0,8,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,45.0,10,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,45.0,9,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,45.0,7,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,45.0,5,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,45.0,5,1
+04-23-2017,192.0,Ring Tricep Extension Belly Button,45.0,5,1
+04-23-2017,192.0,Pullup pipe 1.5in,20.0,2,1
+04-23-2017,192.0,Pullup pipe 2in,0.0,3,4
+04-23-2017,192.0,Pullup pipe 2in,0.0,4,1
+04-23-2017,192.0,Sandbag Good Morning,60.0,17,1
+04-23-2017,192.0,Sandbag Good Morning,60.0,12,1
+04-23-2017,192.0,Sandbag Good Morning,60.0,12,1
+04-23-2017,192.0,Neck Extension,0.0,150,1
+04-23-2017,192.0,Neck Extension,0.0,60,1
+04-23-2017,192.0,Neck Extension,0.0,50,1
+04-23-2017,192.0,Two Leg Calve Raise,0.0,100,1

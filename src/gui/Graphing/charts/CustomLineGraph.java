@@ -34,7 +34,7 @@ public class CustomLineGraph extends LineChart
         {
             for (XYChart.Data<Number, Number> d : ((XYChart.Series<Number, Number>) s).getData())
             {
-                Tooltip tooltip = new Tooltip("Day: " + DATE_FORMAT.format(d.getXValue()) + "\n" + "Volume : " + NUMBER_FORMAT.format(d.getYValue()));
+                Tooltip tooltip = new Tooltip("Series name: " + ((Series<Number, Number>) s).getName() + "\n" + "Day: " + DATE_FORMAT.format(d.getXValue()) + "\n" + "Volume : " + NUMBER_FORMAT.format(d.getYValue()));
 
                 hackTooltipStartTiming(tooltip);
 
