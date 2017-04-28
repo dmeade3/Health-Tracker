@@ -1,5 +1,9 @@
 Functionality:
 
+    when showing prs, they should be in a table format, only able to show one exercise and its always all time
+        weight, and reps completed
+
+
     include the series name in the tooltip
 
     gradually pass the show graph button more data till it is completely customizable
