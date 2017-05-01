@@ -88,7 +88,7 @@ public class MainPageGridpane extends GridPane
 
         // sets up main grid for gridpane
         int rowCount = 50;
-        int colCount = 50;
+        int colCount = 11;
 
         // Set row heights
         for (int i = 0; i < rowCount; i++)
@@ -107,41 +107,50 @@ public class MainPageGridpane extends GridPane
 
     private void initTextFields()
     {
-        additionalWeightTextField = new TextField();
-        additionalWeightTextField.setPromptText("Additional Weight...");
-        GridPane.setConstraints(additionalWeightTextField, 3, 2, 3, 1);
+        additionalWeightTextField = maxSizeTextFields("Additional Weight...", 1, 2, 2, 1);
         getChildren().add(additionalWeightTextField);
 
-        repsTextField = new TextField();
-        repsTextField.setPromptText("Reps...");
-        GridPane.setConstraints(repsTextField, 3, 3, 3, 1);
+        repsTextField = maxSizeTextFields("Reps...", 1, 3, 2, 1);
         getChildren().add(repsTextField);
 
-        setTextField = new TextField();
-        setTextField.setPromptText("Sets...");
-        GridPane.setConstraints(setTextField, 3, 4, 3, 1);
+        setTextField = maxSizeTextFields("Sets...", 1, 4, 2, 1);
         getChildren().add(setTextField);
 
-        bodyweightTextField = new TextField();
-        bodyweightTextField.setPromptText("Bodyweight...");
+        bodyweightTextField = maxSizeTextFields("Bodyweight...", 1, 6, 2, 1);
         bodyweightTextField.setText(loadOnExitDataEntry("bodyweight"));
-        GridPane.setConstraints(bodyweightTextField, 3, 6, 3, 1);
         getChildren().add(bodyweightTextField);
+    }
+
+    private TextField maxSizeTextFields(String name, int wIndex, int hIndex, int wSpan, int hSpan)
+    {
+        TextField returnTextField = new TextField(name);
+        GridPane.setConstraints(returnTextField, wIndex, hIndex, wSpan, hSpan);
+        returnTextField.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+        GridPane.setFillWidth(returnTextField, true);
+
+        return returnTextField;
     }
 
     private void initButtons()
     {
-        submitButton = new Button("Submit");
-        GridPane.setConstraints(submitButton, 3, 7, 3, 3);
+        submitButton = maxSizeButton("Submit", 1, 8, 1, 1);
         getChildren().add(submitButton);
 
-        displayDataButton = new Button("Display Data");
-        GridPane.setConstraints(displayDataButton, 3, 10, 5, 3);
+        displayDataButton = maxSizeButton("Display Data", 1, 10, 1, 1);
         getChildren().add(displayDataButton);
 
-        adminButton = new Button("Admin");
-        GridPane.setConstraints(adminButton, 3, 11, 3, 3);
+        adminButton = maxSizeButton("Admin", 1, 11, 1, 1);
         getChildren().add(adminButton);
+    }
+
+    private Button maxSizeButton(String name, int wIndex, int hIndex, int wSpan, int hSpan)
+    {
+        Button returnButton = new Button(name);
+        GridPane.setConstraints(returnButton, wIndex, hIndex, wSpan, hSpan);
+        returnButton.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+        GridPane.setFillWidth(returnButton, true);
+
+        return returnButton;
     }
 
     private void initComboBoxes()
@@ -178,7 +187,7 @@ public class MainPageGridpane extends GridPane
             }
         });
 
-        GridPane.setConstraints(exercises, 2, 1, 5, 1);
+        GridPane.setConstraints(exercises, 1, 1, 2, 1);
         getChildren().add(exercises);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -187,7 +196,7 @@ public class MainPageGridpane extends GridPane
         Date input = new Date();
         LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         datePicker = new DatePicker(date);
-        GridPane.setConstraints(datePicker, 2, 0, 5, 1);
+        GridPane.setConstraints(datePicker, 1, 0, 3, 1);
         getChildren().add(datePicker);
 
 
@@ -231,14 +240,14 @@ public class MainPageGridpane extends GridPane
         });
 
         userComboBox.getSelectionModel().select(ctr);
-        GridPane.setConstraints(userComboBox, 3, 7, 5, 1);
+        GridPane.setConstraints(userComboBox, 1, 7, 2, 1);
         getChildren().add(userComboBox);
     }
 
     private void initLabels()
     {
         dateLabel = new Label("Date");
-        GridPane.setConstraints(dateLabel, 1, 0);
+        GridPane.setConstraints(dateLabel, 0, 0);
         GridPane.setColumnSpan(dateLabel, 2);
         getChildren().add(dateLabel);
 
@@ -258,7 +267,7 @@ public class MainPageGridpane extends GridPane
         getChildren().add(repsLabel);
 
         setsLabel = new Label("Sets");
-        GridPane.setConstraints(setsLabel, 1, 4);
+        GridPane.setConstraints(setsLabel, 0, 4);
         GridPane.setColumnSpan(setsLabel, 2);
         getChildren().add(setsLabel);
 
@@ -268,7 +277,7 @@ public class MainPageGridpane extends GridPane
         getChildren().add(bodyweightLabel);
 
         userLabel = new Label("User");
-        GridPane.setConstraints(userLabel, 1, 7);
+        GridPane.setConstraints(userLabel, 0, 7);
         GridPane.setColumnSpan(userLabel, 2);
         getChildren().add(userLabel);
     }
@@ -281,9 +290,9 @@ public class MainPageGridpane extends GridPane
         listInfo.setPrefSize(600, MAIN_PAGE_HEIGHT);
         listInfo.setEditable(true);
 
-        writeToConsole(".............................................................Output.............................................................");
+        writeToConsole("...........................................................Output...........................................................");
         listInfo.setItems(workoutData);
-        add(listInfo, 10, 0, 15, 27);
+        add(listInfo, 3, 0, 6, 50);
     }
 
     private static void writeOutPreviousInfo(List<String> info)

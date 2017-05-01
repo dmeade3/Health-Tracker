@@ -1,16 +1,15 @@
 Functionality:
 
+    take out fake test data
+
     when showing prs, they should be in a table format, only able to show one exercise and its always all time
         weight, and reps completed
 
-
-    include the series name in the tooltip
+    datadisplay page format buttons like main
 
     gradually pass the show graph button more data till it is completely customizable
 
     use csv code from budget here
-
-    make or find a daterange object then use it for read in userdata date field
 
     some fields should be search fields like exercise
         -dont currently know how to do this
@@ -27,9 +26,6 @@ Functionality:
 
     improve aesthetics of the program
 
-    Date should be a datepicker
-        -restrict the range to be nothing after today
-
     look at todos from budget to get todo ideas
 
     place for goals and theres charts showing progress towards goal
@@ -38,6 +34,12 @@ Functionality:
             -volume reps with weight
 
     search specific prs
+
+    overall stats:
+        all total volume
+        total all reps
+        total all sets
+        mention earliest workout entry date
 
     display:
         -specific workouts
@@ -48,20 +50,12 @@ Functionality:
         over time:
             -select time range
 
-        -show volume for each bodypart group mapped out
-            -all groups on same map
-            -shows where you should add or subtract volume
-
     user sign in
         password in future maybe
 
-    able to read in data and use it to give back results / progress / stats on workouts (total weight moved)
+    choose timespan of a week, month, day for each column when displaying data
 
     make with jar so launchable like a real app so i can distribute easy if someone else wants it like josh or brian
-
-    look into using css with the gui to make it look good
-        -css
-        -budget css
 
     Additional actions:
 

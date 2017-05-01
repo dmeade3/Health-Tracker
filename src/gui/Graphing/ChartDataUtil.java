@@ -1,16 +1,15 @@
 package gui.Graphing;
 
-import data_control.Exercise;
-import data_control.MuscleGroup;
-import data_control.WorkoutEntry;
-import data_control.WorkoutEntryField;
+import data_control.*;
 import javafx.scene.chart.XYChart;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static data_control.DataManager.readInUserData;
+import static util.MainUtility.DATE_FORMAT;
 
 /**
  * Created by dcmeade on 4/26/2017.
@@ -34,7 +33,7 @@ public class ChartDataUtil
 	                {
 		                // TODO all is for the date, should eventually be a daterange object
 		                // This gets all workout entries within the date range associated with the exercise
-		                chartData = WorkoutEntry.getWorkoutValues(readInUserData("all", exercise), workoutEntryField);
+		                chartData = WorkoutEntry.getWorkoutValues(readInUserData(new DateRange(DATE_FORMAT.parse("04-24-2017"), new Date()), exercise), workoutEntryField);
 
                         // Creates a series from the chart data from the exercise
                         XYChart.Series<Number, Number> series = GraphUtil.createTimeSeries(chartData, GraphDataOption.TOTAL_VOLUME, workoutEntryField, exercise.exerciseName);
@@ -61,7 +60,7 @@ public class ChartDataUtil
                     {
                         // TODO all is for the date, should eventually be a daterange object
                         // This gets all workout entries within the date range associated with the exercise
-                        chartData = WorkoutEntry.getMuscleGroupValues(readInUserData("all", muscleGroup));
+                        chartData = WorkoutEntry.getMuscleGroupValues(readInUserData(new DateRange(DATE_FORMAT.parse("04-24-2017"), new Date()), muscleGroup));
 
                         // Creates a series from the chart data from the exercise
                         XYChart.Series<Number, Number> series = GraphUtil.createTimeSeries(chartData, GraphDataOption.TOTAL_VOLUME, workoutEntryField, muscleGroup.name());
@@ -71,7 +70,7 @@ public class ChartDataUtil
                             seriesList.add(series);
                         }
                     }
-                    catch (NullPointerException e)
+                    catch (NullPointerException | ParseException e)
                     {
                         e.printStackTrace();
                     }

@@ -6,7 +6,7 @@ package util;
 public class Constants
 {
     // MISC NUMBERS
-    public static final int MAIN_PAGE_WIDTH = 850;
+    public static final int MAIN_PAGE_WIDTH = 1200;
 
     public static final int MAIN_PAGE_HEIGHT = 1000;
 

@@ -17,6 +17,8 @@ public class InitMain
     public static void initMain(Stage stage)
     {
         Scene scene = new Scene(new MainPageGridpane(stage), MAIN_PAGE_WIDTH, MAIN_PAGE_HEIGHT);
+
+        scene.getStylesheets().add("main.css");
         stage.setScene(scene);
         stage.setTitle(PROJECT_TITLE);
         stage.setMaxHeight(MAIN_PAGE_HEIGHT);
