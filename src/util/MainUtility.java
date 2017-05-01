@@ -26,6 +26,8 @@ public class MainUtility
 
     public final static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MM-dd-yyyy");
 
+    public final static SimpleDateFormat DATE_FORMAT_LONG = new SimpleDateFormat("MM-dd-yyyy  hh:mm:ss a");
+
     public static final DecimalFormat NUMBER_FORMAT  = new DecimalFormat( "#,###" );
 
     public static String getCurrentDate()
