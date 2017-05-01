@@ -1,9 +1,29 @@
 Functionality:
 
-    take out fake test data
+    Eventual goal is to expand the the main pat of the app into a tabbed pane:
+        pr / workout tracking pane
+        health pane
+
+            all fitbit info
+
+                tabs within this tab
+                    -steps
+                    -Heart:
+                        withings pulse thing
+                        resting heart rate
+
+                    -sleep
+                    -cals burned
+
+        Something for running
+
+
+    will still have to log blood presaure and scale info
+
+
+
 
     when showing prs, they should be in a table format, only able to show one exercise and its always all time
-        weight, and reps completed
 
     datadisplay page format buttons like main
 
@@ -34,6 +54,8 @@ Functionality:
             -volume reps with weight
 
     search specific prs
+
+    be able to show total volum per workout
 
     overall stats:
         all total volume
