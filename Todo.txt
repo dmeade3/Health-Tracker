@@ -1,5 +1,58 @@
 Functionality:
 
+    Big picture:
+
+        -each tab should be completely independent
+
+        Manage Health Data:
+            -Floors
+            -Cals Burned
+            -Heart Rate
+            -Resting Heart Rate
+            -Velocity thing for withings scale
+            -Weight
+            -Blood Pressure
+            -Steps
+            -Health Goals
+                -mostly graphs showing progress
+                -like budget app have a line of progress bars showing progress towards the goal
+                -make a goal object with a start and end and get percentage complete method
+                -have special scene if the goal is complete
+
+
+
+
+
+
+        Manage Fitness Data:
+            -prs
+            -Something for running
+            -lifting goals
+
+
+        Maybe Future manage misc data:
+            -random little things that could be in a tab
+            -app knows my shows i like and gets info on them
+                -which season is out / episode
+                -maybe where i am in the show
+                -when is airing next
+
+
+
+
+
+
+    first tackle the data storing problem
+        reliably store data
+            -read write
+                -dont store duplicates
+                -csv style
+                -make all fitbit objects extend an interface:
+                    -write out
+                    -string format for writing out
+                    -parse line
+
+
     Eventual goal is to expand the the main pat of the app into a tabbed pane:
         pr / workout tracking pane
         health pane
@@ -19,8 +72,9 @@ Functionality:
 
 
     will still have to log blood presaure and scale info
+        -work on getting info for these like fitbit does
 
-
+    find safe way to store password and username
 
 
     when showing prs, they should be in a table format, only able to show one exercise and its always all time
@@ -82,11 +136,6 @@ Functionality:
     Additional actions:
 
         Button:
-            Display data Button:
-                -opens window with display options
-                    -options should be in a listview with a button under called show
-                        -when show is pressed the selected option should be shown
-
             Admin button:
                 -add user
                     -upon creating a new user make a log dir for them
@@ -98,4 +147,11 @@ Functionality:
             Analyze Button:
                 -has tests it runs on your data
                     -exmple ratio between upperbody volume and lower body volume is not balanced
+                -runs tests gives results
+
+
+            Analyze Button for health:
+                -has tests it runs on your data
+                    -exmple say if a certain number is high or not
+                        -if youre on track with your goal
                 -runs tests gives results

@@ -19,29 +19,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Fitbit.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Fitbit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fitbit/Fitbit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="292" column="58" lean-forward="false" selection-start-line="292" selection-start-column="58" selection-end-line="292" selection-end-column="58" />
+            <state relative-caret-position="455">
+              <caret line="588" column="0" lean-forward="true" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;class#Fitbit#0" expanded="false" />
                 <element signature="class#ActivityResponseHandler#0;class#Fitbit#0" expanded="false" />
                 <element signature="docComment;method#processDataPoint#0;class#ActivityResponseHandler#0;class#Fitbit#0" expanded="false" />
                 <element signature="class#WeightResponseHandler#0;class#Fitbit#0" expanded="false" />
-                <element signature="class#ResponseHandler#0;class#Fitbit#0" expanded="false" />
                 <element signature="docComment;method#create#0;class#Fitbit#0" expanded="false" />
+                <element signature="method#isRedirected#0;class#6043:6398" expanded="false" />
                 <element signature="docComment;method#Fitbit#0;class#Fitbit#0" expanded="false" />
                 <element signature="docComment;method#enableLocaleOverride#0;class#Fitbit#0" expanded="false" />
                 <element signature="docComment;method#getCaloriesBurned#0;class#Fitbit#0" expanded="false" />
                 <element signature="docComment;method#getFloorCount#0;class#Fitbit#0" expanded="false" />
+                <element signature="method#getSleepSessions#0;class#Fitbit#0" expanded="true" />
                 <element signature="docComment;method#getStepCount#0;class#Fitbit#0" expanded="false" />
                 <element signature="docComment;method#getWeights#0;class#Fitbit#0" expanded="false" />
                 <element signature="docComment;method#getTracker#0;class#Fitbit#0" expanded="false" />
+                <element signature="method#getTracker#0;class#Fitbit#0" expanded="true" />
                 <element signature="docComment;method#getUserId#0;class#Fitbit#0" expanded="false" />
                 <element signature="docComment;method#restoreUserLocale#0;class#Fitbit#0" expanded="false" />
-                <element signature="method#main#0;class#Fitbit#0" expanded="true" />
+                <element signature="method#getGraphData#0;class#Fitbit#0" expanded="true" />
+                <element signature="method#getGraphData#1;class#Fitbit#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,29 +52,39 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fitbit/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="79" selection-end-column="1" />
+            <state relative-caret-position="418">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="49" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-352">
-              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="352">
+              <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SleepSession.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fitbit/SleepSession.java">
+      <file leaf-file-name="FitbitInterval.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fitbit/FitbitInterval.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="572">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#174#175#0" expanded="true" />
+                <element signature="e#201#202#0" expanded="true" />
+                <element signature="e#250#251#0" expanded="true" />
+                <element signature="e#281#282#0" expanded="true" />
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#359#360#0" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,8 +186,8 @@
         <option value="$PROJECT_DIR$/data/logs/David/workoutEntries.csv" />
         <option value="$PROJECT_DIR$/src/fitbit/StepCount.java" />
         <option value="$PROJECT_DIR$/src/util/MainUtility.java" />
-        <option value="$PROJECT_DIR$/Todo.txt" />
         <option value="$PROJECT_DIR$/src/fitbit/Fitbit.java" />
+        <option value="$PROJECT_DIR$/Todo.txt" />
       </list>
     </option>
   </component>
@@ -886,7 +898,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="41" width="2576" height="1358" extended-state="1" />
+    <frame x="-4" y="41" width="2576" height="1358" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -945,7 +957,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1254,14 +1266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fitbit/FitbitInterval.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fitbit/FitbitTracker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1324,53 +1328,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Todo.txt">
+    <entry file="file://$PROJECT_DIR$/src/fitbit/SleepSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-352">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="486">
+          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fitbit/FitbitInterval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fitbit/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="79" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fitbit/SleepSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="418">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="49" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fitbit/Fitbit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="292" column="58" lean-forward="false" selection-start-line="292" selection-start-column="58" selection-end-line="292" selection-end-column="58" />
+        <state relative-caret-position="455">
+          <caret line="588" column="0" lean-forward="true" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Fitbit#0" expanded="false" />
             <element signature="class#ActivityResponseHandler#0;class#Fitbit#0" expanded="false" />
             <element signature="docComment;method#processDataPoint#0;class#ActivityResponseHandler#0;class#Fitbit#0" expanded="false" />
             <element signature="class#WeightResponseHandler#0;class#Fitbit#0" expanded="false" />
-            <element signature="class#ResponseHandler#0;class#Fitbit#0" expanded="false" />
             <element signature="docComment;method#create#0;class#Fitbit#0" expanded="false" />
+            <element signature="method#isRedirected#0;class#6043:6398" expanded="false" />
             <element signature="docComment;method#Fitbit#0;class#Fitbit#0" expanded="false" />
             <element signature="docComment;method#enableLocaleOverride#0;class#Fitbit#0" expanded="false" />
             <element signature="docComment;method#getCaloriesBurned#0;class#Fitbit#0" expanded="false" />
             <element signature="docComment;method#getFloorCount#0;class#Fitbit#0" expanded="false" />
+            <element signature="method#getSleepSessions#0;class#Fitbit#0" expanded="true" />
             <element signature="docComment;method#getStepCount#0;class#Fitbit#0" expanded="false" />
             <element signature="docComment;method#getWeights#0;class#Fitbit#0" expanded="false" />
             <element signature="docComment;method#getTracker#0;class#Fitbit#0" expanded="false" />
+            <element signature="method#getTracker#0;class#Fitbit#0" expanded="true" />
             <element signature="docComment;method#getUserId#0;class#Fitbit#0" expanded="false" />
             <element signature="docComment;method#restoreUserLocale#0;class#Fitbit#0" expanded="false" />
-            <element signature="method#main#0;class#Fitbit#0" expanded="true" />
+            <element signature="method#getGraphData#0;class#Fitbit#0" expanded="true" />
+            <element signature="method#getGraphData#1;class#Fitbit#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>

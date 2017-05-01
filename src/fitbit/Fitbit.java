@@ -27,6 +27,7 @@ import org.joda.time.LocalDate;
 import org.joda.time.Minutes;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import util.MainUtility;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -43,12 +44,25 @@ import java.util.regex.Pattern;
  * <p>Note: Fitbit does not provide timezone information on timestamps,
  * so it's assumed the timezone preference set in the Fitbit user profile matches timezone
  * settings in the local environment.</p>
- * 
- * @author Clay Gregory
+ *
  *
  */
-public class Fitbit {
-	
+public class Fitbit
+{
+
+	/*
+	*
+	* TODO
+	* move functions for getting data to there respective classes
+	*
+	* formet this file's braces
+	* make sleep work
+	*
+	* TODO
+	*
+	* */
+
+
 	protected static abstract class ActivityResponseHandler extends ResponseHandler {
 		
 		/**
@@ -141,10 +155,9 @@ public class Fitbit {
 		}
 	}
 	
-	protected static abstract class ResponseHandler {
-		
+	protected static abstract class ResponseHandler
+	{
 		protected abstract void processResponse( String json );
-
 	}
 	
 	private static final String AJAX_API_URL = "https://www.fitbit.com/ajaxapi";
@@ -360,10 +373,10 @@ public class Fitbit {
 	 * 
 	 * @return FitbitTracker linked to user account
 	 */
-	public FitbitTracker getTracker( ) {
-		
-		try {
-			
+	public FitbitTracker getTracker( )
+	{
+		try
+		{
 			JsonArray serviceCalls = new JsonArray( );
 			JsonObject getDevicesCall = new JsonObject( );
 			getDevicesCall.addProperty( "name", "device" );
@@ -390,8 +403,8 @@ public class Fitbit {
 				.get( "getOwnerDevices" ).getAsJsonObject( )
 				.get( "result" ).getAsJsonArray( );
 			
-			if ( jsonResult.size( ) > 0 ) {
-				
+			if ( jsonResult.size( ) > 0 )
+			{
 				JsonObject trackerJson = jsonResult.get( 0 ).getAsJsonObject( );
 				
 				FitbitTracker tracker = new FitbitTracker( );
@@ -402,13 +415,19 @@ public class Fitbit {
 				tracker.setType( trackerJson.get( "type" ).getAsString( ) );
 				return tracker;
 				
-			} else {
+			}
+			else
+			{
 				return null;
 			}
 			
-		} catch( IOException e ) {
+		}
+		catch( IOException e )
+		{
 			throw new FitbitExecutionException( e );
-		} catch( URISyntaxException e ) {
+		}
+		catch( URISyntaxException e )
+		{
 			throw new FitbitExecutionException( e );
 		}
 	}
@@ -418,7 +437,8 @@ public class Fitbit {
 	 * 
 	 * @return unique Fitbit user ID authenticated for client
 	 */
-	public String getUserId( ) {
+	public String getUserId( )
+	{
 		return this.userId;
 	}
 	
@@ -502,17 +522,25 @@ public class Fitbit {
 	}
 	
 	protected void getGraphData( String type, LocalDate from, LocalDate to, Map<String,String> customParams, ResponseHandler handler ) {
-		try {
+		try
+		{
 			HttpGet get = new HttpGet( buildGraphUrl( type, from, to, customParams ).toString( ) );
 			HttpResponse response = this.getHttpClient( ).execute( get );
-			if ( response.getStatusLine( ).getStatusCode( ) != 200 )
-				throw new FitbitExecutionException( );
+
+				if ( response.getStatusLine( ).getStatusCode( ) != 200 )
+				{
+					throw new FitbitExecutionException();
+				}
 			
 			String result = EntityUtils.toString( response.getEntity( ) ).trim( );
 			handler.processResponse( result );
-		} catch( IOException e ) {
+		}
+		catch( IOException e )
+		{
 			throw new FitbitExecutionException( e );
-		} catch( URISyntaxException e ) {
+		}
+		catch( URISyntaxException e )
+		{
 			throw new FitbitExecutionException( e );
 		}
 	}
@@ -521,8 +549,8 @@ public class Fitbit {
 		return this.httpClient;
 	}
 	
-	protected List<String> getSleepSessionIds( LocalDate date ) {
-		
+	protected List<String> getSleepSessionIds( LocalDate date )
+	{
 		List<String> sessions = new ArrayList<String>( );
 		try {
 			HttpGet pageGet = new HttpGet( SLEEP_BASE_URL + URL_DATE_FORMAT.print( date ) );
@@ -544,6 +572,9 @@ public class Fitbit {
 
 	public static void main(String... args)
 	{
+		// TODO find a way to limit output
+		// TODO BasicConfigurator.configure();
+
 
 		Fitbit fitbit = null;
 		try
@@ -556,17 +587,12 @@ public class Fitbit {
 		}
 
 
-		System.out.println( "Today's sleep" );
-		for ( SleepSession ss : fitbit.getSleepSessions(LocalDate.now()))
+		System.out.println( "Today's floor activity" );
+		for ( FloorCount fc : fitbit.getFloorCount( LocalDate.now( ) ) )
 		{
-
-			System.out.println( "\nAsleep for " + ss.getDurationAsleep( ).getStandardMinutes( ) + " minutes" );
-			System.out.println( "Restless for " + ss.getDurationRestless( ).getStandardMinutes( ) + " minutes" );
-			System.out.println( "Awake for " + ss.getDurationAwake( ).getStandardMinutes( ) + " minutes" );
-
-			//Write minute-by-minute sleep state over duration of session to stdout
-			for ( SleepLevel level : ss.getSleepLevels( ) ) {
-				System.out.println( level.getInterval( ).getStart( ) + " " + level.getValue( ) );
+			if (fc.getValue() != 0)
+			{
+				System.out.println(MainUtility.DATE_FORMAT_LONG.format(fc.getInterval().getStart().toDate()) + " " + fc.getValue());
 			}
 		}
 	}
