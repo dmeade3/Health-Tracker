@@ -20,20 +20,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="workoutEntries.csv" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workoutEntries.csv" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/logs/David/workoutEntries.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.5656214">
+              <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Exercise.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data_control/Exercise.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.86875725">
+            <state vertical-scroll-proportion="0.0">
               <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
               <folding />
             </state>
@@ -133,8 +143,8 @@
         <option value="$PROJECT_DIR$/src/gui/components/MainPageGridpane.java" />
         <option value="$PROJECT_DIR$/src/data_control/Exercise.java" />
         <option value="$PROJECT_DIR$/src/gui/Graphing/charts/CustomLineGraph.java" />
-        <option value="$PROJECT_DIR$/data/logs/David/workoutEntries.csv" />
         <option value="$PROJECT_DIR$/Todo.txt" />
+        <option value="$PROJECT_DIR$/data/logs/David/workoutEntries.csv" />
       </list>
     </option>
   </component>
@@ -851,7 +861,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="2576" height="1398" extended-state="0" />
+    <frame x="-8" y="0" width="2576" height="1398" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1300,14 +1310,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/logs/David/workoutEntries.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/InitMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3321719">
@@ -1316,18 +1318,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data_control/Exercise.java">
+    <entry file="file://$PROJECT_DIR$/Todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.970964">
-          <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Todo.txt">
+    <entry file="file://$PROJECT_DIR$/src/data_control/Exercise.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86875725">
-          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/logs/David/workoutEntries.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5656214">
+          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding />
         </state>
       </provider>
