@@ -53,6 +53,9 @@ Functionality:
                     -parse line
 
 
+    color like fitbit
+        -make whole screan app
+
     Eventual goal is to expand the the main pat of the app into a tabbed pane:
         pr / workout tracking pane
         health pane
