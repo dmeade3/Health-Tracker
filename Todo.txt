@@ -56,6 +56,10 @@ Functionality:
     color like fitbit
         -make whole screan app
 
+    foramt very closely to fitbit
+
+    tab for charts and tab for data selection and viewing within a tableview
+
     Eventual goal is to expand the the main pat of the app into a tabbed pane:
         pr / workout tracking pane
         health pane

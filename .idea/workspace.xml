@@ -43,8 +43,8 @@
       <file leaf-file-name="Todo.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6390042">
-              <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.7120332">
+              <caret line="60" column="76" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -861,7 +861,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="2576" height="1398" extended-state="0" />
+    <frame x="-8" y="0" width="2576" height="1398" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1320,8 +1320,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6390042">
-          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.7120332">
+          <caret line="60" column="76" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
           <folding />
         </state>
       </provider>
