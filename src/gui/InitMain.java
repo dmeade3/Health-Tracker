@@ -1,6 +1,6 @@
 package gui;
 
-import gui.components.MainPageGridpane;
+import gui.components.MainTabPane;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
@@ -16,7 +16,7 @@ public class InitMain
 
     public static void initMain(Stage stage)
     {
-        Scene scene = new Scene(new MainPageGridpane(stage), MAIN_PAGE_WIDTH, MAIN_PAGE_HEIGHT);
+        Scene scene = new Scene(new MainTabPane(stage), MAIN_PAGE_WIDTH, MAIN_PAGE_HEIGHT);
 
         scene.getStylesheets().add("main.css");
         stage.setScene(scene);

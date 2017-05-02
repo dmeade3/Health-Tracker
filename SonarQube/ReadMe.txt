@@ -27,7 +27,13 @@ Get Started in Two Minutes:
     TODO put the actual script paths here
 
     Home:
-        C:\Users\David\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\bin\windows-x86-64\StartSonar.bat
+        "C:\Users\David\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\bin\windows-x86-64\StartSonar.bat"
+
+        cd "C:\Users\David\Desktop\Intelij Workspace\Health-Tracker\"
+        "C:\Users\David\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonar-scanner-3.0.1.733-windows\bin\sonar-scanner.bat"
 
     Work:
+        "C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\bin\windows-x86-64\StartSonar.bat"
 
+        cd "C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\"
+        "C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonar-scanner-3.0.1.733-windows\bin\sonar-scanner.bat"

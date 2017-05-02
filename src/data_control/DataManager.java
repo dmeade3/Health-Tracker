@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static gui.components.MainPageGridpane.writeToConsole;
+import static gui.components.WorkoutPageGridpane.writeToConsole;
 import static util.Constants.LOGS_PATH;
 import static util.Constants.WORKOUT_CSV_HEADER;
 

@@ -1,30 +1,15 @@
 Priority:
 
     use a excel spreadsheet for issue tracking
-        -edit down issue tracking
         -load these issues into the excel
-        -color the issues
-
-    -use sonar cube
-        -make scripts for starting my sonarqube or at least record the commands so it can be copied pasted easy
-
-    -make full screen sized or at least a bit bigger
 
 
 
     after
         -make everything inside a tabbed pane
-            -make it the main object
             -make custom tabs extendning tab for:
                 -sleep
-                -cals burned
                 ...
-                or
-                    -fitbit
-                    -withings
-                    ...
-
-
 
 
 
@@ -58,6 +43,7 @@ Planning: <-- this will be all that stays
             -Weight
             -Blood Pressure
             -Steps
+            -Exercise
             -Health Goals
                 -mostly graphs showing progress
                 -like budget app have a line of progress bars showing progress towards the goal
@@ -89,9 +75,6 @@ All that is tracked:
         -Steps Per day
 
 
-    By hand:
-        -Blood Preasure
-
     Fitbit:
         -Steps
         -Floors
@@ -101,11 +84,7 @@ All that is tracked:
         -Calories Burned
         -Active Minutes
             -Catagory of activity
-
-    My Fitness Pal:
-
-        -Calories Eaten
-
+        -Calories eaten
 
 
     Withings:
@@ -114,8 +93,8 @@ All that is tracked:
         -BodyFat
         -Water%
         -Bone Mass
-        -
-
+        -Blood Preasure
+        -Artery Velocity thing
 
 
 
@@ -160,6 +139,7 @@ will still have to log blood presaure and scale info
 
 find safe way to store password and username
 
+-make task for every time compiled to run sonarqube
 
 when showing prs, they should be in a table format, only able to show one exercise and its always all time
 
