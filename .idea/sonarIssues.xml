@@ -8,12 +8,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/SonarQube/ReadMe.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/Todo.txt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/data/logs/David/workoutEntries.csv">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/sonar-project.properties">
           <value>
             <set />
           </value>

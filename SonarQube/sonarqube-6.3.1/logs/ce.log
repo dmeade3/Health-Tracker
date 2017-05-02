@@ -1,0 +1,14 @@
+2017.05.01 22:20:42 INFO  ce[][o.s.p.ProcessEntryPoint] Starting ce
+2017.05.01 22:20:42 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2017.05.01 22:20:43 INFO  ce[][o.e.plugins] [Annex] modules [], plugins [], sites []
+2017.05.01 22:20:43 INFO  ce[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.01 22:20:43 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.01 22:20:43 WARN  ce[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.01 22:20:44 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\David\Desktop\Intelij Workspace\Workout-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.01 22:20:44 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2017.05.01 22:20:52 INFO  ce[][o.s.s.c.q.PurgeCeActivities] Delete the Compute Engine tasks created before Wed Nov 02 22:20:52 EDT 2016
+2017.05.01 22:20:52 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is up
+2017.05.01 22:33:03 INFO  ce[AVvHAPkoYTaBQR4pNORH][o.s.s.c.t.CeWorkerCallableImpl] Execute task | project=java-sonar-runner-simple | type=REPORT | id=AVvHAPkoYTaBQR4pNORH
+2017.05.01 22:33:06 INFO  ce[AVvHAPkoYTaBQR4pNORH][o.s.s.c.t.CeWorkerCallableImpl] Executed task | project=java-sonar-runner-simple | type=REPORT | id=AVvHAPkoYTaBQR4pNORH | time=3787ms
+2017.05.01 22:34:11 INFO  ce[AVvHAghXYTaBQR4pNORJ][o.s.s.c.t.CeWorkerCallableImpl] Execute task | project=health-tracker | type=REPORT | id=AVvHAghXYTaBQR4pNORJ
+2017.05.01 22:34:13 INFO  ce[AVvHAghXYTaBQR4pNORJ][o.s.s.c.t.CeWorkerCallableImpl] Executed task | project=health-tracker | type=REPORT | id=AVvHAghXYTaBQR4pNORJ | time=2069ms

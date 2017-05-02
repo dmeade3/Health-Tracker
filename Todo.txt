@@ -1,164 +1,225 @@
-Functionality:
+Priority:
 
-    Big picture:
+    organize thi page into tasks and one root todo task
 
-        -each tab should be completely independent
+    use a excel spreadsheet for issue tracking
+        -edit down issue tracking
+        -load these issues into the excel
+        -color the issues
+        
 
-        Manage Health Data:
-            -Floors
-            -Cals Burned
-            -Heart Rate
-            -Resting Heart Rate
-            -Velocity thing for withings scale
-            -Weight
-            -Blood Pressure
-            -Steps
-            -Health Goals
-                -mostly graphs showing progress
-                -like budget app have a line of progress bars showing progress towards the goal
-                -make a goal object with a start and end and get percentage complete method
-                -have special scene if the goal is complete
+    -use sonar cube
+        -make scripts for starting my sonarqube
 
+    -make full screen sized
 
+    after
+        -make everything inside a tabbed pane
+            -make it the main object
+            -make custom tabs extendning tab for:
+                -sleep
+                -cals burned
+                ...
+                or
+                    -fitbit
+                    - withings
+                    ...
 
+Big picture:
 
-
-
-        Manage Fitness Data:
-            -prs
-            -Something for running
-            -lifting goals
-
-
-        Maybe Future manage misc data:
-            -random little things that could be in a tab
-            -app knows my shows i like and gets info on them
-                -which season is out / episode
-                -maybe where i am in the show
-                -when is airing next
+    -Design with extansion and other future apps in mind
+        -make basic as possible down until it has to be specific
 
 
+    -each tab should be completely independent
+
+    Manage Health Data:
+        -Floors
+        -Cals Burned
+        -Heart Rate
+        -Resting Heart Rate
+        -Velocity thing for withings scale
+        -Weight
+        -Blood Pressure
+        -Steps
+        -Health Goals
+            -mostly graphs showing progress
+            -like budget app have a line of progress bars showing progress towards the goal
+            -make a goal object with a start and end and get percentage complete method
+            -have special scene if the goal is complete
 
 
 
 
-    first tackle the data storing problem
-        reliably store data
-            -read write
-                -dont store duplicates
-                -csv style
-                -make all fitbit objects extend an interface:
-                    -write out
-                    -string format for writing out
-                    -parse line
 
 
-    color like fitbit
-        -make whole screan app
-
-    foramt very closely to fitbit
-
-    tab for charts and tab for data selection and viewing within a tableview
-
-    Eventual goal is to expand the the main pat of the app into a tabbed pane:
-        pr / workout tracking pane
-        health pane
-
-            all fitbit info
-
-                tabs within this tab
-                    -steps
-                    -Heart:
-                        withings pulse thing
-                        resting heart rate
-
-                    -sleep
-                    -cals burned
-
-        Something for running
+    Manage Fitness Data:
+        -prs
+        -Something for running
+        -lifting goals
 
 
-    will still have to log blood presaure and scale info
-        -work on getting info for these like fitbit does
-
-    find safe way to store password and username
-
-
-    when showing prs, they should be in a table format, only able to show one exercise and its always all time
-
-    datadisplay page format buttons like main
-
-    gradually pass the show graph button more data till it is completely customizable
-
-    use csv code from budget here
-
-    some fields should be search fields like exercise
-        -dont currently know how to do this
-
-    review situations when fields are required / not required based on exercise selection
-        -for exercise logging
-
-    Restricted textfield
-        -takes regex
-            -enum of restriction options
-        -use everywhere
-
-    Should have stats for whole workout (Day volume all added up)
-
-    improve aesthetics of the program
-
-    look at todos from budget to get todo ideas
-
-    place for goals and theres charts showing progress towards goal
-        -weight goal
-        -lifting goal
-            -volume reps with weight
-
-    search specific prs
-
-    be able to show total volum per workout
-
-    overall stats:
-        all total volume
-        total all reps
-        total all sets
-        mention earliest workout entry date
-
-    display:
-        -specific workouts
-        -overall
-            -volume
-            -reps
-
-        over time:
-            -select time range
-
-    user sign in
-        password in future maybe
-
-    choose timespan of a week, month, day for each column when displaying data
-
-    make with jar so launchable like a real app so i can distribute easy if someone else wants it like josh or brian
-
-    Additional actions:
-
-        Button:
-            Admin button:
-                -add user
-                    -upon creating a new user make a log dir for them
-                    -after user added reload the users in the combo box
-
-            Delete entry / user button:
-                -opens a windows explorer window and lets you do it yourself or opens list view window and lets you delete from list view
-
-            Analyze Button:
-                -has tests it runs on your data
-                    -exmple ratio between upperbody volume and lower body volume is not balanced
-                -runs tests gives results
+    Maybe Future manage misc data:
+        -random little things that could be in a tab
+        -app knows my shows i like and gets info on them
+            -which season is out / episode
+            -maybe where i am in the show
+            -when is airing next
 
 
-            Analyze Button for health:
-                -has tests it runs on your data
-                    -exmple say if a certain number is high or not
-                        -if youre on track with your goal
-                -runs tests gives results
+All that is tracked:
+
+    Goals:
+        -Steps Per day
+
+
+    By hand:
+        -Blood Preasure
+
+    Fitbit:
+        -Steps
+        -Floors
+        -Sleep
+        -Water
+        -Resting Heart Rate
+        -Calories Burned
+        -Active Minutes
+            -Catagory of activity
+
+    My Fitness Pal:
+
+        -Calories Eaten
+
+
+
+    Withings:
+
+        -Weight
+        -BodyFat
+        -Water%
+        -Bone Mass
+        -
+
+
+
+
+first tackle the data storing problem
+    reliably store data
+        -read write
+            -dont store duplicates
+            -csv style
+            -make all fitbit objects extend an interface:
+                -write out
+                -string format for writing out
+                -parse line
+
+
+color like fitbit
+    -make whole screan app
+
+foramt very closely to fitbit
+
+tab for charts and tab for data selection and viewing within a tableview
+
+Eventual goal is to expand the the main pat of the app into a tabbed pane:
+    pr / workout tracking pane
+    health pane
+
+        all fitbit info
+
+            tabs within this tab
+                -steps
+                -Heart:
+                    withings pulse thing
+                    resting heart rate
+
+                -sleep
+                -cals burned
+
+    Something for running
+
+
+will still have to log blood presaure and scale info
+    -work on getting info for these like fitbit does
+
+find safe way to store password and username
+
+
+when showing prs, they should be in a table format, only able to show one exercise and its always all time
+
+datadisplay page format buttons like main
+
+gradually pass the show graph button more data till it is completely customizable
+
+use csv code from budget here
+
+some fields should be search fields like exercise
+    -dont currently know how to do this
+
+review situations when fields are required / not required based on exercise selection
+    -for exercise logging
+
+Restricted textfield
+    -takes regex
+        -enum of restriction options
+    -use everywhere
+
+Should have stats for whole workout (Day volume all added up)
+
+improve aesthetics of the program
+
+look at todos from budget to get todo ideas
+
+place for goals and theres charts showing progress towards goal
+    -weight goal
+    -lifting goal
+        -volume reps with weight
+
+search specific prs
+
+be able to show total volum per workout
+
+overall stats:
+    all total volume
+    total all reps
+    total all sets
+    mention earliest workout entry date
+
+display:
+    -specific workouts
+    -overall
+        -volume
+        -reps
+
+    over time:
+        -select time range
+
+user sign in
+    password in future maybe
+
+choose timespan of a week, month, day for each column when displaying data
+
+make with jar so launchable like a real app so i can distribute easy if someone else wants it like josh or brian
+
+Additional actions:
+
+    Button:
+        Admin button:
+            -add user
+                -upon creating a new user make a log dir for them
+                -after user added reload the users in the combo box
+
+        Delete entry / user button:
+            -opens a windows explorer window and lets you do it yourself or opens list view window and lets you delete from list view
+
+        Analyze Button:
+            -has tests it runs on your data
+                -exmple ratio between upperbody volume and lower body volume is not balanced
+            -runs tests gives results
+
+
+        Analyze Button for health:
+            -has tests it runs on your data
+                -exmple say if a certain number is high or not
+                    -if youre on track with your goal
+            -runs tests gives results
