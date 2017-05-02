@@ -185,3 +185,7 @@
 2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@53360289 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@68e6e03a]
 2017.05.02 12:56:15 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
 2017.05.02 12:56:15 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2017.05.02 15:54:32 INFO  web[][o.s.p.StopWatcher] Stopping process
+2017.05.02 15:54:33 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2017.05.02 15:54:33 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2017.05.02 15:54:35 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is stopped

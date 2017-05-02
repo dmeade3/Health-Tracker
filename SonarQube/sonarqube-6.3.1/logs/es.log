@@ -72,3 +72,8 @@
 2017.05.02 12:56:00 INFO  es[][o.elasticsearch.node] [sonarqube] started
 2017.05.02 12:56:00 INFO  es[][o.e.gateway] [sonarqube] recovered [7] indices into cluster_state
 2017.05.02 12:56:01 INFO  es[][o.e.c.r.allocation] [sonarqube] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[components][2], [components][3], [components][3], [components][2]] ...]).
+2017.05.02 15:54:35 INFO  es[][o.s.p.StopWatcher] Stopping process
+2017.05.02 15:54:35 INFO  es[][o.elasticsearch.node] [sonarqube] stopping ...
+2017.05.02 15:54:35 INFO  es[][o.elasticsearch.node] [sonarqube] stopped
+2017.05.02 15:54:35 INFO  es[][o.elasticsearch.node] [sonarqube] closing ...
+2017.05.02 15:54:35 INFO  es[][o.elasticsearch.node] [sonarqube] closed

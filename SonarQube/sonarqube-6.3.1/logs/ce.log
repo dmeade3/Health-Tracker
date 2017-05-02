@@ -48,3 +48,5 @@
 2017.05.02 13:17:10 ERROR ce[AVvKKmZv9X05yY8lFgc2][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
 2017.05.02 13:17:10 ERROR ce[AVvKKmZv9X05yY8lFgc2][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
 2017.05.02 13:17:12 INFO  ce[AVvKKmZv9X05yY8lFgc2][o.s.s.c.t.CeWorkerCallableImpl] Executed task | project=health-tracker | type=REPORT | id=AVvKKmZv9X05yY8lFgc2 | time=3089ms
+2017.05.02 15:54:30 INFO  ce[][o.s.p.StopWatcher] Stopping process
+2017.05.02 15:54:30 INFO  ce[][o.s.ce.app.CeServer] Compute Engine shutting down...

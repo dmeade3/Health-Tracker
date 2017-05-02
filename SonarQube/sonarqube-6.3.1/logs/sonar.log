@@ -40,3 +40,11 @@ Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
 2017.05.02 12:56:15 INFO  app[][o.s.p.m.JavaProcessLauncher] Launch process[ce]: C:\Program Files\Java\jre1.8.0_91\bin\java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Djava.io.tmpdir=C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\temp -javaagent:C:\Program Files\Java\jre1.8.0_91\lib\management-agent.jar -cp ./lib/common/*;./lib/server/*;./lib/ce/*;C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\lib\jdbc\h2\h2-1.3.176.jar org.sonar.ce.app.CeServer C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\temp\sq-process870712404559241898properties
 2017.05.02 12:56:22 INFO  app[][o.s.p.m.Monitor] Process[ce] is up
 2017.05.02 12:56:22 INFO  app[][o.s.application.App] SonarQube is up
+CTRL-C trapped.  Shutting down.
+2017.05.02 15:54:30 INFO  app[][o.s.p.m.Monitor] Process[ce] is stopping
+2017.05.02 15:54:32 INFO  app[][o.s.p.m.Monitor] Process[ce] is stopped
+2017.05.02 15:54:32 INFO  app[][o.s.p.m.Monitor] Process[web] is stopping
+2017.05.02 15:54:35 INFO  app[][o.s.p.m.Monitor] Process[web] is stopped
+2017.05.02 15:54:35 INFO  app[][o.s.p.m.Monitor] Process[es] is stopping
+2017.05.02 15:54:35 INFO  app[][o.s.p.m.Monitor] Process[es] is stopped
+<-- Wrapper Stopped
