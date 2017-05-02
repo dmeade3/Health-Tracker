@@ -1,0 +1,31 @@
+
+tsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¬é†©şÿÿÿÿ8ŞÏÍÑ¼+
+Lsquid:S1135"2Complete the task associated to this TODO comment.(öË…æùÿÿÿÿ
+Nsquid:S1135"2Complete the task associated to this TODO comment.(…ïœ†8±¬ÒÑ¼+
+Ssquid:S1135"2Complete the task associated to this TODO comment.(ØÂ½¬şÿÿÿÿ8±¬ÒÑ¼+
+msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ÉŒÈ½ùÿÿÿÿ
+bsquid:S1192"FDefine a constant instead of duplicating this literal "value" 5 times.(ä­å8ÍíÉÑ¼+
+U
+squid:S106";Replace this usage of System.out or System.err by a logger.(‡ÄŞ(8î×Ñ¼+
+Usquid:S2864"4Iterate over the "entrySet" instead of the "keySet".(Ñâüİøÿÿÿÿ8î×Ñ¼+
+Wsquid:S1213";Move this constructor to comply with Java Code Conventions.(ì–ŠË8ŞÏÍÑ¼+
+Fsquid:S1166"%Either log or rethrow this exception.(Ñáö€ıÿÿÿÿ8î×Ñ¼+
+[squid:S1161":Add the "@Override" annotation above this method signature(³‰”ˆøÿÿÿÿ8Â”ÉÑ¼+
+[squid:S1161":Add the "@Override" annotation above this method signature(³‰”ˆøÿÿÿÿ8ÍíÉÑ¼+
+asquid:S2147"ECombine this catch with the one at line 442, which has the same body.(ßµ‘†8±¬ÒÑ¼+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(´÷ô‡ùÿÿÿÿ8î×Ñ¼+
+Lsquid:S1135"2Complete the task associated to this TODO comment.(öË…æùÿÿÿÿ
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¯áˆ™8ŞÏÍÑ¼+
+Tsquid:S1213"8Move this variable to comply with Java Code Conventions.(ÑÄ·‡8ŞÏÍÑ¼+
+Ssquid:S1135"2Complete the task associated to this TODO comment.(î‰õ üÿÿÿÿ8î×Ñ¼+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(´èÔøÿÿÿÿ8±¬ÒÑ¼+
+Ssquid:S1213"8Move this variable to comply with Java Code Conventions.(íÃË8ŞÏÍÑ¼+
+Tsquid:S1213"8Move this variable to comply with Java Code Conventions.(“‡‹8ŞÏÍÑ¼+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(Æ©º¼8î×Ñ¼+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8î×Ñ¼+
+jsquid:S1192"IDefine a constant instead of duplicating this literal "dateTime" 3 times.(øÅªÂúÿÿÿÿ8Â”ÉÑ¼+
+asquid:S2147"ECombine this catch with the one at line 569, which has the same body.(ßµ‘†8î×Ñ¼+
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ú˜ıì8±¬ÒÑ¼+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ØÂ½¬şÿÿÿÿ8î×Ñ¼+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ûæ½Êüÿÿÿÿ8î×Ñ¼+

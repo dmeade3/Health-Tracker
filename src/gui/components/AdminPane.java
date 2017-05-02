@@ -73,7 +73,7 @@ public class AdminPane extends TitledPane
             for (StepCount sc : fitbit.getStepCount(LocalDate.now()))
             {
 
-                // Make this string in the StepCount object
+                // Todo Make this string in the StepCount object
                 DataManager.fitbitCsvWriter("\"" + DATE_FORMAT_LONG.format(sc.getInterval().getStart().toDate()) + "\"" + "," + "\"" + sc.getValue() + "\"", "steps.csv", Constants.STEPS_CSV_HEADER);
             }
 

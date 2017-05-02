@@ -1,0 +1,12 @@
+
+‘"squid:ClassVariableVisibilityCheck"`Make SLEEP_LEVEL_RESTLESS a static final constant or non-public and provide accessors if needed.(ÂÛÚ®øÿÿÿÿ
+Rsquid:S1444"8Make this "public static SLEEP_LEVEL_ASLEEP" field final(Ï¥½Ëùÿÿÿÿ
+wsquid:S3008"]Rename this field "SLEEP_LEVEL_ASLEEP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï¥½Ëùÿÿÿÿ
+"squid:ClassVariableVisibilityCheck"^Make SLEEP_LEVEL_ASLEEP a static final constant or non-public and provide accessors if needed.(Ï¥½Ëùÿÿÿÿ
+ysquid:S3008"_Rename this field "SLEEP_LEVEL_RESTLESS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÛÚ®øÿÿÿÿ
+qsquid:S3008"\Rename this field "SLEEP_LEVEL_AWAKE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ÿŠÌ
+‰"squid:ClassVariableVisibilityCheck"]Make SLEEP_LEVEL_AWAKE a static final constant or non-public and provide accessors if needed.(“ÿŠÌ
+Ssquid:S1135"2Complete the task associated to this TODO comment.(Ï¥½Ëùÿÿÿÿ8ßºëÑ¼+
+Dsquid:EmptyStatementUsageCheck"Remove this empty statement.(¸îØÍ
+Tsquid:S1444":Make this "public static SLEEP_LEVEL_RESTLESS" field final(ÂÛÚ®øÿÿÿÿ
+Lsquid:S1444"7Make this "public static SLEEP_LEVEL_AWAKE" field final(“ÿŠÌ
