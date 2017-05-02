@@ -117,7 +117,7 @@ public class DataDisplayGridpane extends GridPane
         showData.setOnAction((ActionEvent event) ->
         {
             Stage chartStage = new Stage();
-            chartStage.setTitle("Workout Tracker Stats");
+            chartStage.setTitle("Workout Stats");
 
             // TODO Set Graphviewoption a combo box and select, if doenst comply make a popup saying the error
             // TODO make a private function that looks at the inputs and decides on a title

@@ -20,7 +20,7 @@ public class Constants
     // MISC STRINGS
     public static final String WORKOUT_CSV_HEADER = "date,bodyweight,exercise,weight,reps,sets";
 
-    public static final String PROJECT_TITLE = "Workout Tracker";
+    public static final String PROJECT_TITLE = "Health Tracker";
 
     public static final String DATA_DISPLAY_TITLE = "Data Display";
 

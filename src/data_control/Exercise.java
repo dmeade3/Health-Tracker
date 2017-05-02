@@ -23,7 +23,6 @@ public enum Exercise
   RING_TRICEP_EXT_BUTTON("Ring Tricep Extension Belly Button", true, false, TRICEPS, ABS),
 	 SANDBAG_SHOULDERING("Sandbag Shouldering",    false, false, BACK_NON_LATS_ERECTORS, ERECTORS, ABS, LATS, FOREARMS, CHEST, HAMSTRINGS, QUADS, SHOULDERS, GLUTES),
 	SANDBAG_GOOD_MORNING("Sandbag Good Morning",   false, false, BACK_NON_LATS_ERECTORS, ERECTORS, ABS, LATS, HAMSTRINGS, GLUTES),
-		  BEAR_HUG_SQUAT("Bear Hug Squat",         true,  false, BACK_NON_LATS_ERECTORS, LATS, ABS, GLUTES, QUADS, CHEST),
 	               LUNGE("Lunge",                  true,  false, QUADS, GLUTES),
 	        RING_PULLUPS("Ring Pullups",           true,  false, LATS, BICEPS, FOREARMS),
 		AROUND_THE_WORLD("Around The World",       false, true,  ABS, SHOULDERS),
