@@ -5,54 +5,67 @@ Priority:
 
 
 
-    after
-        -make everything inside a tabbed pane
-            -make custom tabs extendning tab for:
-                -sleep
-                ...
-
-
-
 
 
 
 Planning: <-- this will be all that stays
 
+    -need admin panel at top with refresh button
+        -main tab pane hols list all objects
+            -might need to make custom tab interface with refresh method
+        when refresh pressed it will go throught the list and refresh the data
+
+
+    -Data Handling:
+        Refresh button clicked / app loaded:
+            data csv's updated
+
+
+
+    -Each tab should be completely independent
     -Design with extension and other future apps in mind
         -make basic as possible down until it has to be specific
 
-    -each tab should be completely independent
+
 
     Manage Health Data:
 
         -5 min increments is what it seems to be returning from fitbit
 
         Categories:
-            -Floors
-            -Cals Burned
-            -Cals Left to Eat
-                -either get from fitbit or calc on own
-                -say if withing goal or not
-            -Heart Rate
-            -Sleep
-            -Water
-            -Active Minutes
-                -what level of activity
-            -Resting Heart Rate
-            -Velocity thing for withings scale
-            -Weight
-            -Blood Pressure
-            -Steps
-            -Exercise
-            -Health Goals
-                -mostly graphs showing progress
-                -like budget app have a line of progress bars showing progress towards the goal
-                -make a goal object with a start and end and get percentage complete method
-                -have special scene if the goal is complete
+
+            By Hand:
+                -Exercise
+
+            Fitbit:
+                -Steps
+                -Floors
+                -Sleep
+                -Water
+                -Resting Heart Rate
+                -Calories Burned
+                -Active Minutes
+                    -Catagory of activity
+                -Calories eaten
+                -Cals Left to Eat
+                    -either get from fitbit or calc on own
+                    -say if withing goal or not
+                -Heart Rate
+                -Health Goals
+                    -mostly graphs showing progress
+                    -like budget app have a line of progress bars showing progress towards the goal
+                    -make a goal object with a start and end and get percentage complete method
+                    -have special scene if the goal is complete
 
 
+            Withings:
 
-
+                -Weight
+                -BodyFat
+                -Water%
+                -Bone Mass
+                -Blood Pressure
+                -Pulse Wave Velocity
 
 
     Manage Fitness Data:
@@ -69,32 +82,6 @@ Planning: <-- this will be all that stays
             -when is airing next
 
 
-All that is tracked:
-
-    Goals:
-        -Steps Per day
-
-
-    Fitbit:
-        -Steps
-        -Floors
-        -Sleep
-        -Water
-        -Resting Heart Rate
-        -Calories Burned
-        -Active Minutes
-            -Catagory of activity
-        -Calories eaten
-
-
-    Withings:
-
-        -Weight
-        -BodyFat
-        -Water%
-        -Bone Mass
-        -Blood Preasure
-        -Artery Velocity thing
 
 
 
@@ -107,31 +94,6 @@ first tackle the data storing problem
                 -write out
                 -string format for writing out
                 -parse line
-
-
-color like fitbit
-    -make whole screan app
-
-foramt very closely to fitbit
-
-tab for charts and tab for data selection and viewing within a tableview
-
-Eventual goal is to expand the the main pat of the app into a tabbed pane:
-    pr / workout tracking pane
-    health pane
-
-        all fitbit info
-
-            tabs within this tab
-                -steps
-                -Heart:
-                    withings pulse thing
-                    resting heart rate
-
-                -sleep
-                -cals burned
-
-    Something for running
 
 
 will still have to log blood presaure and scale info

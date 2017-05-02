@@ -6,6 +6,7 @@ package fitbit;
  * @author Clay Gregory
  *
  */
-public class StepCount extends ActivityValue<Integer> {
+public class StepCount extends ActivityValue<Integer>
+{
 	
 }

@@ -5,15 +5,17 @@ package fitbit;
  * @author clay
  *
  */
-public class FitbitExecutionException extends RuntimeException {
-
+public class FitbitExecutionException extends RuntimeException
+{
 	private static final long serialVersionUID = 8555581489120167250L;
 
-	public FitbitExecutionException( ) {
+	public FitbitExecutionException( )
+	{
 		super( );
 	}
 	
-	public FitbitExecutionException( Throwable t ) {
+	public FitbitExecutionException( Throwable t )
+	{
 		super( t );
 	}
 }

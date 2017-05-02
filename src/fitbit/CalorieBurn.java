@@ -6,15 +6,17 @@ package fitbit;
  * @author Clay Gregory
  *
  */
-public class CalorieBurn extends ActivityValue<Integer> {
-
+public class CalorieBurn extends ActivityValue<Integer>
+{
 	private String activityLevel;
 		
-	public String getActivityLevel( ) {
+	public String getActivityLevel( )
+	{
 		return activityLevel;
 	}
 
-	public void setActivityLevel( String activityLevel ) {
+	public void setActivityLevel( String activityLevel )
+	{
 		this.activityLevel = activityLevel;
 	}
 }

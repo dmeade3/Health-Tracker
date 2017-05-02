@@ -7,6 +7,7 @@ package fitbit;
  * @author Clay Gregory
  *
  */
-public class FloorCount extends ActivityValue<Integer> {
+public class FloorCount extends ActivityValue<Integer>
+{
 	
 }

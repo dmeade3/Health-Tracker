@@ -124,3 +124,64 @@
 2017.05.02 09:28:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@7e113133 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@31f90c6]
 2017.05.02 09:28:58 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
 2017.05.02 09:28:58 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2017.05.02 12:55:46 INFO  web[AVvJWYZ/tzvy0DvIAACT][o.s.s.p.w.RestartAction] SonarQube restart requested by admin
+2017.05.02 12:55:49 INFO  web[][o.s.p.StopWatcher] Stopping process
+2017.05.02 12:55:50 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2017.05.02 12:55:50 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2017.05.02 12:55:51 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is stopped
+2017.05.02 12:56:02 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2017.05.02 12:56:02 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2017.05.02 12:56:03 INFO  web[][o.e.plugins] [Ahmet Abdol] modules [], plugins [], sites []
+2017.05.02 12:56:04 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.02 12:56:04 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.3.1.21392 / 54be39f47d188340b14d4d9236bbf3d43b1db2ae
+2017.05.02 12:56:04 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2017.05.02 12:56:04 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\data
+2017.05.02 12:56:04 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.02 12:56:05 WARN  web[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Code Smells [smells] installed
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin SonarJava [java] updated to version 4.8.0.9441
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin PMD [pmd] installed
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Sonargraph Integration [sonargraphintegration] installed
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Sonargraph [Sonargraph] installed
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin C# / 5.7.0.612 / 6c7d5830a41c62429eade2ead6e3fdf12a388856
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Code Smells / 4.0.0
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Git / 1.2 / a713dd64daf8719ba4e7f551f9a1966c62690c17
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PHP / 2.9.2.1744 / 949b3433f56b501573b08243bc8485b0585ad5a1
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PMD / 2.6 / f419f834b4bea51f9b6da33517b7f6186db5c066
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Python / 1.7.0.1195 / 5c015d7ae2353373d3dc52a465d1cd805ab6535a
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SVN / 1.4.0.522 / 1309b92a587d1c8fd55a2981c69ceadc1f79e79c
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJS / 2.20.0.4207 / d65285af4c43250613fa9d176207aeda9176d20a
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJava / 4.8.0.9441 / 250ec3a2fa0e0809b972f7c6c759dfc7f545b9f0
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph / 3.5
+2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph Integration / 2.0.1
+2017.05.02 12:56:07 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Architecture' (sonargraphintegration_architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structure' (sonargraphintegration_structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structural Debt' (sonargraphintegration_structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structural Debt Dashbox' (sonargraph.structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structure Dashbox' (sonargraph.structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Architecture Dashbox' (sonargraph.architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.02 12:56:08 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2017.05.02 12:56:08 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2017.05.02 12:56:09 INFO  web[][o.s.s.r.RegisterRules] Register rules
+2017.05.02 12:56:13 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
+2017.05.02 12:56:15 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2017.05.02 12:56:15 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index authorization
+2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index issues
+2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index tests
+2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index users
+2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index views
+2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index project measures
+2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index components
+2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@31e94cb7 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@274ecc6c]
+2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@3e4a14e3 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@453d7b69]
+2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@2d466636 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@43459271]
+2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@23ebf9ec [pattern=org.sonar.api.web.ServletFilter$UrlPattern@7969de59]
+2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@57c8a4fc [pattern=org.sonar.api.web.ServletFilter$UrlPattern@2b101370]
+2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@12f523c6 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@89a20]
+2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@53360289 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@68e6e03a]
+2017.05.02 12:56:15 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
+2017.05.02 12:56:15 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000

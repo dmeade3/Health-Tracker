@@ -1,5 +1,5 @@
 projectKey=health-tracker
 serverUrl=http://localhost:9000
 dashboardUrl=http://localhost:9000/dashboard/index/health-tracker
-ceTaskId=AVvJW0X8vuDQxizFec8V
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AVvJW0X8vuDQxizFec8V
+ceTaskId=AVvKKmZv9X05yY8lFgc2
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVvKKmZv9X05yY8lFgc2

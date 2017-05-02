@@ -5,6 +5,8 @@ import org.apache.log4j.Logger;
 import util.ProgramInfo;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,6 +142,82 @@ public class DataManager
                 bw.write(workoutEntry.toString() + "\n");
 
                 writeToConsole("Adding entry: " + workoutEntry.toString());
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                if (bw != null)
+                {
+                    bw.close();
+                }
+
+                if (fw != null)
+                {
+                    fw.close();
+                }
+            }
+            catch (IOException ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    public static void fitbitCsvWriter(String writeOutString, String filename, String header)
+    {
+        // Make from here down a generic function to write to a csv file if entry doesnt exist
+        // Fitbit csv writer
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+
+        // TODO make the user dynamic
+        String filePath = LOGS_PATH + System.getProperty("file.separator") + "David" + System.getProperty("file.separator") + filename;
+
+        String date = writeOutString.split(",")[0];
+
+        try
+        {
+            File file = new File(filePath);
+            // if file doesnt exists, then create it
+            if (!file.exists())
+            {
+                try
+                {
+                    file.createNewFile();
+
+                    // true = append file
+                    fw = new FileWriter(file.getAbsoluteFile(), true);
+                    bw = new BufferedWriter(fw);
+
+                    logger.info("Creating new log file: " + filePath);
+
+                    bw.write(header + "\n" + writeOutString + "\n");
+                }
+                catch (IOException ioExp)
+                {
+                    logger.warn("File path cannot be used: " + file.getAbsolutePath());
+
+                    writeToConsole("Path not able to be created, User may be wrong / not exist");
+                }
+            }
+            else
+            {
+                // true = append file
+                fw = new FileWriter(file.getAbsoluteFile(), true);
+                bw = new BufferedWriter(fw);
+
+                String currentContent= new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
+
+                if (!currentContent.contains(date))
+                {
+                    bw.write(writeOutString + "\n");
+                }
             }
         }
         catch (IOException e)

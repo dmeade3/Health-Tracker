@@ -7,15 +7,17 @@ package fitbit;
  * @author Clay Gregory
  *
  */
-public class ActivityValue<V extends Number> extends FitbitInterval {
-		
+public class ActivityValue<V extends Number> extends FitbitInterval
+{
 	private V value;
 
-	public V getValue( ) {
+	public V getValue( )
+	{
 		return this.value;
 	}
 	
-	public void setValue( V value ) {
+	public void setValue( V value )
+	{
 		this.value = value;
 	}
 }

@@ -16,48 +16,57 @@ import java.util.List;
  * @author Clay Gregory
  *
  */
-public class SleepSession extends FitbitInterval {
-	
+public class SleepSession extends FitbitInterval
+{
 	public static class SleepLevel extends ActivityValue<Integer>{ };
-	
-	public static int SLEEP_LEVEL_ASLEEP = 1;
-	
+	public static int SLEEP_LEVEL_ASLEEP = 1; // TODO make this into an enum
 	public static int SLEEP_LEVEL_RESTLESS = 2;
-	
 	public static int SLEEP_LEVEL_AWAKE = 3;
 		
 	private List<SleepLevel> sleepLevels = Collections.emptyList( );
 
-	public Duration getDurationAsleep( ) {
+	public Duration getDurationAsleep( )
+	{
 		return getDurationAtLevel( SLEEP_LEVEL_ASLEEP );
 	}
 
-	public Duration getDurationAwake( ) {
+	public Duration getDurationAwake( )
+	{
 		return getDurationAtLevel( SLEEP_LEVEL_AWAKE );
 	}
 	
-	public Duration getDurationInBed( ) {
+	public Duration getDurationInBed( )
+	{
 		return this.getInterval( ).toDuration( );
 	}
 	
-	public Duration getDurationRestless( ) {
+	public Duration getDurationRestless( )
+	{
 		return getDurationAtLevel( SLEEP_LEVEL_RESTLESS );
 	}
 	
-	public List<SleepLevel> getSleepLevels( ) {
+	public List<SleepLevel> getSleepLevels( )
+	{
 		return this.sleepLevels;
 	}
 	
-	public void setSleepLevels( List<SleepLevel> sleepLevels ) {
+	public void setSleepLevels( List<SleepLevel> sleepLevels )
+	{
 		this.sleepLevels = sleepLevels;
 	}
 	
-	protected Duration getDurationAtLevel( int sleelLevel ) {
+	protected Duration getDurationAtLevel( int sleelLevel )
+	{
 		Duration duration = new Duration( 0 );
-		for ( SleepLevel level : this.getSleepLevels( ) ) {
+
+		for ( SleepLevel level : this.getSleepLevels( ) )
+		{
 			if ( level.getValue( ) == sleelLevel )
-				duration = duration.plus( level.getInterval( ).toDuration( ) );
+			{
+				duration = duration.plus(level.getInterval().toDuration());
+			}
 		}
+
 		return duration;
 	}
 }

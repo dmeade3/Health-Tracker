@@ -63,19 +63,21 @@ public class Fitbit
 	* */
 
 
-	protected static abstract class ActivityResponseHandler extends ResponseHandler {
-		
+	protected static abstract class ActivityResponseHandler extends ResponseHandler
+	{
 		/**
 		* Receives activity data points from response
 		* 
 		* @param interval parsed from description
 		* @param dataPoint JSON data point at interval
 		*/
-		protected void processDataPoint( Interval interval, JsonObject dataPoint ) {
+		protected void processDataPoint( Interval interval, JsonObject dataPoint )
+		{
 		//optional to implement, default noop
 		}
 		
-		protected void processResponse( String json ) {
+		protected void processResponse( String json )
+		{
 			
 			JsonParser parser = new JsonParser( );
 			
@@ -87,8 +89,8 @@ public class Fitbit
 			
 			int intervalSize = computeIntervalSize( dataPoints );
 
-			for ( JsonElement dataPoint : dataPoints ) {
-				
+			for ( JsonElement dataPoint : dataPoints )
+			{
 				JsonObject dataPointObject = dataPoint.getAsJsonObject( );
 				String dateTime = dataPointObject.get( "dateTime" ).getAsString( );
 				
@@ -98,23 +100,23 @@ public class Fitbit
 			}
 		}
 		
-		private int computeIntervalSize( JsonArray dataPoints ) {
-			
+		private int computeIntervalSize(JsonArray dataPoints)
+		{
 			DateTime previousDateTime = null;
 			int intervalSum = 0;
 			float intervalCount = 0;
-			for ( JsonElement dataPoint : dataPoints ) {
 
-				String dateTime = dataPoint
-					.getAsJsonObject( )
-					.get( "dateTime" )
-					.getAsString( );
+			for (JsonElement dataPoint : dataPoints)
+			{
+				String dateTime = dataPoint.getAsJsonObject().get("dateTime").getAsString();
 				
 				DateTime dt = DATE_TIME_FORMAT.parseDateTime( dateTime );
-				if ( previousDateTime != null ) {
+				if (previousDateTime != null)
+				{
 					intervalCount++;
 					intervalSum += Minutes.minutesBetween( previousDateTime, dt ).getMinutes( );
 				}
+
 				previousDateTime = dt;
 			}
 			
@@ -122,12 +124,12 @@ public class Fitbit
 		}
 	}
 	
-	protected static class WeightResponseHandler extends ResponseHandler {
+	protected static class WeightResponseHandler extends ResponseHandler
+	{
+		List<Weight> weights = new ArrayList<>( );
 		
-		List<Weight> weights = new ArrayList<Weight>( );
-		
-		protected void processResponse( String json ) {
-			
+		protected void processResponse( String json )
+		{
 			JsonParser parser = new JsonParser( );
 			
 			JsonArray dataPoints = parser.parse( json ).getAsJsonObject( )
@@ -136,8 +138,8 @@ public class Fitbit
 				.get( "weight" ).getAsJsonObject( )
 				.get( "dataPoints" ).getAsJsonArray( );
 			
-			for ( JsonElement dataPoint : dataPoints ) {
-
+			for ( JsonElement dataPoint : dataPoints )
+			{
 				JsonObject dataPointObject = dataPoint.getAsJsonObject( );
 				
 				Weight w = new Weight( );
@@ -150,7 +152,8 @@ public class Fitbit
 			}
 		}
 		
-		public List<Weight> getWeights( ) {
+		public List<Weight> getWeights( )
+		{
 			return this.weights;
 		}
 	}
@@ -184,21 +187,25 @@ public class Fitbit
 	 * @return Fitbit client
 	 * @throws FitbitAuthenticationException
 	 */
-	public static Fitbit create( String email, String password ) throws FitbitAuthenticationException {
+	public static Fitbit create( String email, String password ) throws FitbitAuthenticationException
+	{
 		return new Fitbit( email, password );
 	}
 	
-	protected static HttpClient createHttpClient( ) {
-		return HttpClientBuilder.create( )
-			.setRedirectStrategy( new DefaultRedirectStrategy( ) {
-				@Override
-				public boolean isRedirected( HttpRequest request, HttpResponse response, HttpContext context ) throws ProtocolException {
-					int responseCode = response.getStatusLine( ).getStatusCode( );
-					return super.isRedirected( request, response, context ) || responseCode == 301 || responseCode == 302;
-				}
-			} )
-			.setDefaultRequestConfig( RequestConfig.custom( ).setCookieSpec( CookieSpecs.BROWSER_COMPATIBILITY ).build( ) )
-			.build( );
+	protected static HttpClient createHttpClient()
+	{
+		return HttpClientBuilder.create().setRedirectStrategy(new DefaultRedirectStrategy()
+		{
+			@Override
+			public boolean isRedirected( HttpRequest request, HttpResponse response, HttpContext context ) throws ProtocolException
+			{
+				int responseCode = response.getStatusLine( ).getStatusCode( );
+
+				return super.isRedirected( request, response, context ) || responseCode == 301 || responseCode == 302;
+			}
+		} )
+		.setDefaultRequestConfig( RequestConfig.custom( ).setCookieSpec( CookieSpecs.BROWSER_COMPATIBILITY ).build( ) )
+		.build( );
 	}
 	
 	private HttpClient httpClient;
@@ -215,7 +222,8 @@ public class Fitbit
 	 * @param password of Fitbit account
 	 * @throws FitbitAuthenticationException if authentication fails
 	 */
-	public Fitbit( String email, String password ) throws FitbitAuthenticationException {
+	public Fitbit( String email, String password ) throws FitbitAuthenticationException
+	{
 		this.httpClient = createHttpClient( );
 		this.userId = authenticate( email, password );
 	}
@@ -229,7 +237,8 @@ public class Fitbit
 	 * 
 	 * @return true if successful
 	 */
-	public boolean enableLocaleOverride( ) {
+	public boolean enableLocaleOverride( )
+	{
 		try {
 			URIBuilder builder = new URIBuilder( I18N_URL );
 			builder.addParameter( "locale", "en_US" );
@@ -247,13 +256,14 @@ public class Fitbit
 	 * @param date of activity logs
 	 * @return List of {@link CalorieBurn}s for date specified
 	 */
-	public List<CalorieBurn> getCaloriesBurned( LocalDate date ) {
-		
+	public List<CalorieBurn> getCaloriesBurned( LocalDate date )
+	{
 		final List<CalorieBurn> result = new ArrayList<CalorieBurn>( );
-		this.getGraphData( "intradayCaloriesBurned", date, null, new ActivityResponseHandler( ) {
-			
+		this.getGraphData( "intradayCaloriesBurned", date, null, new ActivityResponseHandler( )
+		{
 			@Override
-			protected void processDataPoint( Interval interval, JsonObject dataPoint ) {
+			protected void processDataPoint( Interval interval, JsonObject dataPoint )
+			{
 				CalorieBurn cb = new CalorieBurn( );
 				cb.setValue( dataPoint.get( "value" ).getAsInt( ) );
 				cb.setInterval( interval );
@@ -261,6 +271,7 @@ public class Fitbit
 				result.add( cb );
 			}
 		} );
+
 		return result;
 	}
 	
@@ -270,20 +281,21 @@ public class Fitbit
 	 * @param date of activity logs
 	 * @return List of {@link FloorCount}s for specified date
 	 */
-	public List<FloorCount> getFloorCount( LocalDate date ) {
-		
-		
+	public List<FloorCount> getFloorCount( LocalDate date )
+	{
 		final List<FloorCount> result = new ArrayList<FloorCount>( );
-		this.getGraphData( "intradayFloors", date, null, new ActivityResponseHandler( ) {
-			
+		this.getGraphData( "intradayFloors", date, null, new ActivityResponseHandler( )
+		{
 			@Override
-			protected void processDataPoint( Interval interval, JsonObject dataPoint ) {
+			protected void processDataPoint( Interval interval, JsonObject dataPoint )
+			{
 				FloorCount fc = new FloorCount( );
 				fc.setValue( dataPoint.get( "value" ).getAsInt( ) );
 				fc.setInterval( interval );
 				result.add( fc );
 			}
 		} );
+
 		return result;
 	}
 	
@@ -297,18 +309,20 @@ public class Fitbit
 
 	// TODO
 
-	public List<SleepSession> getSleepSessions( LocalDate date ) {
-		
+	public List<SleepSession> getSleepSessions( LocalDate date )
+	{
 		final List<SleepSession> result = new ArrayList<>( );
-		for ( String sessionId : getSleepSessionIds( date ) ) {
-			
+		for ( String sessionId : getSleepSessionIds( date ) )
+		{
 			SleepSession session = new SleepSession( );
 			final List<SleepLevel> levels = new ArrayList<>( );
 			session.setSleepLevels( levels );
 			
-			getGraphData( "intradaySleep", date, Collections.singletonMap( "arg", sessionId ), new ActivityResponseHandler( ) {
+			getGraphData( "intradaySleep", date, Collections.singletonMap( "arg", sessionId ), new ActivityResponseHandler( )
+			{
 				@Override
-				protected void processDataPoint( Interval interval, JsonObject dataPoint ) {
+				protected void processDataPoint( Interval interval, JsonObject dataPoint )
+				{
 					SleepLevel sl = new SleepLevel( );
 					sl.setValue( dataPoint.get( "value" ).getAsInt( ) );
 					sl.setInterval( interval );
@@ -316,7 +330,8 @@ public class Fitbit
 				}
 			} );
 			
-			if ( !levels.isEmpty( ) ) {
+			if ( !levels.isEmpty( ) )
+			{
 				session.setInterval(
 					new Interval(
 						levels.get( 0 ).getInterval( ).getStart( ),
@@ -337,12 +352,14 @@ public class Fitbit
 	 * @param date of activity logs
 	 * @return List of {@link StepCount}s for date specified
 	 */
-	public List<StepCount> getStepCount( LocalDate date ) {
-		
+	public List<StepCount> getStepCount( LocalDate date )
+	{
 		final List<StepCount> result = new ArrayList<StepCount>( );
-		this.getGraphData( "intradaySteps", date, null, new ActivityResponseHandler( ) {
+		this.getGraphData( "intradaySteps", date, null, new ActivityResponseHandler( )
+		{
 			@Override
-			protected void processDataPoint( Interval interval, JsonObject dataPoint ) {
+			protected void processDataPoint( Interval interval, JsonObject dataPoint )
+			{
 				StepCount sc = new StepCount( );
 				sc.setValue( dataPoint.get( "value" ).getAsInt( ) );
 				sc.setInterval( interval );
@@ -360,8 +377,8 @@ public class Fitbit
 	 * @param to date of weight interval end
 	 * @return List of {@link Weight}s for interval specified
 	 */
-	public List<Weight> getWeights( LocalDate from, LocalDate to ) {
-		
+	public List<Weight> getWeights( LocalDate from, LocalDate to )
+	{
 		WeightResponseHandler responseHandler = new WeightResponseHandler( );
 		this.getGraphData( "weight", from, to, null, responseHandler );
 	
@@ -449,10 +466,12 @@ public class Fitbit
 	 * @see #enableLocaleOverride()
 	 * @return true if successful
 	 */
-	public boolean restoreUserLocale( ) {
-		try {
-			
-			if ( this.userLocale != null ) {
+	public boolean restoreUserLocale( )
+	{
+		try
+		{
+			if ( this.userLocale != null )
+			{
 				URIBuilder builder = new URIBuilder( I18N_URL );
 				builder.addParameter( "locale", this.userLocale );
 				HttpGet get = new HttpGet( builder.build( ).toURL( ).toString( ) );
@@ -461,16 +480,18 @@ public class Fitbit
 			}
 			
 			return false;
-			
-		} catch( Exception e ) {
+		}
+		catch( Exception e )
+		{
 			throw new FitbitExecutionException( e );
 		}
 	}
 	
-	protected String authenticate( String email, String password ) throws FitbitAuthenticationException {
-
+	protected String authenticate( String email, String password ) throws FitbitAuthenticationException
+	{
 		String response = null;
-		try {
+		try
+		{
 			//go ahead and consume it – if on Android, we don't have #consume on EntityUtils
 			EntityUtils.toString( this.getHttpClient( ).execute( new HttpGet( LOGIN_URL ) ).getEntity( ) );
 			
@@ -490,38 +511,48 @@ public class Fitbit
 			if ( this.userLocale != null )
 				this.userLocale = this.userLocale.replace("-", "_" );
 			
-		} catch( Exception e ) {
+		}
+		catch( Exception e )
+		{
 			throw new FitbitExecutionException( e );
 		}
 		
 		Matcher m = Pattern.compile( "./user/([A-Z0-9]+)" ).matcher( response );
+
 		if ( !m.find( ) )
 			throw new FitbitAuthenticationException( );
 		
 		return m.group( 1 );
 	}
 	
-	protected URL buildGraphUrl( String type, LocalDate from, LocalDate to, Map<String,String> customParams ) throws MalformedURLException, URISyntaxException {
-		
-		URIBuilder builder = new URIBuilder( GRAPH_BASE_URL );
-		builder.addParameter( "userId", this.getUserId( ) );
-		builder.addParameter( "type", type );
-		builder.addParameter( "apiFormat", "json" );
-		builder.addParameter( "dateFrom", DATE_FORMAT.print( from ) );
-		builder.addParameter( "dateTo", DATE_FORMAT.print( to ) );
-		
-		if ( customParams != null )
-			for ( String key : customParams.keySet( ) )
-				builder.addParameter( key, customParams.get( key ) );
+	protected URL buildGraphUrl( String type, LocalDate from, LocalDate to, Map<String,String> customParams ) throws MalformedURLException, URISyntaxException
+	{
+
+		URIBuilder builder = new URIBuilder(GRAPH_BASE_URL);
+		builder.addParameter("userId", this.getUserId());
+		builder.addParameter("type", type);
+		builder.addParameter("apiFormat", "json");
+		builder.addParameter("dateFrom", DATE_FORMAT.print(from));
+		builder.addParameter("dateTo", DATE_FORMAT.print(to));
+
+		if (customParams != null)
+		{
+			for (String key : customParams.keySet())
+			{
+				builder.addParameter(key, customParams.get(key));
+			}
+		}
 		
 		return builder.build( ).toURL( );
 	}
 	
-	protected void getGraphData( String type, LocalDate date, Map<String,String> customParams, ResponseHandler handler ) {
+	protected void getGraphData( String type, LocalDate date, Map<String,String> customParams, ResponseHandler handler )
+	{
 		getGraphData( type, date, date, customParams, handler );
 	}
 	
-	protected void getGraphData( String type, LocalDate from, LocalDate to, Map<String,String> customParams, ResponseHandler handler ) {
+	protected void getGraphData( String type, LocalDate from, LocalDate to, Map<String,String> customParams, ResponseHandler handler )
+	{
 		try
 		{
 			HttpGet get = new HttpGet( buildGraphUrl( type, from, to, customParams ).toString( ) );
@@ -545,14 +576,16 @@ public class Fitbit
 		}
 	}
 	
-	protected HttpClient getHttpClient( ) {
+	protected HttpClient getHttpClient( )
+	{
 		return this.httpClient;
 	}
 	
 	protected List<String> getSleepSessionIds( LocalDate date )
 	{
 		List<String> sessions = new ArrayList<String>( );
-		try {
+		try
+		{
 			HttpGet pageGet = new HttpGet( SLEEP_BASE_URL + URL_DATE_FORMAT.print( date ) );
 			HttpResponse response = this.getHttpClient( ).execute( pageGet );
 			if ( response.getStatusLine( ).getStatusCode( ) != 200 )
@@ -560,10 +593,13 @@ public class Fitbit
 			
 			String pageResult = EntityUtils.toString( response.getEntity( ) );
 			Matcher m = Pattern.compile( "sleepRecord\\.([0-9]+)" ).matcher( pageResult );
-			while ( m.find( ) ) {
+			while ( m.find( ) )
+			{
 				sessions.add( m.group( 1 ) );
 			}
-		} catch( IOException e ) {
+		}
+		catch( IOException e )
+		{
 			throw new FitbitExecutionException( e );
 		}
 		
