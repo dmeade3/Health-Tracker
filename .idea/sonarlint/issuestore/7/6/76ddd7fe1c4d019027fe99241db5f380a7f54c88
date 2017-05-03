@@ -1,50 +1,0 @@
-
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(äÈÕ¯øÿÿÿÿ
-Ksquid:S2696"6Make the enclosing method "static" or remove this set.(àõ´Ò
-vsquid:S1188"\Reduce this anonymous class number of lines from 23 to at most 20, or make it a named class.(—ñ’‡þÿÿÿÿ
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ë¹Ÿÿþÿÿÿÿ
-~squid:S1450"dRemove the "additionalWeightLabel" field and declare it as a local variable in the relevant methods.(Ý‘ñÒüÿÿÿÿ
-ssquid:S1450"^Remove the "bodyweightLabel" field and declare it as a local variable in the relevant methods.(ä©ãÀ
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(¡«Ôáûÿÿÿÿ
-vsquid:S1488"\Immediately return this expression instead of assigning it to the temporary variable "cell".(±Â ðøÿÿÿÿ
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(÷µÆÉûÿÿÿÿ
-`squid:S1132"FMove the "" string literal on the left side of this string comparison.(Ñ¿øÅúÿÿÿÿ
-Gsquid:S1135"2Complete the task associated to this TODO comment.(…ïœ†
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(òë´¢ýÿÿÿÿ
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(º¢üØûÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ž£Öþÿÿÿÿ
-Dsquid:S2093"*Change this "try" to a try-with-resources.(ç£êúÿÿÿÿ
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(åéÔãýÿÿÿÿ
-lsquid:S1450"XRemove the "userLabel" field and declare it as a local variable in the relevant methods.(¼Ã®w
-lsquid:S1450"XRemove the "dateLabel" field and declare it as a local variable in the relevant methods.(ñ«ð
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(« Ò©ÿÿÿÿÿ
-^squid:S1188"DReduce this lambda expression number of lines from 29 to at most 20.(ð·é„ùÿÿÿÿ
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(˜ïïÕüÿÿÿÿ
-Ksquid:S1481"6Remove this unused "displayAdminStage" local variable.(ÀÊûò
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(âšñåúÿÿÿÿ
-Ssquid:S1135"2Complete the task associated to this TODO comment.(Â¿„ãúÿÿÿÿ8èôÍ¼+
-msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(öÝé°üÿÿÿÿ
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(¨ÏÄèûÿÿÿÿ
-Ksquid:S2696"6Make the enclosing method "static" or remove this set.(ôºÍ
-Ksquid:S2696"6Make the enclosing method "static" or remove this set.(Æ¨Ðö
-?squid:S1166"%Either log or rethrow this exception.(É˜ÙŽúÿÿÿÿ
-\squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Õ³Ú—
-V
-squid:S899"BDo something with the "boolean" value returned by "createNewFile".(£ªÝÊ
-rsquid:S1450"XRemove the "setsLabel" field and declare it as a local variable in the relevant methods.(èõâÁýÿÿÿÿ
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(úß³°ùÿÿÿÿ
-lsquid:S1450"WRemove the "listInfo" field and declare it as a local variable in the relevant methods.(‚ ú
-Ksquid:S2696"6Make the enclosing method "static" or remove this set.(Ç‚ÄÃ
-Gsquid:S1135"2Complete the task associated to this TODO comment.(›½
-Ksquid:S2696"6Make the enclosing method "static" or remove this set.(Š°€á
-Ksquid:S2696"6Make the enclosing method "static" or remove this set.(»Þ›ö
-Ksquid:S2696"6Make the enclosing method "static" or remove this set.(´¡ç 
-_squid:S2259"ENullPointerException might be thrown as 'fileWriter' is nullable here(§¾áïûÿÿÿÿ
-Psquid:S2696"6Make the enclosing method "static" or remove this set.(°õ±‚úÿÿÿÿ
-qsquid:S1450"\Remove the "exerciseLabel" field and declare it as a local variable in the relevant methods.(ŠÂŽ²
-Ksquid:S2696"6Make the enclosing method "static" or remove this set.(¯»òÕ
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-?squid:S1166"%Either log or rethrow this exception.(É˜ÙŽúÿÿÿÿ
-rsquid:S1450"XRemove the "repsLabel" field and declare it as a local variable in the relevant methods.(à£àùøÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(öï›™ýÿÿÿÿ

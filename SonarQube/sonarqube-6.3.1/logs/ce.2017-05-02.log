@@ -1,0 +1,52 @@
+2017.05.01 22:20:42 INFO  ce[][o.s.p.ProcessEntryPoint] Starting ce
+2017.05.01 22:20:42 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2017.05.01 22:20:43 INFO  ce[][o.e.plugins] [Annex] modules [], plugins [], sites []
+2017.05.01 22:20:43 INFO  ce[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.01 22:20:43 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.01 22:20:43 WARN  ce[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.01 22:20:44 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\David\Desktop\Intelij Workspace\Workout-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.01 22:20:44 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2017.05.01 22:20:52 INFO  ce[][o.s.s.c.q.PurgeCeActivities] Delete the Compute Engine tasks created before Wed Nov 02 22:20:52 EDT 2016
+2017.05.01 22:20:52 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is up
+2017.05.01 22:33:03 INFO  ce[AVvHAPkoYTaBQR4pNORH][o.s.s.c.t.CeWorkerCallableImpl] Execute task | project=java-sonar-runner-simple | type=REPORT | id=AVvHAPkoYTaBQR4pNORH
+2017.05.01 22:33:06 INFO  ce[AVvHAPkoYTaBQR4pNORH][o.s.s.c.t.CeWorkerCallableImpl] Executed task | project=java-sonar-runner-simple | type=REPORT | id=AVvHAPkoYTaBQR4pNORH | time=3787ms
+2017.05.01 22:34:11 INFO  ce[AVvHAghXYTaBQR4pNORJ][o.s.s.c.t.CeWorkerCallableImpl] Execute task | project=health-tracker | type=REPORT | id=AVvHAghXYTaBQR4pNORJ
+2017.05.01 22:34:13 INFO  ce[AVvHAghXYTaBQR4pNORJ][o.s.s.c.t.CeWorkerCallableImpl] Executed task | project=health-tracker | type=REPORT | id=AVvHAghXYTaBQR4pNORJ | time=2069ms
+2017.05.02 09:29:00 INFO  ce[][o.s.p.ProcessEntryPoint] Starting ce
+2017.05.02 09:29:00 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2017.05.02 09:29:01 INFO  ce[][o.e.plugins] [Feline] modules [], plugins [], sites []
+2017.05.02 09:29:02 INFO  ce[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.02 09:29:02 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.02 09:29:03 WARN  ce[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.02 09:29:04 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.02 09:29:04 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2017.05.02 09:29:05 INFO  ce[][o.s.s.c.q.PurgeCeActivities] Delete the Compute Engine tasks created before Thu Nov 03 09:29:05 EDT 2016
+2017.05.02 09:29:05 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is up
+2017.05.02 09:30:54 INFO  ce[AVvJW0X8vuDQxizFec8V][o.s.s.c.t.CeWorkerCallableImpl] Execute task | project=health-tracker | type=REPORT | id=AVvJW0X8vuDQxizFec8V
+2017.05.02 09:31:01 INFO  ce[AVvJW0X8vuDQxizFec8V][o.s.s.c.t.CeWorkerCallableImpl] Executed task | project=health-tracker | type=REPORT | id=AVvJW0X8vuDQxizFec8V | time=7782ms
+2017.05.02 12:55:47 INFO  ce[][o.s.p.StopWatcher] Stopping process
+2017.05.02 12:55:47 INFO  ce[][o.s.ce.app.CeServer] Compute Engine shutting down...
+2017.05.02 12:56:17 INFO  ce[][o.s.p.ProcessEntryPoint] Starting ce
+2017.05.02 12:56:17 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2017.05.02 12:56:18 INFO  ce[][o.e.plugins] [Aleta Ogord] modules [], plugins [], sites []
+2017.05.02 12:56:18 INFO  ce[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.02 12:56:18 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.02 12:56:18 WARN  ce[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.02 12:56:19 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.02 12:56:20 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2017.05.02 12:56:22 INFO  ce[][o.s.s.c.q.PurgeCeActivities] Delete the Compute Engine tasks created before Thu Nov 03 12:56:22 EDT 2016
+2017.05.02 12:56:22 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is up
+2017.05.02 13:12:47 INFO  ce[AVvKJmVa9X05yY8lFgc1][o.s.s.c.t.CeWorkerCallableImpl] Execute task | project=health-tracker | type=REPORT | id=AVvKJmVa9X05yY8lFgc1
+2017.05.02 13:12:50 ERROR ce[AVvKJmVa9X05yY8lFgc1][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
+2017.05.02 13:12:50 ERROR ce[AVvKJmVa9X05yY8lFgc1][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
+2017.05.02 13:12:50 ERROR ce[AVvKJmVa9X05yY8lFgc1][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
+2017.05.02 13:12:50 ERROR ce[AVvKJmVa9X05yY8lFgc1][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
+2017.05.02 13:12:54 INFO  ce[AVvKJmVa9X05yY8lFgc1][o.s.s.c.t.CeWorkerCallableImpl] Executed task | project=health-tracker | type=REPORT | id=AVvKJmVa9X05yY8lFgc1 | time=7126ms
+2017.05.02 13:17:08 INFO  ce[AVvKKmZv9X05yY8lFgc2][o.s.s.c.t.CeWorkerCallableImpl] Execute task | project=health-tracker | type=REPORT | id=AVvKKmZv9X05yY8lFgc2
+2017.05.02 13:17:10 ERROR ce[AVvKKmZv9X05yY8lFgc2][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
+2017.05.02 13:17:10 ERROR ce[AVvKKmZv9X05yY8lFgc2][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
+2017.05.02 13:17:10 ERROR ce[AVvKKmZv9X05yY8lFgc2][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
+2017.05.02 13:17:10 ERROR ce[AVvKKmZv9X05yY8lFgc2][c.h.s.m.SonargraphMeasureComputer] Not processing for module: health-tracker
+2017.05.02 13:17:12 INFO  ce[AVvKKmZv9X05yY8lFgc2][o.s.s.c.t.CeWorkerCallableImpl] Executed task | project=health-tracker | type=REPORT | id=AVvKKmZv9X05yY8lFgc2 | time=3089ms
+2017.05.02 15:54:30 INFO  ce[][o.s.p.StopWatcher] Stopping process
+2017.05.02 15:54:30 INFO  ce[][o.s.ce.app.CeServer] Compute Engine shutting down...

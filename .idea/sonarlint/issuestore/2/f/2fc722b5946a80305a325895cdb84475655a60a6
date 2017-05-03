@@ -1,44 +1,0 @@
-
-Isquid:S1066"/Merge this if statement with the enclosing one.(ó×ºŒıÿÿÿÿ
-Ksquid:S2093"*Change this "try" to a try-with-resources.(ç£êúÿÿÿÿ8³¦ªÒ¼+
-b
-squid:S134"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(£¬Å¶
-[
-squid:S899"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‰Ğ‘Ñÿÿÿÿÿ
-csquid:S1192"ODefine a constant instead of duplicating this literal "file.separator" 8 times.(ÓäÊ
-Msquid:S1135"2Complete the task associated to this TODO comment.(ÑãÉX8³¦ªÒ¼+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8³¦ªÒ¼+
-Fsquid:S1166"%Either log or rethrow this exception.(Ôéƒøıÿÿÿÿ8³¦ªÒ¼+
-?squid:S1166"%Either log or rethrow this exception.(É˜Ùúÿÿÿÿ
-Fsquid:S1166"%Either log or rethrow this exception.(“–†ÿÿÿÿÿ8³¦ªÒ¼+
-msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(æ„ÇŒıÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÕØû×ûÿÿÿÿ
-_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ù£¸
-g
-squid:S134"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(ó×ºŒıÿÿÿÿ
-Dsquid:S2093"*Change this "try" to a try-with-resources.(ç£êúÿÿÿÿ
-Osquid:S1141"5Extract this nested try block into a separate method.(ç£êúÿÿÿÿ
-@squid:S1172"+Remove this unused method parameter "date".(÷Ö¸
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-8squid:S1148"#Use a logger to log this exception.(Ç’Çê
-Vsquid:S1141"5Extract this nested try block into a separate method.(ç£êúÿÿÿÿ8³¦ªÒ¼+
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(şšÕ‰
-?squid:S1166"%Either log or rethrow this exception.(“–†ÿÿÿÿÿ
-b
-squid:S899"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ8³¦ªÒ¼+
-?squid:S1148"#Use a logger to log this exception.(Ç’Çê8³¦ªÒ¼+
-Fsquid:S1166"%Either log or rethrow this exception.(É˜Ùúÿÿÿÿ8³¦ªÒ¼+
-Dsquid:S1066"/Merge this if statement with the enclosing one.(£¬Å¶
-?squid:S1166"%Either log or rethrow this exception.(É˜Ùúÿÿÿÿ
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ñºè”ıÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ñºè”ıÿÿÿÿ
-_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ğ“Ã
-Lsquid:S1135"2Complete the task associated to this TODO comment.(¦êò¶ùÿÿÿÿ
-rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(«—£ıÿÿÿÿ
-Tsquid:S1118":Add a private constructor to hide the implicit public one.(ŞĞ¸şıÿÿÿÿ
-?squid:S1166"%Either log or rethrow this exception.(Ôéƒøıÿÿÿÿ
-?squid:S1166"%Either log or rethrow this exception.(É˜Ùúÿÿÿÿ
-gsquid:S1192"SDefine a constant instead of duplicating this literal "workoutEntries.csv" 3 times.(ÓäÊ

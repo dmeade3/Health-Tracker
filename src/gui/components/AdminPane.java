@@ -56,17 +56,12 @@ public class AdminPane extends TitledPane
     {
         refreshDataButton.setOnMouseClicked(event ->
         {
-            System.out.println("Refreshing Program Data");
-
-
-            // TODO refactor this to be easier to add other refreshers
-
-            // Load Step data to csv
-
-            // TODO for loop through how many days of data you are going to keep track of, unless it takes a long time then find another way
+            System.out.println("Refreshing Program Data Fitbit");
 
 
 
+            // TODO Find way to make this very compact but makes sense, maybe make a function that you can pass a list to EX: fitbit.getStepCount(LocalDate.now()) and have
+            // TODO the rest taken care of
 
 
 			// Updates the csv file for steps
@@ -74,9 +69,12 @@ public class AdminPane extends TitledPane
             {
                 // Todo Make this string in the StepCount object
                 DataManager.fitbitCsvWriter("\"" + DATE_FORMAT_LONG.format(sc.getInterval().getStart().toDate()) + "\"" + "," + "\"" + sc.getValue() + "\"", "steps.csv", Constants.STEPS_CSV_HEADER);
-
-                //break;
             }
+
+
+
+            // TODO make a refresh button for the other sources here too like myfitnesspal and withing
+
 
 
 

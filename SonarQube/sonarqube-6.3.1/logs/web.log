@@ -1,191 +1,520 @@
-2017.05.01 22:20:17 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
-2017.05.01 22:20:17 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
-2017.05.01 22:20:19 INFO  web[][o.e.plugins] [Jaeger] modules [], plugins [], sites []
-2017.05.01 22:20:19 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
-2017.05.01 22:20:19 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.3.1.21392 / 54be39f47d188340b14d4d9236bbf3d43b1db2ae
-2017.05.01 22:20:20 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2017.05.01 22:20:20 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: C:\Users\David\Desktop\Intelij Workspace\Workout-Tracker\SonarQube\sonarqube-6.3.1\data
-2017.05.01 22:20:20 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
-2017.05.01 22:20:20 WARN  web[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
-2017.05.01 22:20:21 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\David\Desktop\Intelij Workspace\Workout-Tracker\SonarQube\sonarqube-6.3.1
-2017.05.01 22:20:21 INFO  web[][o.s.s.p.d.m.h.MigrationHistoryTableImpl] Creating table schema_migrations
-2017.05.01 22:20:21 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin C# [csharp] installed
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Flex [flex] installed
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Java [java] installed
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin SonarJS [javascript] installed
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin PHP [php] installed
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Python [python] installed
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Git [scmgit] installed
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin SVN [scmsvn] installed
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin C# / 5.7.0.612 / 6c7d5830a41c62429eade2ead6e3fdf12a388856
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Git / 1.2 / a713dd64daf8719ba4e7f551f9a1966c62690c17
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Java / 4.5.0.8398 / f5a869c42a13d27735d57da1691ca167093a885b
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PHP / 2.9.2.1744 / 949b3433f56b501573b08243bc8485b0585ad5a1
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Python / 1.7.0.1195 / 5c015d7ae2353373d3dc52a465d1cd805ab6535a
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SVN / 1.4.0.522 / 1309b92a587d1c8fd55a2981c69ceadc1f79e79c
-2017.05.01 22:20:22 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJS / 2.20.0.4207 / d65285af4c43250613fa9d176207aeda9176d20a
-2017.05.01 22:20:24 INFO  web[][o.s.s.p.Platform] DB needs migration, entering safe mode
-2017.05.01 22:20:24 INFO  web[][o.s.s.p.d.m.AutoDbMigration] Automatically perform DB migration on fresh install
-2017.05.01 22:20:24 INFO  web[][o.s.s.p.Platform] DB has been updated, exiting safe mode
-2017.05.01 22:20:26 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
-2017.05.01 22:20:27 INFO  web[][o.s.s.e.IndexCreator] Create index components
-2017.05.01 22:20:28 INFO  web[][o.s.s.e.IndexCreator] Create type components/component
-2017.05.01 22:20:29 INFO  web[][o.s.s.e.IndexCreator] Create type components/authorization
-2017.05.01 22:20:29 INFO  web[][o.s.s.e.IndexCreator] Create index tests
-2017.05.01 22:20:30 INFO  web[][o.s.s.e.IndexCreator] Create type tests/test
-2017.05.01 22:20:30 INFO  web[][o.s.s.e.IndexCreator] Create index projectmeasures
-2017.05.01 22:20:31 INFO  web[][o.s.s.e.IndexCreator] Create type projectmeasures/projectmeasure
-2017.05.01 22:20:31 INFO  web[][o.s.s.e.IndexCreator] Create type projectmeasures/authorization
-2017.05.01 22:20:31 INFO  web[][o.s.s.e.IndexCreator] Create index rules
-2017.05.01 22:20:32 INFO  web[][o.s.s.e.IndexCreator] Create type rules/activeRule
-2017.05.01 22:20:32 INFO  web[][o.s.s.e.IndexCreator] Create type rules/rule
-2017.05.01 22:20:32 INFO  web[][o.s.s.e.IndexCreator] Create index issues
-2017.05.01 22:20:33 INFO  web[][o.s.s.e.IndexCreator] Create type issues/issue
-2017.05.01 22:20:33 INFO  web[][o.s.s.e.IndexCreator] Create type issues/authorization
-2017.05.01 22:20:33 INFO  web[][o.s.s.e.IndexCreator] Create index users
-2017.05.01 22:20:33 INFO  web[][o.s.s.e.IndexCreator] Create type users/user
-2017.05.01 22:20:33 INFO  web[][o.s.s.e.IndexCreator] Create index views
-2017.05.01 22:20:34 INFO  web[][o.s.s.e.IndexCreator] Create type views/view
-2017.05.01 22:20:35 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
-2017.05.01 22:20:35 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
-2017.05.01 22:20:35 INFO  web[][o.s.s.r.RegisterRules] Register rules
-2017.05.01 22:20:39 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
-2017.05.01 22:20:39 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile {lang=cs, name=Sonar way}
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Set default cs profile: Sonar way
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile {lang=java, name=Sonar way}
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Set default java profile: Sonar way
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile {lang=flex, name=Sonar way}
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Set default flex profile: Sonar way
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile {lang=py, name=Sonar way}
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Set default py profile: Sonar way
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile {lang=php, name=Sonar way}
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile {lang=php, name=PSR-2}
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile {lang=php, name=Drupal}
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Set default php profile: Sonar way
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile {lang=js, name=Sonar way}
-2017.05.01 22:20:40 INFO  web[][o.s.s.q.RegisterQualityProfiles] Set default js profile: Sonar way
-2017.05.01 22:20:41 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
-2017.05.01 22:20:41 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
-2017.05.01 22:20:41 INFO  web[][o.s.s.e.IndexerStartupTask] Index authorization
-2017.05.01 22:20:41 INFO  web[][o.s.s.e.IndexerStartupTask] Index issues
-2017.05.01 22:20:41 INFO  web[][o.s.s.e.IndexerStartupTask] Index tests
-2017.05.01 22:20:41 INFO  web[][o.s.s.e.IndexerStartupTask] Index users
-2017.05.01 22:20:41 INFO  web[][o.s.s.e.IndexerStartupTask] Index views
-2017.05.01 22:20:41 INFO  web[][o.s.s.e.IndexerStartupTask] Index project measures
-2017.05.01 22:20:41 INFO  web[][o.s.s.e.IndexerStartupTask] Index components
-2017.05.01 22:20:41 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@71709013 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@56feb653]
-2017.05.01 22:20:41 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@6fbc970d [pattern=org.sonar.api.web.ServletFilter$UrlPattern@1ab962e1]
-2017.05.01 22:20:41 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@2f78c2ca [pattern=org.sonar.api.web.ServletFilter$UrlPattern@24f72cd7]
-2017.05.01 22:20:41 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@a976c52 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@1315da1d]
-2017.05.01 22:20:41 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@8432edf [pattern=org.sonar.api.web.ServletFilter$UrlPattern@39072679]
-2017.05.01 22:20:41 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@11563928 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@72d80b]
-2017.05.01 22:20:41 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@7a70a88a [pattern=org.sonar.api.web.ServletFilter$UrlPattern@5a4f5195]
-2017.05.01 22:20:41 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
-2017.05.01 22:20:41 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
-2017.05.02 09:28:44 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
-2017.05.02 09:28:44 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
-2017.05.02 09:28:45 INFO  web[][o.e.plugins] [Master Order] modules [], plugins [], sites []
-2017.05.02 09:28:46 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
-2017.05.02 09:28:46 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.3.1.21392 / 54be39f47d188340b14d4d9236bbf3d43b1db2ae
-2017.05.02 09:28:49 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2017.05.02 09:28:49 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\data
-2017.05.02 09:28:49 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
-2017.05.02 09:28:50 WARN  web[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin C# / 5.7.0.612 / 6c7d5830a41c62429eade2ead6e3fdf12a388856
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Git / 1.2 / a713dd64daf8719ba4e7f551f9a1966c62690c17
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Java / 4.5.0.8398 / f5a869c42a13d27735d57da1691ca167093a885b
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PHP / 2.9.2.1744 / 949b3433f56b501573b08243bc8485b0585ad5a1
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Python / 1.7.0.1195 / 5c015d7ae2353373d3dc52a465d1cd805ab6535a
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SVN / 1.4.0.522 / 1309b92a587d1c8fd55a2981c69ceadc1f79e79c
-2017.05.02 09:28:51 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJS / 2.20.0.4207 / d65285af4c43250613fa9d176207aeda9176d20a
-2017.05.02 09:28:53 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
-2017.05.02 09:28:54 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
-2017.05.02 09:28:54 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
-2017.05.02 09:28:54 INFO  web[][o.s.s.r.RegisterRules] Register rules
-2017.05.02 09:28:56 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
-2017.05.02 09:28:58 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
-2017.05.02 09:28:58 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
-2017.05.02 09:28:58 INFO  web[][o.s.s.e.IndexerStartupTask] Index authorization
-2017.05.02 09:28:58 INFO  web[][o.s.s.e.IndexerStartupTask] Index issues
-2017.05.02 09:28:58 INFO  web[][o.s.s.e.IndexerStartupTask] Index tests
-2017.05.02 09:28:58 INFO  web[][o.s.s.e.IndexerStartupTask] Index users
-2017.05.02 09:28:58 INFO  web[][o.s.s.e.IndexerStartupTask] Index views
-2017.05.02 09:28:58 INFO  web[][o.s.s.e.IndexerStartupTask] Index project measures
-2017.05.02 09:28:58 INFO  web[][o.s.s.e.IndexerStartupTask] Index components
-2017.05.02 09:28:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@6d62477c [pattern=org.sonar.api.web.ServletFilter$UrlPattern@493f1059]
-2017.05.02 09:28:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@78224d55 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@704bc8a]
-2017.05.02 09:28:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@38e0fae9 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@52c24045]
-2017.05.02 09:28:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@747a4faf [pattern=org.sonar.api.web.ServletFilter$UrlPattern@7713659d]
-2017.05.02 09:28:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@568c9eaf [pattern=org.sonar.api.web.ServletFilter$UrlPattern@702da4e6]
-2017.05.02 09:28:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@3d980d6a [pattern=org.sonar.api.web.ServletFilter$UrlPattern@fd39590]
-2017.05.02 09:28:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@7e113133 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@31f90c6]
-2017.05.02 09:28:58 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
-2017.05.02 09:28:58 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
-2017.05.02 12:55:46 INFO  web[AVvJWYZ/tzvy0DvIAACT][o.s.s.p.w.RestartAction] SonarQube restart requested by admin
-2017.05.02 12:55:49 INFO  web[][o.s.p.StopWatcher] Stopping process
-2017.05.02 12:55:50 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
-2017.05.02 12:55:50 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
-2017.05.02 12:55:51 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is stopped
-2017.05.02 12:56:02 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
-2017.05.02 12:56:02 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
-2017.05.02 12:56:03 INFO  web[][o.e.plugins] [Ahmet Abdol] modules [], plugins [], sites []
-2017.05.02 12:56:04 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
-2017.05.02 12:56:04 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.3.1.21392 / 54be39f47d188340b14d4d9236bbf3d43b1db2ae
-2017.05.02 12:56:04 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2017.05.02 12:56:04 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\data
-2017.05.02 12:56:04 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
-2017.05.02 12:56:05 WARN  web[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Code Smells [smells] installed
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin SonarJava [java] updated to version 4.8.0.9441
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin PMD [pmd] installed
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Sonargraph Integration [sonargraphintegration] installed
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin Sonargraph [Sonargraph] installed
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin C# / 5.7.0.612 / 6c7d5830a41c62429eade2ead6e3fdf12a388856
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Code Smells / 4.0.0
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Git / 1.2 / a713dd64daf8719ba4e7f551f9a1966c62690c17
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PHP / 2.9.2.1744 / 949b3433f56b501573b08243bc8485b0585ad5a1
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PMD / 2.6 / f419f834b4bea51f9b6da33517b7f6186db5c066
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Python / 1.7.0.1195 / 5c015d7ae2353373d3dc52a465d1cd805ab6535a
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SVN / 1.4.0.522 / 1309b92a587d1c8fd55a2981c69ceadc1f79e79c
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJS / 2.20.0.4207 / d65285af4c43250613fa9d176207aeda9176d20a
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJava / 4.8.0.9441 / 250ec3a2fa0e0809b972f7c6c759dfc7f545b9f0
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph / 3.5
-2017.05.02 12:56:05 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph Integration / 2.0.1
-2017.05.02 12:56:07 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
-2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Architecture' (sonargraphintegration_architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
-2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structure' (sonargraphintegration_structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
-2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structural Debt' (sonargraphintegration_structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
-2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structural Debt Dashbox' (sonargraph.structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
-2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structure Dashbox' (sonargraph.structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
-2017.05.02 12:56:08 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Architecture Dashbox' (sonargraph.architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
-2017.05.02 12:56:08 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
-2017.05.02 12:56:08 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
-2017.05.02 12:56:09 INFO  web[][o.s.s.r.RegisterRules] Register rules
-2017.05.02 12:56:13 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
-2017.05.02 12:56:15 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
-2017.05.02 12:56:15 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
-2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index authorization
-2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index issues
-2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index tests
-2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index users
-2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index views
-2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index project measures
-2017.05.02 12:56:15 INFO  web[][o.s.s.e.IndexerStartupTask] Index components
-2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@31e94cb7 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@274ecc6c]
-2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@3e4a14e3 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@453d7b69]
-2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@2d466636 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@43459271]
-2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@23ebf9ec [pattern=org.sonar.api.web.ServletFilter$UrlPattern@7969de59]
-2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@57c8a4fc [pattern=org.sonar.api.web.ServletFilter$UrlPattern@2b101370]
-2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@12f523c6 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@89a20]
-2017.05.02 12:56:15 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@53360289 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@68e6e03a]
-2017.05.02 12:56:15 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
-2017.05.02 12:56:15 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
-2017.05.02 15:54:32 INFO  web[][o.s.p.StopWatcher] Stopping process
-2017.05.02 15:54:33 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
-2017.05.02 15:54:33 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
-2017.05.02 15:54:35 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is stopped
+2017.05.03 09:13:49 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2017.05.03 09:13:50 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2017.05.03 09:13:51 INFO  web[][o.e.plugins] [Julie Power] modules [], plugins [], sites []
+2017.05.03 09:13:52 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.03 09:13:52 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.3.1.21392 / 54be39f47d188340b14d4d9236bbf3d43b1db2ae
+2017.05.03 09:13:52 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2017.05.03 09:13:52 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\data
+2017.05.03 09:13:52 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.03 09:13:53 WARN  web[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin C# / 5.7.0.612 / 6c7d5830a41c62429eade2ead6e3fdf12a388856
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Code Smells / 4.0.0
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Git / 1.2 / a713dd64daf8719ba4e7f551f9a1966c62690c17
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PHP / 2.9.2.1744 / 949b3433f56b501573b08243bc8485b0585ad5a1
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PMD / 2.6 / f419f834b4bea51f9b6da33517b7f6186db5c066
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Python / 1.7.0.1195 / 5c015d7ae2353373d3dc52a465d1cd805ab6535a
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SVN / 1.4.0.522 / 1309b92a587d1c8fd55a2981c69ceadc1f79e79c
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJS / 2.20.0.4207 / d65285af4c43250613fa9d176207aeda9176d20a
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJava / 4.8.0.9441 / 250ec3a2fa0e0809b972f7c6c759dfc7f545b9f0
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph / 3.5
+2017.05.03 09:13:54 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph Integration / 2.0.1
+2017.05.03 09:13:56 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2017.05.03 09:13:57 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Architecture' (sonargraphintegration_architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:13:57 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structure' (sonargraphintegration_structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:13:57 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structural Debt' (sonargraphintegration_structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:13:57 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structural Debt Dashbox' (sonargraph.structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:13:57 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structure Dashbox' (sonargraph.structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:13:57 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Architecture Dashbox' (sonargraph.architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:13:57 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2017.05.03 09:13:58 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2017.05.03 09:13:58 INFO  web[][o.s.s.r.RegisterRules] Register rules
+2017.05.03 09:14:02 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
+2017.05.03 09:14:03 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2017.05.03 09:14:04 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2017.05.03 09:14:04 INFO  web[][o.s.s.e.IndexerStartupTask] Index authorization
+2017.05.03 09:14:04 INFO  web[][o.s.s.e.IndexerStartupTask] Index issues
+2017.05.03 09:14:04 INFO  web[][o.s.s.e.IndexerStartupTask] Index tests
+2017.05.03 09:14:04 INFO  web[][o.s.s.e.IndexerStartupTask] Index users
+2017.05.03 09:14:04 INFO  web[][o.s.s.e.IndexerStartupTask] Index views
+2017.05.03 09:14:04 INFO  web[][o.s.s.e.IndexerStartupTask] Index project measures
+2017.05.03 09:14:04 INFO  web[][o.s.s.e.IndexerStartupTask] Index components
+2017.05.03 09:14:04 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@756a322b [pattern=org.sonar.api.web.ServletFilter$UrlPattern@681d7cce]
+2017.05.03 09:14:04 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@2a09ea4d [pattern=org.sonar.api.web.ServletFilter$UrlPattern@e567e4d]
+2017.05.03 09:14:04 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@4e62b322 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@2b5c6321]
+2017.05.03 09:14:04 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@5ea47d49 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@7f3a4545]
+2017.05.03 09:14:04 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@135e683c [pattern=org.sonar.api.web.ServletFilter$UrlPattern@6e6d112b]
+2017.05.03 09:14:04 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@4d56bd84 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@2da9239a]
+2017.05.03 09:14:04 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@6bd541fb [pattern=org.sonar.api.web.ServletFilter$UrlPattern@13977b98]
+2017.05.03 09:14:04 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
+2017.05.03 09:14:04 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2017.05.03 09:42:53 INFO  web[AVvOcjz9LtzGElrgAAFn][o.s.s.p.ServerPluginRepository] Uninstalling plugin PMD [pmd]
+2017.05.03 09:42:58 INFO  web[AVvOcjz9LtzGElrgAAFo][o.s.s.p.w.RestartAction] SonarQube restart requested by admin
+2017.05.03 09:43:00 INFO  web[][o.s.p.StopWatcher] Stopping process
+2017.05.03 09:43:01 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2017.05.03 09:43:01 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2017.05.03 09:43:03 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is stopped
+2017.05.03 09:43:14 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2017.05.03 09:43:14 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2017.05.03 09:43:15 INFO  web[][o.e.plugins] [Hera] modules [], plugins [], sites []
+2017.05.03 09:43:15 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.03 09:43:15 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.3.1.21392 / 54be39f47d188340b14d4d9236bbf3d43b1db2ae
+2017.05.03 09:43:16 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2017.05.03 09:43:16 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\data
+2017.05.03 09:43:16 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.03 09:43:16 WARN  web[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin C# / 5.7.0.612 / 6c7d5830a41c62429eade2ead6e3fdf12a388856
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Code Smells / 4.0.0
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Git / 1.2 / a713dd64daf8719ba4e7f551f9a1966c62690c17
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PHP / 2.9.2.1744 / 949b3433f56b501573b08243bc8485b0585ad5a1
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Python / 1.7.0.1195 / 5c015d7ae2353373d3dc52a465d1cd805ab6535a
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SVN / 1.4.0.522 / 1309b92a587d1c8fd55a2981c69ceadc1f79e79c
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJS / 2.20.0.4207 / d65285af4c43250613fa9d176207aeda9176d20a
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJava / 4.8.0.9441 / 250ec3a2fa0e0809b972f7c6c759dfc7f545b9f0
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph / 3.5
+2017.05.03 09:43:17 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph Integration / 2.0.1
+2017.05.03 09:43:19 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2017.05.03 09:43:19 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Architecture' (sonargraphintegration_architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:43:19 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structure' (sonargraphintegration_structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:43:19 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structural Debt' (sonargraphintegration_structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:43:19 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structural Debt Dashbox' (sonargraph.structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:43:19 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structure Dashbox' (sonargraph.structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:43:19 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Architecture Dashbox' (sonargraph.architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 09:43:19 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2017.05.03 09:43:20 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2017.05.03 09:43:20 INFO  web[][o.s.s.r.RegisterRules] Register rules
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SingletonClassReturningNewInstance
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidDeeplyNestedIfStmts
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:IdempotentOperations
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidProtectedFieldInFinalClass
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnitUseExpected
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CouplingBetweenObjects
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseProperClassLoader
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AbstractClassWithoutAbstractMethod
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseConcurrentHashMap
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:TooManyFields
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryWrapperObjectCreation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DoNotHardCodeSDCard
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:FinalizeOnlyCallsSuperFinalize
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:FinalizeShouldBeProtected
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:IntegerInstantiation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ReplaceHashtableWithMap
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ConfusingTernary
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidDuplicateLiterals
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CallSuperFirst
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyWhileStmt
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryLocalBeforeReturn
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DefaultLabelNotLastInSwitchStmt
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidConstantsInterface
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CallSuperInConstructor
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SimplifyStartsWith
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:IfStmtsMustUseBraces
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidInstantiatingObjectsInLoops
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ExcessiveClassLength
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CommentSize
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:BrokenNullCheck
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UselessQualifiedThis
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:TestClassWithoutTestCases
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnitTestsShouldIncludeAssert
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyStatementNotInLoop
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ReturnEmptyArrayRatherThanNull
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseCorrectExceptionLogging
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NullAssignment
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ReturnFromFinallyBlock
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DoNotCallGarbageCollectionExplicitly
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryCaseChange
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SignatureDeclareThrowsExceptionWithTypeResolution
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:FieldDeclarationsShouldBeAtStartOfClass
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:GenericsNaming
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CloneThrowsCloneNotSupportedException
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryReturn
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ShortClassName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:UnnecessaryBooleanAssertion
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ByteInstantiation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnit4TestShouldUseAfterAnnotation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidFieldNameMatchingTypeName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DoNotUseThreads
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:TooManyStaticImports
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EqualsNull
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnusedNullCheckInEquals
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NPathComplexity
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyFinalizer
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidCallingFinalize
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ReplaceEnumerationWithIterator
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseStringBufferForStringAppends
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidUsingHardCodedIP
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MDBAndSessionBeanNamingConvention
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SuspiciousOctalEscape
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NcssConstructorCount
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:OverrideBothEqualsAndHashcode
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:StringInstantiation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidPrefixingMethodParameters
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DontUseFloatTypeForLoopIndices
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:GuardLogStatementJavaUtil
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:BooleanInstantiation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MissingBreakInSwitch
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:TooFewBranchesForASwitchStatement
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:IfElseStmtsMustUseBraces
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidUsingVolatile
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidCatchingGenericException
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyStaticInitializer
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:FinalizeOverloaded
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LongVariable
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryFullyQualifiedName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:PositionLiteralsFirstInComparisons
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyFinallyBlock
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:RedundantFieldInitializer
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SwitchDensity
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:BooleanGetMethodName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidEnumAsIdentifier
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyIfStmt
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnusedFormalParameter
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptySwitchStatements
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidUsingShortType
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:FinalizeDoesNotCallSuperFinalize
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:InefficientEmptyStringCheck
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DataflowAnomalyAnalysis
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DontImportSun
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ClassWithOnlyPrivateConstructorsShouldBeFinal
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:StdCyclomaticComplexity
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryFinalModifier
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ConstructorCallsOverridableMethod
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:XPathRule
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CyclomaticComplexity
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MethodNamingConventions
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DuplicateImports
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidLiteralsInIfCondition
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidThrowingNewInstanceOfSameException
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SimpleDateFormatNeedsLocale
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SuspiciousHashcodeMethodName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UselessOperationOnImmutable
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyMethodInAbstractClassShouldBeAbstract
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SimplifyBooleanReturns
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SwitchStmtsShouldHaveDefault
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SimplifyBooleanExpressions
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseEqualsToCompareStrings
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AssignmentInOperand
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseNotifyAllInsteadOfNotify
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LocalVariableCouldBeFinal
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LocalHomeNamingConvention
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SimplifiedTernary
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UselessStringValueOf
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:BeanMembersShouldSerialize
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidBranchingStatementAsLastInLoop
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseArraysAsList
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseLocaleWithCaseConversions
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:BadComparison
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryConversionTemporary
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UncommentedEmptyConstructor
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LoosePackageCoupling
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseArrayListInsteadOfVector
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:UseAssertTrueInsteadOfAssertEquals
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:StringToString
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:FinalFieldCouldBeStatic
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ForLoopsMustUseBraces
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptySynchronizedBlock
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:OnlyOneReturn
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:StaticEJBFieldShouldBeFinal
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:InstantiationToGetClass
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ExcessiveImports
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CollapsibleIfStatements
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseStringBufferLength
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnitTestContainsTooManyAsserts
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NcssMethodCount
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:GodClass
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MethodArgumentCouldBeFinal
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CallSuperLast
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:StringBufferInstantiationWithChar
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseVarargs
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseCollectionIsEmpty
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ForLoopShouldBeWhileLoop
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnusedPrivateField
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnusedLocalVariable
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ConsecutiveLiteralAppends
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MissingSerialVersionUID
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UselessOverridingMethod
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnusedImports
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ExceptionAsFlowControl
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NonStaticInitializer
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:PreserveStackTrace
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidDecimalLiteralsInBigDecimalConstructor
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:TooManyMethods
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NonThreadSafeSingleton
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryParentheses
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseUtilityClass
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SuspiciousEqualsMethodName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CommentContent
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnnecessaryConstructor
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnitStaticSuite
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MisleadingVariableName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ShortVariable
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyStatementBlock
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ExcessivePublicCount
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyInitializer
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CloneMethodMustBePublic
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidRethrowingException
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:RemoteInterfaceNamingConvention
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ExcessiveParameterList
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidSynchronizedAtMethodLevel
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidInstanceofChecksInCatchClause
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UncommentedEmptyMethodBody
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MoreThanOneLogger
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UselessParentheses
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:UseAssertSameInsteadOfAssertTrue
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnitAssertionsShouldIncludeMessage
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:JumbledIncrementer
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ArrayIsStoredDirectly
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidStringBufferField
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SingleMethodSingleton
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LooseCoupling
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidProtectedMethodInFinalClassNotExtending
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidUsingNativeCode
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MethodReturnsInternalArray
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyTryBlock
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LongInstantiation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ProperLogger
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DontImportJavaLang
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AtLeastOneConstructor
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ReplaceVectorWithList
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:InefficientStringBuffering
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnusedPrivateMethod
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidMultipleUnaryOperators
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CloseResource
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:BigIntegerInstantiation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:InsufficientStringBufferDeclaration
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidFieldNameMatchingMethodName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CompareObjectsWithEquals
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ClassCastExceptionWithToArray
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:GuardLogStatement
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NoPackage
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NcssTypeCount
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnit4SuitesShouldUseSuiteAnnotation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DoNotCallSystemExit
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidUsingOctalValues
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AssignmentToNonFinalStatic
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CommentDefaultAccessModifier
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:OptimizableToArrayCall
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LogicInversion
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ClassNamingConventions
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:VariableNamingConventions
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidCatchingThrowable
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnsynchronizedStaticDateFormatter
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidPrintStackTrace
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DoubleCheckedLocking
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MethodWithSameNameAsEnclosingClass
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidFinalLocalVariable
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DoNotExtendJavaLangError
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AccessorClassGeneration
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:WhileLoopsMustUseBraces
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CheckResultSet
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:SimplifyBooleanAssertion
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SystemPrintln
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SuspiciousConstantFieldName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidReassigningParameters
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:UseAssertNullInsteadOfAssertTrue
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:GuardDebugLogging
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidAssertAsIdentifier
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidThrowingRawExceptionTypes
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseIndexOfChar
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CommentRequired
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:PositionLiteralsFirstInCaseInsensitiveComparisons
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ShortMethodName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ModifiedCyclomaticComplexity
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidAccessibilityAlteration
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:OneDeclarationPerLine
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CloneMethodReturnTypeMustMatchClassName
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LocalInterfaceSessionNamingConvention
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CloneMethodMustImplementCloneable
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnusedModifier
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:EmptyCatchBlock
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ExtendsObject
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AbstractClassWithoutAnyMethod
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidThrowingNullPointerException
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DoNotThrowExceptionInFinally
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ExcessiveMethodLength
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LooseCouplingWithTypeResolution
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:PrematureDeclaration
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidDollarSigns
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SingularField
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ImmutableField
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnusedImportsWithTypeResolution
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnit4TestShouldUseTestAnnotation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SimplifyConditional
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidThreadGroup
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:NonCaseLabelInSwitchStatement
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UnconditionalIfStatement
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AppendCharacterWithChar
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DefaultPackage
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:PackageCase
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ConsecutiveAppendsShouldReuse
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:DontCallThreadRun
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ImportFromSamePackage
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:RemoteSessionInterfaceNamingConvention
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidCatchingNPE
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LawOfDemeter
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:SignatureDeclareThrowsException
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidArrayLoops
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ShortInstantiation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AddEmptyString
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MissingStaticMethodInNonInstantiatableClass
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:UseObjectForClearerAPI
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AvoidLosingExceptionInformation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnit4TestShouldUseBeforeAnnotation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:AbstractNaming
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:UseAssertEqualsInsteadOfAssertTrue
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:ProperCloneImplementation
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CloneMethodMustImplementCloneableWithTypeResolution
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:CheckSkipResult
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:LoggerIsNotStaticFinal
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd-unit-tests:JUnitSpelling
+2017.05.03 09:43:23 INFO  web[][o.s.s.r.RegisterRules] Disable rule pmd:MisplacedNullCheck
+2017.05.03 09:43:24 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
+2017.05.03 09:43:26 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2017.05.03 09:43:26 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2017.05.03 09:43:26 INFO  web[][o.s.s.e.IndexerStartupTask] Index authorization
+2017.05.03 09:43:26 INFO  web[][o.s.s.e.IndexerStartupTask] Index issues
+2017.05.03 09:43:26 INFO  web[][o.s.s.e.IndexerStartupTask] Index tests
+2017.05.03 09:43:26 INFO  web[][o.s.s.e.IndexerStartupTask] Index users
+2017.05.03 09:43:26 INFO  web[][o.s.s.e.IndexerStartupTask] Index views
+2017.05.03 09:43:26 INFO  web[][o.s.s.e.IndexerStartupTask] Index project measures
+2017.05.03 09:43:26 INFO  web[][o.s.s.e.IndexerStartupTask] Index components
+2017.05.03 09:43:26 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@41d7b99e [pattern=org.sonar.api.web.ServletFilter$UrlPattern@a9bdc4e]
+2017.05.03 09:43:26 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@3e1b3aec [pattern=org.sonar.api.web.ServletFilter$UrlPattern@42fc6ff8]
+2017.05.03 09:43:26 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@5c744051 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@3b5fcd69]
+2017.05.03 09:43:26 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@693e69ba [pattern=org.sonar.api.web.ServletFilter$UrlPattern@5ec170f]
+2017.05.03 09:43:26 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@7c7e1cd9 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@6617d955]
+2017.05.03 09:43:26 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@6f990c1d [pattern=org.sonar.api.web.ServletFilter$UrlPattern@638d4de3]
+2017.05.03 09:43:26 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@fed7d66 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@28b37162]
+2017.05.03 09:43:26 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
+2017.05.03 09:43:26 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2017.05.03 13:02:41 INFO  web[AVvOjR/kz4wIxbOVAABO][o.s.s.p.w.RestartAction] SonarQube restart requested by admin
+2017.05.03 13:02:43 INFO  web[][o.s.p.StopWatcher] Stopping process
+2017.05.03 13:02:44 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2017.05.03 13:02:44 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2017.05.03 13:02:46 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is stopped
+2017.05.03 13:02:56 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2017.05.03 13:02:56 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2017.05.03 13:02:57 INFO  web[][o.e.plugins] [Aralune] modules [], plugins [], sites []
+2017.05.03 13:02:58 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.03 13:02:58 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.3.1.21392 / 54be39f47d188340b14d4d9236bbf3d43b1db2ae
+2017.05.03 13:02:58 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2017.05.03 13:02:58 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\data
+2017.05.03 13:02:58 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.03 13:02:58 WARN  web[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Plugin 3D Code Metrics [citymodel] installed
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin 3D Code Metrics / 3.4.1 / e49317cb59656b228b06fbef28edbea181ef5900
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin C# / 5.7.0.612 / 6c7d5830a41c62429eade2ead6e3fdf12a388856
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Code Smells / 4.0.0
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Git / 1.2 / a713dd64daf8719ba4e7f551f9a1966c62690c17
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PHP / 2.9.2.1744 / 949b3433f56b501573b08243bc8485b0585ad5a1
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Python / 1.7.0.1195 / 5c015d7ae2353373d3dc52a465d1cd805ab6535a
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SVN / 1.4.0.522 / 1309b92a587d1c8fd55a2981c69ceadc1f79e79c
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJS / 2.20.0.4207 / d65285af4c43250613fa9d176207aeda9176d20a
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJava / 4.8.0.9441 / 250ec3a2fa0e0809b972f7c6c759dfc7f545b9f0
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph / 3.5
+2017.05.03 13:02:59 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph Integration / 2.0.1
+2017.05.03 13:03:01 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodel/resources
+2017.05.03 13:03:01 INFO  web[][e.e.s.l.LicenseWS] Creating service: api/citymodelLicense
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodelLicense/getHtmlLicenseInfo
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodelLicense/getUseRemainingDays
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodelLicense/getDownloadKey
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodelLicense/getLicenseStatusAndWriteMsgIfNotValid
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodelLicense/getLicenseStatus
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodelLicense/getHtmlEvalWaterMark
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodelLicense/getSupportRemainingDays
+2017.05.03 13:03:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/citymodelLicense/allLicenseInfo
+2017.05.03 13:03:01 INFO  web[][e.e.s.l.LicenseWS] Service created: api/citymodelLicense
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Architecture' (sonargraphintegration_architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structure' (sonargraphintegration_structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structural Debt' (sonargraphintegration_structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structural Debt Dashbox' (sonargraph.structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structure Dashbox' (sonargraph.structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Architecture Dashbox' (sonargraph.architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'City Model' (citymodel) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Megalopolis' (globalcitymodel) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Megalopolis Filter' (globalcityfiltermodel) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:03:01 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2017.05.03 13:03:02 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2017.05.03 13:03:02 INFO  web[][o.s.s.r.RegisterRules] Register rules
+2017.05.03 13:03:05 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
+2017.05.03 13:03:06 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2017.05.03 13:03:06 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2017.05.03 13:03:06 INFO  web[][o.s.s.e.IndexerStartupTask] Index authorization
+2017.05.03 13:03:06 INFO  web[][o.s.s.e.IndexerStartupTask] Index issues
+2017.05.03 13:03:06 INFO  web[][o.s.s.e.IndexerStartupTask] Index tests
+2017.05.03 13:03:06 INFO  web[][o.s.s.e.IndexerStartupTask] Index users
+2017.05.03 13:03:06 INFO  web[][o.s.s.e.IndexerStartupTask] Index views
+2017.05.03 13:03:06 INFO  web[][o.s.s.e.IndexerStartupTask] Index project measures
+2017.05.03 13:03:06 INFO  web[][o.s.s.e.IndexerStartupTask] Index components
+2017.05.03 13:03:06 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@5e68f542 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@5d559e4e]
+2017.05.03 13:03:06 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@3a643ed8 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@23bf1e33]
+2017.05.03 13:03:06 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@1b222306 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@ab5c44]
+2017.05.03 13:03:06 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@4c124228 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@3630dd13]
+2017.05.03 13:03:06 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@4f9c93d [pattern=org.sonar.api.web.ServletFilter$UrlPattern@5aa4c888]
+2017.05.03 13:03:06 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@71a8e8f2 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@3bd267db]
+2017.05.03 13:03:06 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@4ffe36cc [pattern=org.sonar.api.web.ServletFilter$UrlPattern@79a7b8b9]
+2017.05.03 13:03:06 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
+2017.05.03 13:03:06 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2017.05.03 13:05:39 INFO  web[AVvPQ+3CthcGfg5qAAA2][o.s.s.p.ServerPluginRepository] Uninstalling plugin 3D Code Metrics [citymodel]
+2017.05.03 13:05:51 INFO  web[AVvPQ+3CthcGfg5qAAA3][o.s.s.p.w.RestartAction] SonarQube restart requested by admin
+2017.05.03 13:05:54 INFO  web[][o.s.p.StopWatcher] Stopping process
+2017.05.03 13:05:55 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2017.05.03 13:05:55 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2017.05.03 13:05:56 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is stopped
+2017.05.03 13:06:06 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2017.05.03 13:06:07 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2017.05.03 13:06:07 INFO  web[][o.e.plugins] [Bella Donna] modules [], plugins [], sites []
+2017.05.03 13:06:08 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2017.05.03 13:06:08 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 6.3.1.21392 / 54be39f47d188340b14d4d9236bbf3d43b1db2ae
+2017.05.03 13:06:09 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2017.05.03 13:06:09 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1\data
+2017.05.03 13:06:09 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://localhost:9092/sonar
+2017.05.03 13:06:09 WARN  web[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2017.05.03 13:06:09 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\dcmeade\Desktop\Intelij Workspace\Health-Tracker\SonarQube\sonarqube-6.3.1
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin C# / 5.7.0.612 / 6c7d5830a41c62429eade2ead6e3fdf12a388856
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Code Smells / 4.0.0
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Flex / 2.3 / 79167f762219bea1fd181ff5ef6ca4b34abd1675
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Git / 1.2 / a713dd64daf8719ba4e7f551f9a1966c62690c17
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin PHP / 2.9.2.1744 / 949b3433f56b501573b08243bc8485b0585ad5a1
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Python / 1.7.0.1195 / 5c015d7ae2353373d3dc52a465d1cd805ab6535a
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SVN / 1.4.0.522 / 1309b92a587d1c8fd55a2981c69ceadc1f79e79c
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJS / 2.20.0.4207 / d65285af4c43250613fa9d176207aeda9176d20a
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin SonarJava / 4.8.0.9441 / 250ec3a2fa0e0809b972f7c6c759dfc7f545b9f0
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph / 3.5
+2017.05.03 13:06:10 INFO  web[][o.s.s.p.ServerPluginRepository] Deploy plugin Sonargraph Integration / 2.0.1
+2017.05.03 13:06:11 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2017.05.03 13:06:12 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Architecture' (sonargraphintegration_architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:06:12 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structure' (sonargraphintegration_structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:06:12 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Integration Structural Debt' (sonargraphintegration_structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:06:12 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structural Debt Dashbox' (sonargraph.structural_debt) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:06:12 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Structure Dashbox' (sonargraph.structure) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:06:12 WARN  web[][o.s.s.u.DeprecatedViews] Widget 'Sonargraph Architecture Dashbox' (sonargraph.architecture) is ignored. See org.sonar.api.web.page.PageDefinition to define pages.
+2017.05.03 13:06:12 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2017.05.03 13:06:12 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2017.05.03 13:06:13 INFO  web[][o.s.s.s.RegisterMetrics] Disable metric City Model snapshot data [city_snapshot_data]
+2017.05.03 13:06:13 INFO  web[][o.s.s.r.RegisterRules] Register rules
+2017.05.03 13:06:15 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
+2017.05.03 13:06:17 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2017.05.03 13:06:17 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2017.05.03 13:06:17 INFO  web[][o.s.s.e.IndexerStartupTask] Index authorization
+2017.05.03 13:06:17 INFO  web[][o.s.s.e.IndexerStartupTask] Index issues
+2017.05.03 13:06:17 INFO  web[][o.s.s.e.IndexerStartupTask] Index tests
+2017.05.03 13:06:17 INFO  web[][o.s.s.e.IndexerStartupTask] Index users
+2017.05.03 13:06:17 INFO  web[][o.s.s.e.IndexerStartupTask] Index views
+2017.05.03 13:06:17 INFO  web[][o.s.s.e.IndexerStartupTask] Index project measures
+2017.05.03 13:06:17 INFO  web[][o.s.s.e.IndexerStartupTask] Index components
+2017.05.03 13:06:17 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@63cf64b2 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@91761ac]
+2017.05.03 13:06:17 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@15236050 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@d516cb2]
+2017.05.03 13:06:17 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@f110065 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@1bed037]
+2017.05.03 13:06:17 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@7b5d18c0 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@1ffff578]
+2017.05.03 13:06:17 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@236560f6 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@306de742]
+2017.05.03 13:06:17 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@471db840 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@4f771285]
+2017.05.03 13:06:17 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@c3a7043 [pattern=org.sonar.api.web.ServletFilter$UrlPattern@26cf063c]
+2017.05.03 13:06:17 INFO  web[][o.s.s.a.TomcatAccessLog] Web server is started
+2017.05.03 13:06:17 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000

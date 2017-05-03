@@ -43,6 +43,7 @@ public class CustomLineGraph extends LineChart
         }
     }
 
+    // TODO make this common area
     private static NumberAxis getDateFormatedNumberAxis()
     {
         NumberAxis numberAxis = new NumberAxis();

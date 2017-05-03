@@ -1,6 +1,5 @@
 package data_control;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import util.ProgramInfo;
 
@@ -246,23 +245,5 @@ public class DataManager
                 ex.printStackTrace();
             }
         }
-    }
-
-    public static void main(String... args)
-    {
-        BasicConfigurator.configure();
-
-        //
-        //WorkoutEntry workoutEntry = new WorkoutEntry("3/13/2017", 195, "Pullups", 20, 5, 33.44f);
-
-        //storeWorkoutEntry(workoutEntry, "David", "3/13/2017");
-
-
-        /*List<WorkoutEntry> workoutEntries = readInUserData("David", "03-21-2017", "all");
-
-        for (WorkoutEntry workoutEntry : workoutEntries)
-        {
-            System.out.println(workoutEntry.toString());
-        }*/
     }
 }

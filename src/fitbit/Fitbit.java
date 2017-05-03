@@ -354,8 +354,8 @@ public class Fitbit
 	 */
 	public List<StepCount> getStepCount( LocalDate date )
 	{
-		final List<StepCount> result = new ArrayList<StepCount>( );
-		this.getGraphData( "intradaySteps", date, null, new ActivityResponseHandler( )
+		final List<StepCount> result = new ArrayList<>( );
+		this.getGraphData( "intradaySteps", date, null,	new ActivityResponseHandler( )
 		{
 			@Override
 			protected void processDataPoint( Interval interval, JsonObject dataPoint )

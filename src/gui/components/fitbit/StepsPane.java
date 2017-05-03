@@ -1,20 +1,13 @@
 package gui.components.fitbit;
 
-import fitbit.Fitbit;
-import fitbit.FitbitAuthenticationException;
-import fitbit.StepCount;
 import gui.Graphing.charts.CustomBarGraph;
 import javafx.geometry.Insets;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
-import org.joda.time.LocalDate;
 import util.Constants;
 
-import java.io.*;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -23,7 +16,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static util.Constants.LOGS_PATH;
-import static util.MainUtility.DATE_FORMAT_LONG;
 
 /**
  * Created by dcmeade on 5/2/2017.
@@ -76,13 +68,13 @@ public class StepsPane extends FlowPane
 
 		summaryFlowPane.getChildren().add(new Label("\tTotal Steps: " + totalSteps));
 
-
-
 		getChildren().add(summaryFlowPane);
 	}
 
 	private void readInStepData(Stream<String> stream)
 	{
+		// TODO only add if within the date range
+
 		// Read in file
 		for (String line : stream.collect(Collectors.toList()))
 		{

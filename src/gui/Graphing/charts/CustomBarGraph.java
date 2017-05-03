@@ -1,14 +1,9 @@
 package gui.Graphing.charts;
 
-import javafx.beans.NamedArg;
-import javafx.geometry.Insets;
-import javafx.scene.chart.*;
-import javafx.scene.control.Tooltip;
-import javafx.scene.text.Font;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 
-import static util.MainUtility.DATE_FORMAT;
-import static util.MainUtility.NUMBER_FORMAT;
-import static util.MainUtility.hackTooltipStartTiming;
 
 /**
  * Project: Health-Tracker

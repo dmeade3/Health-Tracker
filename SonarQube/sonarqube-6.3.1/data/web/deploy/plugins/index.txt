@@ -5,7 +5,6 @@ smells,false,qualinsight-sonarqube-smell-plugin-4.0.0.jar|d0418e95f362980bf0a9f4
 sonargraphintegration,false,sonar-sonargraph-integration-2.0.1.jar|277c75888bd4b8b54a44c58eeee83120
 flex,false,sonar-flex-plugin-2.3.jar|8aa2bdaa868a414c07e56c973c0e5399
 scmgit,false,sonar-scm-git-plugin-1.2.jar|7eb5e3ad8c8a2ea587ff7df0d3e1512b
-pmd,false,sonar-pmd-plugin-2.6.jar|f6f655d89f546cccc0997e3d3817f6db
 php,false,sonar-php-plugin-2.9.2.1744.jar|bb1c367cbfa99ddc741de3e57d138564
 Sonargraph,false,sonar-sonargraph-plugin-3.5.jar|4cf8161f417979f8f50be191bfbe5aae
 scmsvn,false,sonar-scm-svn-plugin-1.4.0.522.jar|289161bc0f69374980dbb6cc4620c53e
