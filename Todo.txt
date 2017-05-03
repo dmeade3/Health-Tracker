@@ -101,6 +101,14 @@ will still have to log blood presaure and scale info
 
 find safe way to store password and username
 
+get log4j.properties to work
+
+tool tips to all graphs
+
+space out graph x axis more
+
+total steps add
+
 -make task for every time compiled to run sonarqube
 
 when showing prs, they should be in a table format, only able to show one exercise and its always all time

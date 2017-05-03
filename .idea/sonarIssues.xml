@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$USER_HOME$/.IdeaIC15/idea64.exe.vmoptions">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/SonarQube/ReadMe.txt">
           <value>
             <set />
@@ -18,7 +23,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/css/main.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/data/logs/David/steps.csv">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/data/logs/David/workoutEntries.csv">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/log4j.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/log4j.properties">
           <value>
             <set />
           </value>
@@ -63,6 +88,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/gui/Graphing/charts/CustomBarGraph.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/gui/Graphing/charts/CustomLineGraph.java">
           <value>
             <set />
@@ -74,6 +104,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/gui/InitMain.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/gui/components/AdminPane.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/gui/components/MainTabPane.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/gui/components/fitbit/StepsPane.java">
           <value>
             <set />
           </value>

@@ -7,6 +7,7 @@ import util.ProgramInfo;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -209,15 +210,27 @@ public class DataManager
             else
             {
                 // true = append file
-                fw = new FileWriter(file.getAbsoluteFile(), true);
-                bw = new BufferedWriter(fw);
+                //fw = new FileWriter(file.getAbsoluteFile(), false);
+                //bw = new BufferedWriter(fw);
 
-                String currentContent= new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
 
-                if (!currentContent.contains(date))
-                {
-                    bw.write(writeOutString + "\n");
-                }
+	            // TODO this is incredibely slow and memory intensive
+
+                String currentContent = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
+
+	            //System.out.println("content: " + currentContent);
+
+	            // replace the entry in place
+	            currentContent.replaceFirst("\"" + date + "\"" + ".*", writeOutString);
+
+	            // If does not exist in file add to the end
+	            if (!currentContent.contains(writeOutString))
+	            {
+		            currentContent += currentContent + writeOutString + "\n";
+	            }
+
+
+	            Files.write(Paths.get(String.valueOf(file.toPath())), currentContent.getBytes());
             }
         }
         catch (IOException e)

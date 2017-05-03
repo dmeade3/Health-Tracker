@@ -52,5 +52,11 @@ public class MainTabPane extends TabPane
         getTabs().add(bloodPressureTab);
         getTabs().add(goalsTab);
         getTabs().add(exerciseTab);
+
+	    // Make tabs non deletable
+	    for (Tab tab : getTabs())
+	    {
+			tab.closableProperty().setValue(false);
+	    }
     }
 }

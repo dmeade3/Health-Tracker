@@ -69,17 +69,16 @@ public class AdminPane extends TitledPane
 
 
 
-
+			// Updates the csv file for steps
             for (StepCount sc : fitbit.getStepCount(LocalDate.now()))
             {
-
                 // Todo Make this string in the StepCount object
                 DataManager.fitbitCsvWriter("\"" + DATE_FORMAT_LONG.format(sc.getInterval().getStart().toDate()) + "\"" + "," + "\"" + sc.getValue() + "\"", "steps.csv", Constants.STEPS_CSV_HEADER);
             }
 
 
 
-
+			// TODO find a way to trigger center gui reload here
 
 
         });
