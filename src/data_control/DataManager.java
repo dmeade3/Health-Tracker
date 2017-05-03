@@ -209,26 +209,16 @@ public class DataManager
             }
             else
             {
-                // true = append file
-                //fw = new FileWriter(file.getAbsoluteFile(), false);
-                //bw = new BufferedWriter(fw);
-
-
-	            // TODO this is incredibely slow and memory intensive
-
                 String currentContent = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
-
-	            //System.out.println("content: " + currentContent);
-
+	            
 	            // replace the entry in place
-	            currentContent.replaceFirst("\"" + date + "\"" + ".*", writeOutString);
+	            currentContent = currentContent.replaceFirst(date + ".*", writeOutString);
 
 	            // If does not exist in file add to the end
-	            if (!currentContent.contains(writeOutString))
+	            if (!currentContent.contains(writeOutString.trim()))
 	            {
-		            currentContent += currentContent + writeOutString + "\n";
+		            currentContent += writeOutString + "\n";
 	            }
-
 
 	            Files.write(Paths.get(String.valueOf(file.toPath())), currentContent.getBytes());
             }
