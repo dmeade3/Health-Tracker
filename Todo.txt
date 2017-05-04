@@ -56,7 +56,7 @@ Planning: <-- this will be all that stays
                     -like budget app have a line of progress bars showing progress towards the goal
                     -make a goal object with a start and end and get percentage complete method
                     -have special scene if the goal is complete
-
+                -break down info for macro nutrients eaten that day on the nutrition page
 
             Withings:
 
