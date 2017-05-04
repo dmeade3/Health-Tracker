@@ -1,4 +1,4 @@
-package data_control;
+package data_control.workout;
 
 /**
  * Created by dcmeade on 4/24/2017.

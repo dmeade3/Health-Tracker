@@ -1,4 +1,4 @@
-package data_control;
+package data_control.workout;
 
 import gui.Graphing.GraphDataOption;
 

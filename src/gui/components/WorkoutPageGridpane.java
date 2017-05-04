@@ -1,11 +1,9 @@
 package gui.components;
 
 import data_control.DataManager;
-import data_control.Exercise;
-import data_control.WorkoutEntry;
+import data_control.workout.Exercise;
+import data_control.workout.WorkoutEntry;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -22,8 +20,6 @@ import util.ProgramInfo;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -31,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static gui.components.AdminPane.loadOnExitDataEntry;
 import static util.Constants.*;
 import static util.MainUtility.*;
 
@@ -47,7 +44,6 @@ public class WorkoutPageGridpane extends GridPane
     private static TextField additionalWeightTextField;
     private static ComboBox<Exercise> exercises;
     private static DatePicker datePicker;
-    private static ComboBox userComboBox;
     private static Button submitButton;
     private static Button displayDataButton;
     private static Button adminButton;
@@ -57,7 +53,6 @@ public class WorkoutPageGridpane extends GridPane
     private static Label bodyweightLabel;
     private static Label additionalWeightLabel;
     private static Label exerciseLabel;
-    private static Label userLabel;
     private static ListView<String> listInfo;
     private static ObservableList<String> workoutData;
 
@@ -207,41 +202,6 @@ public class WorkoutPageGridpane extends GridPane
         getChildren().add(datesComboBox);*/
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        ObservableList<String> users = getUsers();
-        userComboBox = new ComboBox(users);
-
-        String prevUser = loadOnExitDataEntry("user");
-
-        int ctr = 0;
-
-        if (prevUser != null)
-        {
-            for (String item : users)
-            {
-                if (item.equals(prevUser))
-                {
-                    break;
-                }
-                else
-                {
-                    ctr++;
-                }
-            }
-        }
-
-        // Listener for user change
-        userComboBox.valueProperty().addListener(new ChangeListener<String>()
-        {
-            @Override public void changed(ObservableValue ov, String t, String newValue)
-            {
-                ProgramInfo.CURRENT_USER = newValue;
-            }
-        });
-
-        userComboBox.getSelectionModel().select(ctr);
-        GridPane.setConstraints(userComboBox, 1, 7, 2, 1);
-        getChildren().add(userComboBox);
     }
 
     private void initLabels()
@@ -275,11 +235,6 @@ public class WorkoutPageGridpane extends GridPane
         GridPane.setConstraints(bodyweightLabel, 0, 6);
         GridPane.setColumnSpan(bodyweightLabel, 3);
         getChildren().add(bodyweightLabel);
-
-        userLabel = new Label("User");
-        GridPane.setConstraints(userLabel, 0, 7);
-        GridPane.setColumnSpan(userLabel, 2);
-        getChildren().add(userLabel);
     }
 
     private void initListView()
@@ -328,29 +283,6 @@ public class WorkoutPageGridpane extends GridPane
         }
     }
 
-    private static String loadOnExitDataEntry(String target)
-    {
-        try
-        {
-            List<String> lines = Files.readAllLines(Paths.get(ON_EXIT_INFO_PATH));
-
-            for (String s : lines)
-            {
-                // user
-                if (s.split(":")[0].equals(target))
-                {
-                    return s.split(":")[1];
-                }
-            }
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
     private static void initActions(Stage stage)
     {
         // TODO move this to a more central place
@@ -363,7 +295,7 @@ public class WorkoutPageGridpane extends GridPane
             List<String> info = new ArrayList<>();
 
             // Collect data i want to write out to load on next start
-            info.add("user:" + userComboBox.getSelectionModel().getSelectedItem());
+            info.add("user:" + ProgramInfo.CURRENT_USER);
 
             if (bodyweightTextField.getText() != null)
             {
@@ -426,7 +358,7 @@ public class WorkoutPageGridpane extends GridPane
                     throw new Exception("User cant be blank");
                 }
 
-                DataManager.storeWorkoutEntry(workoutEntry, (String) userComboBox.getSelectionModel().getSelectedItem(), DATE_FORMAT.format(date));
+                DataManager.storeWorkoutEntry(workoutEntry, ProgramInfo.CURRENT_USER, DATE_FORMAT.format(date));
             }
             catch (Exception ex)
             {

@@ -1,4 +1,4 @@
-package data_control;
+package data_control.workout;
 
 import javafx.scene.chart.XYChart;
 import org.apache.log4j.Logger;

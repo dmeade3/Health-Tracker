@@ -1,7 +1,7 @@
 package gui.components;
 
-import data_control.Exercise;
-import data_control.WorkoutEntryField;
+import data_control.workout.Exercise;
+import data_control.workout.WorkoutEntryField;
 import gui.Graphing.ChartDataUtil;
 import gui.Graphing.GraphViewOption;
 import gui.Graphing.charts.CustomLineGraph;

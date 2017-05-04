@@ -1,5 +1,8 @@
 package data_control;
 
+import data_control.workout.Exercise;
+import data_control.workout.MuscleGroup;
+import data_control.workout.WorkoutEntry;
 import org.apache.log4j.Logger;
 import util.ProgramInfo;
 
@@ -176,8 +179,7 @@ public class DataManager
         BufferedWriter bw = null;
         FileWriter fw = null;
 
-        // TODO make the user dynamic
-        String filePath = LOGS_PATH + System.getProperty("file.separator") + "David" + System.getProperty("file.separator") + filename;
+        String filePath = LOGS_PATH + System.getProperty("file.separator") + ProgramInfo.CURRENT_USER + System.getProperty("file.separator") + filename;
 
         String date = writeOutString.split(",")[0];
 

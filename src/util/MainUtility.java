@@ -1,6 +1,6 @@
 package util;
 
-import data_control.Exercise;
+import data_control.workout.Exercise;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;

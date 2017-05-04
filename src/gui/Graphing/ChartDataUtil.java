@@ -1,6 +1,10 @@
 package gui.Graphing;
 
 import data_control.*;
+import data_control.workout.Exercise;
+import data_control.workout.MuscleGroup;
+import data_control.workout.WorkoutEntry;
+import data_control.workout.WorkoutEntryField;
 import javafx.scene.chart.XYChart;
 
 import java.text.ParseException;

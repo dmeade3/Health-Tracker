@@ -6,6 +6,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import util.Constants;
+import util.ProgramInfo;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -36,8 +37,7 @@ public class StepsPane extends FlowPane
 	    barChart.getXAxis().setLabel("Time");
 	    barChart.getYAxis().setLabel("Steps");
 
-	    // TODO make david a dynamic variable
-	    try (Stream<String> stream = Files.lines(Paths.get(LOGS_PATH + System.getProperty("file.separator") + "David" + System.getProperty("file.separator") + "steps.csv")))
+	    try (Stream<String> stream = Files.lines(Paths.get(LOGS_PATH + System.getProperty("file.separator") + ProgramInfo.CURRENT_USER + System.getProperty("file.separator") + "steps.csv")))
 	    {
 		    readInStepData(stream);
 

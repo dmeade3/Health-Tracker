@@ -3,8 +3,8 @@ package gui.components;
 
 import data_control.DataManager;
 import data_control.DateRange;
-import data_control.Exercise;
-import data_control.WorkoutEntry;
+import data_control.workout.Exercise;
+import data_control.workout.WorkoutEntry;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

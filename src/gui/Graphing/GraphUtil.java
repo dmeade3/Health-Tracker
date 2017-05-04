@@ -1,6 +1,6 @@
 package gui.Graphing;
 
-import data_control.WorkoutEntryField;
+import data_control.workout.WorkoutEntryField;
 import javafx.scene.chart.XYChart;
 import org.apache.log4j.Logger;
 
