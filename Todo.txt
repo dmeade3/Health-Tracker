@@ -122,9 +122,6 @@ first tackle the data storing problem
 will still have to log blood presaure and scale info
     -work on getting info for these like fitbit does
 
-get log4j.properties to work
-
--make task for every time compiled to run sonarqube
 
 when showing prs, they should be in a table format, only able to show one exercise and its always all time
 
@@ -144,12 +141,6 @@ Restricted textfield
     -takes regex
         -enum of restriction options
     -use everywhere
-
-Should have stats for whole workout (Day volume all added up)
-
-improve aesthetics of the program
-
-look at todos from budget to get todo ideas
 
 place for goals and theres charts showing progress towards goal
     -weight goal
