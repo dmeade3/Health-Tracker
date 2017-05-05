@@ -1,7 +1,11 @@
 package gui.Graphing.charts;
 
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -11,46 +15,65 @@ import static thorwin.math.Math.polynomial;
 /**
  * Created by dcmeade on 5/4/2017.
  */
-public class CustomLineGraphWithTrendLine extends CustomLineGraph
+public class CustomLineGraphWithTrendLine extends LineChart // TODO Eventually have this extend CustomLineGraph
 {
-    public CustomLineGraphWithTrendLine(String chartTitle, List<Series<Number, Number>> seriesList)
+    public CustomLineGraphWithTrendLine(String chartTitle, List<XYChart.Series<Number, Number>> seriesList)
     {
-        super(chartTitle, seriesList);
+        super(new NumberAxis(), new NumberAxis());
 
         // setup the chart
         XYChart.Series<Number,Number> seriesTrendLine = new XYChart.Series<>();
 
+	    seriesTrendLine.setName("Trendline");
 
         // Add the trendline series
         getData().add(seriesTrendLine);
 
-
-        /*
-        *
-        * TODO
-        *
-        * */
-
-        getStylesheets().add("main.css");
-
-        long now = (new Date()).getTime();
+        getStylesheets().add("customLineGraphWithTrendLine.css");
 
         // setup chart series
-        double[] xs = {now-1000, now-900, now-800, now-700, now -600, now-500};
-        double[] ys = {0.5, 1.3, 2.4, 5.6, 8.8, 9.1};
+	    List<Double> xAxis = new ArrayList<>();
+	    List<Double> yAxis = new ArrayList<>();
 
-        for (int i = 0; i < xs.length; i++)
-        {
-            seriesTrendLine.getData().add(new XYChart.Data<>(xs[i], ys[i]));
-        }
+	    for (Series<Number, Number> series : seriesList)
+	    {
+			for (Data<Number, Number> data : series.getData())
+			{
+				xAxis.add(data.getXValue().doubleValue());
+
+				yAxis.add(data.getYValue().doubleValue());
+			}
+	    }
+
+		// Convert x Axis to array
+	    double[] arrayXAxis = xAxis.stream().mapToDouble(Double::doubleValue).toArray();
+	    double[] arrayYAxis = yAxis.stream().mapToDouble(Double::doubleValue).toArray();
 
         // calculate the polynomial coefficients and calculate trend points
-        double[] coefficients = polyfit(xs, ys, 2);
+        double[] coefficients = polyfit(arrayXAxis, arrayYAxis, 4); // TODO maybe make the number a passable arg <- must be in a range
 
-        for (double x = 0; x <= 5.0; x += 0.05)
+	    double start = Double.MAX_VALUE;
+	    double end = Double.MIN_VALUE;
+
+	    for (int i = 0; i < xAxis.size() ; i++)
+	    {
+			if (arrayXAxis[i] < start)
+			{
+				start = arrayXAxis[i];
+			}
+
+		    else if (arrayXAxis[i] > end)
+		    {
+				end = arrayXAxis[i];
+		    }
+	    }
+
+        for (double x = start; x <= end; x += 0.05)
         {
             double y = polynomial(x, coefficients);
-            seriesTrendLine.getData().add(new XYChart.Data<>(x,y));
+            seriesTrendLine.getData().add(new XYChart.Data<>(x, y));
         }
+
+	    getData().addAll(seriesList);
     }
 }

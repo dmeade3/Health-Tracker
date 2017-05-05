@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/css/customLineGraphWithTrendLine.css">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/css/main.css">
           <value>
             <set />
@@ -93,12 +98,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/database/Database.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/database/Database_Test_Area.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/gui/Graphing/charts/CustomBarGraph.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/gui/Graphing/charts/CustomLineGraph.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/gui/Graphing/charts/CustomLineGraphWithTrendLine.java">
           <value>
             <set />
           </value>

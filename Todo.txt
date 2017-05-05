@@ -5,9 +5,6 @@ Priority:
 
 
 
-
-
-
 Planning: <-- this will be all that stays
 
     -need admin panel at top with refresh button
@@ -85,6 +82,32 @@ Planning: <-- this will be all that stays
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 first tackle the data storing problem
     reliably store data
         -read write
@@ -99,15 +122,7 @@ first tackle the data storing problem
 will still have to log blood presaure and scale info
     -work on getting info for these like fitbit does
 
-find safe way to store password and username
-
 get log4j.properties to work
-
-tool tips to all graphs
-
-space out graph x axis more
-
-total steps add
 
 -make task for every time compiled to run sonarqube
 
@@ -141,10 +156,6 @@ place for goals and theres charts showing progress towards goal
     -lifting goal
         -volume reps with weight
 
-search specific prs
-
-be able to show total volum per workout
-
 overall stats:
     all total volume
     total all reps
@@ -159,33 +170,3 @@ display:
 
     over time:
         -select time range
-
-user sign in
-    password in future maybe
-
-choose timespan of a week, month, day for each column when displaying data
-
-make with jar so launchable like a real app so i can distribute easy if someone else wants it like josh or brian
-
-Additional actions:
-
-    Button:
-        Admin button:
-            -add user
-                -upon creating a new user make a log dir for them
-                -after user added reload the users in the combo box
-
-        Delete entry / user button:
-            -opens a windows explorer window and lets you do it yourself or opens list view window and lets you delete from list view
-
-        Analyze Button:
-            -has tests it runs on your data
-                -exmple ratio between upperbody volume and lower body volume is not balanced
-            -runs tests gives results
-
-
-        Analyze Button for health:
-            -has tests it runs on your data
-                -exmple say if a certain number is high or not
-                    -if youre on track with your goal
-            -runs tests gives results
